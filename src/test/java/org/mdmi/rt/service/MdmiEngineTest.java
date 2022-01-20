@@ -51,7 +51,7 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMI/MDMITransformationService/maps2");
+		System.setProperty("mdmi.maps", "src/test/resources/testmaps");
 	}
 
 	@Autowired
@@ -143,7 +143,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testCDA2FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/PS/CCD").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/test").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -155,14 +155,14 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.ImmunizationUSCore", document.get());
+				runTransformation("CCDAonFHIRJSON.CompositionBundle", "CDAR2.ContinuityOfCareDocument", document.get());
 			}
 		}
 	}
 
 	@Test
 	public void testCDA2FHIR2() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/PS/CCD").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/cda").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -174,7 +174,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.CompositionBundle", document.get());
+				runTransformation("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
 			}
 		}
 	}
@@ -200,7 +200,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testV2toFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/v2").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/test").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -212,7 +212,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("HL7V2.ADTA01CONTENT", "Perspecta.PerspectaFHIRmap", document.get());
+				runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
 			}
 		}
 	}

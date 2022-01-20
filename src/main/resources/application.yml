@@ -17,7 +17,7 @@ logging:
 fhirterminology:
     userName: user
     password: user
-    url: http://ec2-18-188-214-103.us-east-2.compute.amazonaws.com:8080/fhir
+    url: http://ec2-18-118-193-200.us-east-2.compute.amazonaws.com:8080/fhir
 
 origins:
   url: ""

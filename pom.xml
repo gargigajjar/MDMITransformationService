@@ -209,6 +209,12 @@
 			<artifactId>hapi-structures-v26</artifactId>
 			<version>2.3</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>ca.uhn.hapi</groupId>
+			<artifactId>hapi-structures-v251</artifactId>
+			<version>2.3</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.clerezza.ext</groupId>
@@ -246,22 +252,19 @@
 			<version>9.1.1</version>
 		</dependency>
 
-
-
-
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v28 -->
 		<dependency>
 			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-base</artifactId>
-			<version>2.2</version>
+			<artifactId>hapi-structures-v28</artifactId>
+			<version>2.3</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v23 -->
 		<dependency>
 			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-structures-v251</artifactId>
-			<version>2.2</version>
+			<artifactId>hapi-structures-v23</artifactId>
+			<version>2.3</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>org.antlr</groupId>

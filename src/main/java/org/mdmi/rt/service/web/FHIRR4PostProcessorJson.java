@@ -36,7 +36,9 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		if ("xFHIRR4JSON".equals(messageModel.getGroup().getName())) {
+		if ("FHIRR4JSON".equals(messageModel.getGroup().getName()) ||
+				"IPSFHIRJSON".equals(messageModel.getGroup().getName()) ||
+				"CCDAonFHIRJSON".equals(messageModel.getGroup().getName())) {
 			return true;
 		}
 		return false;
