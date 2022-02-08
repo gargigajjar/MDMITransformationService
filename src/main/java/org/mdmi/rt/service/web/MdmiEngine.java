@@ -46,7 +46,7 @@ public class MdmiEngine {
 	ServletContext context;
 
 	static Boolean loaded = Boolean.FALSE;
-	
+
 	@Value("#{systemProperties['mdmi.maps'] ?: '/maps'}")
 	private String mapsFolder;
 
@@ -136,6 +136,7 @@ public class MdmiEngine {
 		CDAPostProcessor.setStylesheet("perspectasections.xsl");
 
 		// add in fhir post processor
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new Deliminated2XML("NJ", "\\|"));
 		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());

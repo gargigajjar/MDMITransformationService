@@ -11,7 +11,24 @@
  *******************************************************************************/
 package org.mdmi.rt.service.web;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.UUID;
+import java.util.function.Consumer;
+
+import org.apache.commons.text.StringEscapeUtils;
 import org.hl7.fhir.r4.model.Bundle;
+import org.hl7.fhir.r4.model.Bundle.BundleEntryComponent;
+import org.hl7.fhir.r4.model.Bundle.HTTPVerb;
+import org.hl7.fhir.r4.model.Identifier;
+import org.hl7.fhir.r4.model.Medication;
+import org.hl7.fhir.r4.model.Organization;
+import org.hl7.fhir.r4.model.Practitioner;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.mdmi.MessageModel;
 import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.engine.postprocessors.IPostProcessor;
@@ -120,9 +137,112 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			// Bundle bundle = parse.parseResource(Bundle.class, content);
 
 			// // System.out.println(ctx.newJsonParser().encodeResourceToString(bundle));
+			// Bundle bundle = parse.parseResource(Bundle.class, mdmiMessage.getDataAsString());
+			// Bundle dedupBundle = deduplicate(bundle);
+			// mdmiMessage.setData(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(dedupBundle));
+
+			HashMap<String, String> referenceMappings = new HashMap<String, String>();
 			Bundle bundle = parse.parseResource(Bundle.class, mdmiMessage.getDataAsString());
-			mdmiMessage.setData(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(bundle));
+			Bundle dedupBundle = deduplicate(bundle);
+			for (BundleEntryComponent bundleEntry : dedupBundle.getEntry()) {
+				UUID uuid = UUID.randomUUID();
+				bundleEntry.setFullUrl("urn:uuid:" + uuid);
+				String k = bundleEntry.getResource().getId();
+				if (k != null) {
+					referenceMappings.put(k, "urn:uuid:" + uuid);
+				}
+				bundleEntry.getRequest().setUrl(bundleEntry.getResource().getResourceType().name());
+				HTTPVerb post = null;
+				bundleEntry.getRequest().setMethod(post.POST);
+			}
+
+			String result = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(dedupBundle);
+			System.out.println(result);
+			JSONParser parser = new JSONParser();
+
+			try {
+				Object obj = parser.parse(result);
+				JSONObject jsonObject = (JSONObject) obj;
+				walk(jsonObject, referenceMappings);
+				mdmiMessage.setData(StringEscapeUtils.unescapeJson(jsonObject.toJSONString()));
+				return;
+
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+
+			mdmiMessage.setData(result);
 		}
 	}
 
+	private void walk(JSONObject jsonObject, HashMap<String, String> referenceMappings) {
+		for (Iterator iterator = jsonObject.keySet().iterator(); iterator.hasNext();) {
+			String key = (String) iterator.next();
+			if (key.equals("reference")) {
+				// System.out.println(key + " : " + jsonObject.get(key));
+				if (referenceMappings.containsKey(jsonObject.get(key))) {
+					jsonObject.replace(key, referenceMappings.get(jsonObject.get(key)));
+				}
+
+			}
+			if (jsonObject.get(key) instanceof JSONObject) {
+				walk((JSONObject) jsonObject.get(key), referenceMappings);
+			}
+			if (jsonObject.get(key) instanceof JSONArray) {
+				JSONArray array = (JSONArray) jsonObject.get(key);
+				Consumer walkit = new Consumer() {
+					@Override
+					public void accept(Object t) {
+						// System.out.println(t);
+						if (t instanceof JSONObject) {
+							walk((JSONObject) t, referenceMappings);
+						}
+
+					}
+				};
+				array.forEach(walkit);
+			}
+		}
+
+	}
+
+	private Bundle deduplicate(Bundle bundle) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		ArrayList<BundleEntryComponent> removelist = new ArrayList<>();
+		for (BundleEntryComponent bundleEntry : bundle.getEntry()) {
+			if (bundleEntry.getResource().fhirType().equals("Practitioner")) {
+				Practitioner practitioner = (Practitioner) bundleEntry.getResource();
+				for (Identifier id : practitioner.getIdentifier()) {
+					String sid = id.getSystem() + "::" + id.getValue();
+					if (!map.containsKey(sid)) {
+						map.put(sid, "");
+					} else {
+						removelist.add(bundleEntry);
+					}
+				}
+			} else if (bundleEntry.getResource().fhirType().equals("Organization")) {
+				Organization organization = (Organization) bundleEntry.getResource();
+				for (Identifier id : organization.getIdentifier()) {
+					String sid = id.getSystem() + "::" + id.getValue();
+					if (!map.containsKey(sid)) {
+						map.put(sid, "");
+					} else {
+						removelist.add(bundleEntry);
+					}
+				}
+			} else if (bundleEntry.getResource().fhirType().equals("Medication")) {
+				Medication medication = (Medication) bundleEntry.getResource();
+				for (Identifier id : medication.getIdentifier()) {
+					String sid = id.getSystem() + "::" + id.getValue();
+					if (!map.containsKey(sid)) {
+						map.put(sid, "");
+					} else {
+						removelist.add(bundleEntry);
+					}
+				}
+			}
+		}
+		bundle.getEntry().removeAll(removelist);
+		return bundle;
+	}
 }

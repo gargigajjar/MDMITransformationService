@@ -168,7 +168,7 @@ public class CDAPreProcesor implements IPreProcessor {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			CDAUtil.save(sourceDocument, baos);
 
-			System.out.println(baos.toString());
+			// System.out.println(baos.toString());
 			mdmiMessage.setData(baos.toString());
 
 		} catch (Exception e) {

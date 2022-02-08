@@ -64,6 +64,25 @@ public class MdmiEngineTest {
 		System.out.println(response.getBody());
 	}
 
+	public void hapiValidation(String result) throws Exception {
+
+		// FhirContext ctx = FhirContext.forR4();
+		// FhirValidator module = new FhirValidator(ctx);
+		//
+		// IValidatorModule module1 = new SchemaBaseValidator(ctx);
+		// IValidatorModule module2 = new SchematronBaseValidator(ctx);
+		// module.registerValidatorModule(module1);
+		// module.registerValidatorModule(module2);
+		//
+		// ValidationResult valresult = module.validateWithResult(result);
+		// if (valresult.isSuccessful() == false) {
+		// for (SingleValidationMessage next : valresult.getMessages()) {
+		// System.out.println(next.getLocationString() + " " + next.getMessage());
+		// }
+		// }
+
+	}
+
 	@Test
 	public void testReset() throws Exception {
 
@@ -180,6 +199,25 @@ public class MdmiEngineTest {
 	}
 
 	@Test
+	public void testMMIStoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/mmis").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation("NJ.RCP_SPEC_PGM", "FHIRR4JSON.MasterBundle", document.get());
+			}
+		}
+	}
+
+	@Test
 	public void testCQL() throws Exception {
 		Set<String> documents = Stream.of(new File("src/test/resources/samples/cql").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
@@ -200,7 +238,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testV2toFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/test").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/v2").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -226,6 +264,18 @@ public class MdmiEngineTest {
 		System.out.println(response.getStatusCode());
 		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
 		System.out.println(response.getBody());
+	}
+
+	private void runTransformationWithValidation(String source, String target, String message) throws Exception {
+		MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
+		map.add("source", source);
+		map.add("target", target);
+		map.add("message", new FileSystemResource(Paths.get(message)));
+		ResponseEntity<String> response = template.postForEntity("/mdmi/transformation", map, String.class);
+		System.out.println(response.getStatusCode());
+		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
+		System.out.println(response.getBody());
+		hapiValidation(response.getBody());
 	}
 
 	private String runTransformation2(String source, String target, String message) throws Exception {
