@@ -15,6 +15,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -190,12 +191,18 @@ public class MdmiEngineTest {
 				}
 			}).collect(Collectors.toSet());
 
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation(
+					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
 			}
 		}
+		fw.close();
 	}
 
 	@Test
@@ -255,7 +262,7 @@ public class MdmiEngineTest {
 		}
 	}
 
-	private void runTransformation(String source, String target, String message) throws Exception {
+	private String runTransformation(String source, String target, String message) throws Exception {
 		MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
 		map.add("source", source);
 		map.add("target", target);
@@ -264,6 +271,7 @@ public class MdmiEngineTest {
 		System.out.println(response.getStatusCode());
 		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
 		System.out.println(response.getBody());
+		return response.getBody();
 	}
 
 	private void runTransformationWithValidation(String source, String target, String message) throws Exception {
