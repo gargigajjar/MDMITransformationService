@@ -52,7 +52,7 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "src/test/resources/testmaps");
+		System.setProperty("mdmi.maps", "maps");
 	}
 
 	@Autowired
@@ -124,8 +124,8 @@ public class MdmiEngineTest {
 	}
 
 	@Test
-	public void testFHIR2CDA() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/PS/FHIR").listFiles()).filter(
+	public void testFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -162,8 +162,8 @@ public class MdmiEngineTest {
 	}
 
 	@Test
-	public void testCDA2FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/test").listFiles()).filter(
+	public void testTEESIX1FHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/teesix1").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -175,7 +175,45 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("CCDAonFHIRJSON.CompositionBundle", "CDAR2.ContinuityOfCareDocument", document.get());
+				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+			}
+		}
+	}
+
+	@Test
+	public void testTEESIXXFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/teesixX").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+			}
+		}
+	}
+
+	@Test
+	public void testTEESIX2FHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/teesix2").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
 			}
 		}
 	}

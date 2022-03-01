@@ -1,0 +1,895 @@
+{
+	"patientId": "50643beb-13bd-4576-84ed-5bca207332f2",
+	"ger_EncounterId": "01814740-4072-4611-8860-17a6d15cbf06",
+	"t6_EncounterId": "01814860-4059-5000-8861-18a6c15dea15",
+	"hospitalId": "tent1",
+	"mrn": "10101010",
+	"fields": [
+		{
+			"id": "45462846-6551-431a-bf32-e7ae64a4952f",
+			"name": "PatientLocationEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:55:09.456-05:00",
+			"updatedTime": "2022-02-22T14:55:09.456-05:00",
+			"children": [
+				{
+					"id": "6787c9e9-5486-4e55-9843-188137f227dd",
+					"name": "PatientLocationLevelOfCare",
+					"value": "ED",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T14:55:09.456-05:00",
+					"updatedTime": "2022-02-22T14:55:09.456-05:00",
+					"children": []
+				},
+				{
+					"id": "980e07d7-04d7-4de2-95b8-b4d985948fac",
+					"name": "PatientLocationRoom",
+					"value": "",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T14:55:09.456-05:00",
+					"updatedTime": "2022-02-22T14:55:09.456-05:00",
+					"children": []
+				},
+				{
+					"id": "44771ec2-da29-477f-be0e-77c9576b983f",
+					"name": "PatientLocationTime",
+					"value": "2022-02-22T14:55:09.456-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T14:55:09.456-05:00",
+					"updatedTime": "2022-02-22T14:55:09.456-05:00",
+					"children": []
+				},
+				{
+					"id": "7ba8d456-6b3a-44e3-956b-329f3bde41de",
+					"name": "PatientLocationUnit",
+					"value": "Trauma",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T14:55:09.456-05:00",
+					"updatedTime": "2022-02-22T14:55:09.456-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "62f692ee-3e7f-4161-80a3-85d113bc0228",
+			"name": "MiddleName",
+			"value": "MName1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:55:30.270-05:00",
+			"updatedTime": "2022-02-22T14:55:46.937-05:00",
+			"children": []
+		},
+		{
+			"id": "f01521d4-71ec-4dff-867d-33d76c6adabb",
+			"name": "MEDEVAC",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:40:03.309-05:00",
+			"updatedTime": "2022-02-22T15:41:03.560-05:00",
+			"children": []
+		},
+		{
+			"id": "0ed926e9-9413-4e66-ad95-539ccf119a54",
+			"name": "Sex",
+			"value": "M",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:30.880-05:00",
+			"updatedTime": "2022-02-22T14:56:30.880-05:00",
+			"children": []
+		},
+		{
+			"id": "bdef7ea3-ae88-49fc-b212-c3a451bcd4ce",
+			"name": "COVID19Time",
+			"value": "2022-01-15T00:00:00.000-05:00",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:42:18.099-05:00",
+			"updatedTime": "2022-02-22T15:42:18.099-05:00",
+			"children": []
+		},
+		{
+			"id": "459319a5-be42-437c-99b5-62e7d9824a1c",
+			"name": "EvacModeofTransport",
+			"value": "Ambulatory",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:40:44.331-05:00",
+			"updatedTime": "2022-02-22T15:40:44.331-05:00",
+			"children": []
+		},
+		{
+			"id": "fbbba816-23e6-4130-ae15-4a1dd3efab69",
+			"name": "PastMedicalHistory",
+			"value": "[\"Alcohol abuse\",\"Anemia\",\"Asthma\"]",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:13:55.002-05:00",
+			"updatedTime": "2022-02-22T15:13:55.002-05:00",
+			"children": []
+		},
+		{
+			"id": "d39628b2-f7c3-4be0-95cd-e41b5aa95fec",
+			"name": "PastSurgicalHistory",
+			"value": [ "Cholecystectomy",  "Hip Replacement - Total"],
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:14:19.330-05:00",
+			"updatedTime": "2022-02-22T15:14:19.330-05:00",
+			"children": []
+		},
+		{
+			"id": "3e58dce4-ad03-4400-8a2d-4cdb8784a95c",
+			"name": "CensusAlerts",
+			"value": "[\"Emergent Alerts\"]",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:12:30.669-05:00",
+			"updatedTime": "2022-02-22T15:12:30.669-05:00",
+			"children": []
+		},
+		{
+			"id": "4d10769f-1fec-8cb0-d14a-19fa79656d79",
+			"name": "AgeGroup",
+			"value": "Adult",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:11.207-05:00",
+			"children": []
+		},
+		{
+			"id": "c124aa04-e2f4-4b61-9a92-4914ee2dc4d4",
+			"name": "PHDisposition",
+			"value": "Evacuation",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:39:14.283-05:00",
+			"updatedTime": "2022-02-22T15:39:14.283-05:00",
+			"children": []
+		},
+		{
+			"id": "653ce76e-6b78-44f0-b430-f591f6e83312",
+			"name": "EvacGround",
+			"value": "Non-Medical",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:41:06.850-05:00",
+			"updatedTime": "2022-02-22T15:41:06.850-05:00",
+			"children": []
+		},
+		{
+			"id": "71981a7b-5d26-42f8-bb12-a4d94098ba05",
+			"name": "EvacTo",
+			"value": "Coalition",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:39:34.419-05:00",
+			"updatedTime": "2022-02-22T15:39:34.419-05:00",
+			"children": []
+		},
+		{
+			"id": "96bb2ed3-cfb3-4188-ba40-f57a211f8be5",
+			"name": "RabiesLot",
+			"value": "654321",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:43:12.072-05:00",
+			"updatedTime": "2022-02-22T15:43:12.072-05:00",
+			"children": []
+		},
+		{
+			"id": "70a5143c-6829-4ea7-b4cd-e4fc5c9aed91",
+			"name": "DateOfBirth",
+			"value": "1976-02-22T00:00:00.000-05:00",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:25.769-05:00",
+			"updatedTime": "2022-02-22T14:56:25.769-05:00",
+			"children": []
+		},
+		{
+			"id": "ea08a820-5d68-46b2-a1d1-90dec45ce818",
+			"name": "RabiesManufacturer",
+			"value": "SomeManufacturer",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:43:06.916-05:00",
+			"updatedTime": "2022-02-22T15:43:06.916-05:00",
+			"children": []
+		},
+		{
+			"id": "e2ecc5c3-0b27-4994-b311-2ffe30144131",
+			"name": "FirstName",
+			"value": "Patient1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:55:23.544-05:00",
+			"updatedTime": "2022-02-22T14:55:23.544-05:00",
+			"children": []
+		},
+		{
+			"id": "cb372ddb-5d0a-4345-aa0a-d1c16ac06588",
+			"name": "SceneHeartPulse",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:03:22.439-05:00",
+			"updatedTime": "2022-02-22T15:03:22.439-05:00",
+			"children": [
+				{
+					"id": "53b16891-624b-4169-a447-82e104c8b179",
+					"name": "SceneHeartTime",
+					"value": "2022-02-22T15:03:22.436-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:22.436-05:00",
+					"updatedTime": "2022-02-22T15:03:22.436-05:00",
+					"children": []
+				},
+				{
+					"id": "3822a63d-5d3f-4e88-9b00-b0bf126fdbfc",
+					"name": "SceneHeartRate",
+					"value": "49",
+					"unit": "bpm",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:22.436-05:00",
+					"updatedTime": "2022-02-22T15:03:22.436-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "9287a934-24d7-4df5-a2cd-ca44534f68df",
+			"name": "CurrentMedications",
+			"value": "[\"Aspirin\"]",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:12:30.603-05:00",
+			"updatedTime": "2022-02-22T15:12:30.603-05:00",
+			"children": []
+		},
+		{
+			"id": "a65a1f38-6c4a-4524-9db6-5f74dfbe8168",
+			"name": "S_IBW",
+			"value": "79.9",
+			"unit": "kg",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:30.890-05:00",
+			"updatedTime": "2022-02-22T14:56:41.423-05:00",
+			"children": []
+		},
+		{
+			"id": "88030c91-8baf-f540-cb53-84e08750d9f9",
+			"name": "Height",
+			"value": "185",
+			"unit": "cm",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:41.402-05:00",
+			"children": []
+		},
+		{
+			"id": "6fe8f135-6886-3f7f-3302-be14c08971c0",
+			"name": "AgeInMonths",
+			"value": "552",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:25.785-05:00",
+			"children": []
+		},
+		{
+			"id": "6affef5c-ba00-4440-8295-a06512a8ae3e",
+			"name": "OLD_BloodType",
+			"value": "A+",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:47:55.881-05:00",
+			"updatedTime": "2022-02-22T15:47:55.881-05:00",
+			"children": []
+		},
+		{
+			"id": "f38feb71-3f82-1222-2f97-c41287bb6d91",
+			"name": "TraumaModifiers",
+			"value": "[\"Blood Thinners\"]",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:12:30.615-05:00",
+			"updatedTime": "2022-02-22T15:12:30.615-05:00",
+			"children": []
+		},
+		{
+			"id": "13042acb-1e33-430b-a538-9a7f225dd8e9",
+			"name": "Gender",
+			"value": "M",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:32.448-05:00",
+			"updatedTime": "2022-02-22T14:56:32.448-05:00",
+			"children": []
+		},
+		{
+			"id": "f10d7626-8994-4ef0-b8c9-6a7bf83f409b",
+			"name": "MedicationAllergyEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:11:14.204-05:00",
+			"updatedTime": "2022-02-22T15:12:04.394-05:00",
+			"children": [
+				{
+					"id": "78f761a2-9187-430b-81c4-cf6247b62f7a",
+					"name": "MedicationReaction",
+					"value": "[\"Unknown\"]",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:12:04.390-05:00",
+					"updatedTime": "2022-02-22T15:12:04.390-05:00",
+					"children": []
+				},
+				{
+					"id": "c0fe022a-efa6-4013-a139-c8e9e871ac37",
+					"name": "SpecificMedicationAllergy",
+					"value": "Acetaminophen",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:11:14.200-05:00",
+					"updatedTime": "2022-02-22T15:11:14.200-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "ff9dac4f-0a0a-4464-ac5f-30e80f760724",
+			"name": "EvacPriority",
+			"value": "Routine",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:39:46.184-05:00",
+			"updatedTime": "2022-02-22T15:39:46.184-05:00",
+			"children": []
+		},
+		{
+			"id": "df1c10dd-e357-4fae-9931-78e9845e7845",
+			"name": "PreArrivalMedicationEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:08:30.724-05:00",
+			"updatedTime": "2022-02-22T15:09:59.356-05:00",
+			"children": [
+				{
+					"id": "bd4b396f-abad-45b7-9c4d-74a90c7b5f3a",
+					"name": "PreArrivalMedicationUnit",
+					"value": "mg",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:09:52.438-05:00",
+					"updatedTime": "2022-02-22T15:09:52.438-05:00",
+					"children": []
+				},
+				{
+					"id": "50e60fbd-553a-4be4-9b1a-408843af2e23",
+					"name": "PreArrivalMedicationRoute",
+					"value": "Oral",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:09:59.352-05:00",
+					"updatedTime": "2022-02-22T15:09:59.352-05:00",
+					"children": []
+				},
+				{
+					"id": "9db27b0f-2ff3-4c4d-90d2-a33609455803",
+					"name": "PreArrivalMedication",
+					"value": "Aspirin",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:08:30.721-05:00",
+					"updatedTime": "2022-02-22T15:08:30.721-05:00",
+					"children": []
+				},
+				{
+					"id": "02e98ff4-35c5-4cf1-887a-837683370a6d",
+					"name": "PreArrivalMedicationDose",
+					"value": "500",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:08:39.506-05:00",
+					"updatedTime": "2022-02-22T15:09:57.315-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "bc40514d-0294-4186-a7c2-7b984dd7c5cf",
+			"name": "SceneBloodPressure",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:02:14.921-05:00",
+			"updatedTime": "2022-02-22T15:02:17.705-05:00",
+			"children": [
+				{
+					"id": "ce7ba7bf-0a26-4eb6-bd4d-a5bb3e75baac",
+					"name": "SceneBloodPressureTime",
+					"value": "2022-02-22T15:02:14.919-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:14.919-05:00",
+					"updatedTime": "2022-02-22T15:02:17.691-05:00",
+					"children": []
+				},
+				{
+					"id": "6f4fe1d8-e806-42cf-8549-b96481ae3de8",
+					"name": "SceneBloodPressureMAP",
+					"value": "100",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:17.705-05:00",
+					"updatedTime": "2022-02-22T15:02:17.705-05:00",
+					"children": []
+				},
+				{
+					"id": "86e5d2a3-7273-462c-ac84-63c30db354a2",
+					"name": "SceneBloodPressureSystolic",
+					"value": "130",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:14.918-05:00",
+					"updatedTime": "2022-02-22T15:02:17.691-05:00",
+					"children": []
+				},
+				{
+					"id": "117be546-c748-4559-aef8-5cf5d8e1aa19",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "85",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:17.691-05:00",
+					"updatedTime": "2022-02-22T15:02:17.691-05:00",
+					"children": []
+				},
+				{
+					"id": "d9949a0a-18dc-4a21-86c0-50eff96dd094",
+					"name": "SceneBloodPressurePalpable",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:17.705-05:00",
+					"updatedTime": "2022-02-22T15:02:17.705-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "2ba8e82a-7b10-47b7-8533-6add36dacba9",
+			"name": "EvacTransportMode",
+			"value": "Ground",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:39:53.083-05:00",
+			"updatedTime": "2022-02-22T15:41:03.553-05:00",
+			"children": []
+		},
+		{
+			"id": "a13f9aab-4437-447d-b9a7-4f517688ce8a",
+			"name": "COVID19Manufacturer",
+			"value": "Pfizer",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:42:31.448-05:00",
+			"updatedTime": "2022-02-22T15:42:31.448-05:00",
+			"children": []
+		},
+		{
+			"id": "3680a648-65ef-48c0-8986-14d4101c6075",
+			"name": "LastName",
+			"value": "LName1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:55:53.801-05:00",
+			"updatedTime": "2022-02-22T14:55:53.801-05:00",
+			"children": []
+		},
+		{
+			"id": "be679400-a907-4518-8db7-6f72be350107",
+			"name": "S_BMI",
+			"value": "23.4",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:37.394-05:00",
+			"updatedTime": "2022-02-22T14:56:41.423-05:00",
+			"children": []
+		},
+		{
+			"id": "3491e90b-2073-4c37-8412-f20fb6a12a31",
+			"name": "T6CaseUniqueId",
+			"value": "CC22CLWK",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:55:09.456-05:00",
+			"updatedTime": "2022-02-22T14:55:09.456-05:00",
+			"children": []
+		},
+		{
+			"id": "2cf27275-a25f-5e4f-f539-bd0b6c5c94ae",
+			"name": "Broselow",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:11.207-05:00",
+			"children": []
+		},
+		{
+			"id": "24cbebfe-25ce-411b-b427-e1a84c902ea4",
+			"name": "COVID19Lot",
+			"value": "12345",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:42:38.185-05:00",
+			"updatedTime": "2022-02-22T15:42:38.185-05:00",
+			"children": []
+		},
+		{
+			"id": "44444ce1-7e83-4b2d-9d91-5e0408c4e098",
+			"name": "AgeInYears",
+			"value": "46",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.189-05:00",
+			"updatedTime": "2022-02-22T14:56:25.780-05:00",
+			"children": []
+		},
+		{
+			"id": "316655d1-6591-4b48-a3a9-7bf2185d012e",
+			"name": "MasterUnit",
+			"value": "ED",
+			"unit": "",
+			"tag": "bedData",
+			"createdTime": "2022-02-22T14:55:09.182-05:00",
+			"updatedTime": "2022-02-22T14:55:09.182-05:00",
+			"children": []
+		},
+		{
+			"id": "90ac44d9-ac2a-4e74-88a6-300cdc64100a",
+			"name": "SceneTempEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:05:54.551-05:00",
+			"updatedTime": "2022-02-22T15:06:01.440-05:00",
+			"children": [
+				{
+					"id": "bfcb0a96-0917-416a-bc83-5ff33da6c621",
+					"name": "SceneTemp",
+					"value": "36.5",
+					"unit": "C",
+					"tag": "",
+					"createdTime": "2022-02-22T15:05:54.544-05:00",
+					"updatedTime": "2022-02-22T15:05:54.544-05:00",
+					"children": []
+				},
+				{
+					"id": "01272dd2-7416-4f22-bbb5-cb629085e7a3",
+					"name": "SceneTempRoute",
+					"value": "Axillary",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:06:01.440-05:00",
+					"updatedTime": "2022-02-22T15:06:01.440-05:00",
+					"children": []
+				},
+				{
+					"id": "c1951c31-650c-42aa-8782-24c75c423576",
+					"name": "SceneTempTime",
+					"value": "2022-02-22T15:05:54.545-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:05:54.545-05:00",
+					"updatedTime": "2022-02-22T15:05:54.545-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "62e6198b-976e-4fc3-0602-d1490d906332",
+			"name": "MESS_Age",
+			"value": "1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:11.207-05:00",
+			"children": []
+		},
+		{
+			"id": "b86df23e-ed59-4108-9d95-3464de0b2e21",
+			"name": "NotesGlobalComplex",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:46:52.165-05:00",
+			"updatedTime": "2022-02-22T15:47:38.201-05:00",
+			"children": [
+				{
+					"id": "0e80399b-79e2-4002-aec2-f9a45f26e2c9",
+					"name": "NotesTime",
+					"value": "2022-02-22T15:46:52.162-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:46:52.165-05:00",
+					"updatedTime": "2022-02-22T15:46:52.165-05:00",
+					"children": []
+				},
+				{
+					"id": "30aee891-ff8c-4e10-86e6-0a9cdc5ce2a8",
+					"name": "Notes",
+					"value": "Some notes about the patient here……",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:47:38.201-05:00",
+					"updatedTime": "2022-02-22T15:47:38.201-05:00",
+					"children": []
+				},
+				{
+					"id": "08d21e1c-ffb4-4324-891a-ed28dce10507",
+					"name": "NotesUserID",
+					"value": "176",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:46:52.165-05:00",
+					"updatedTime": "2022-02-22T15:46:52.165-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "5e435e38-22e9-4d14-a1e1-af8aef5592d0",
+			"name": "RabiesTime",
+			"value": "2015-10-22T00:00:00.000-04:00",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:42:55.341-05:00",
+			"updatedTime": "2022-02-22T15:42:55.341-05:00",
+			"children": []
+		},
+		{
+			"id": "31d0758d-5b43-4a46-9966-c3464b21fd98",
+			"name": "MedicationAllergyEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:11:56.387-05:00",
+			"updatedTime": "2022-02-22T15:11:59.605-05:00",
+			"children": [
+				{
+					"id": "b5c75653-7a3e-4569-a124-669e1853720d",
+					"name": "SpecificMedicationAllergy",
+					"value": "Heparin",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:11:56.383-05:00",
+					"updatedTime": "2022-02-22T15:11:56.383-05:00",
+					"children": []
+				},
+				{
+					"id": "ebc6040f-f47d-4ab0-a6a2-90b7792be145",
+					"name": "MedicationReaction",
+					"value": "[\"Unknown\"]",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:11:59.601-05:00",
+					"updatedTime": "2022-02-22T15:11:59.601-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "c2026f1a-0809-4e91-8dc5-5069cfc3cc73",
+			"name": "SceneRespiratoryRateEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:03:47.476-05:00",
+			"updatedTime": "2022-02-22T15:03:47.476-05:00",
+			"children": [
+				{
+					"id": "f614ae65-b5a1-4e66-a88b-be3809ac2b80",
+					"name": "SceneRespiratoryRateTime",
+					"value": "2022-02-22T15:03:47.472-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:47.472-05:00",
+					"updatedTime": "2022-02-22T15:03:47.472-05:00",
+					"children": []
+				},
+				{
+					"id": "08170222-c7ec-411b-9962-39c9a364a768",
+					"name": "SceneRespiratoryRate",
+					"value": "25",
+					"unit": "bpm",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:47.471-05:00",
+					"updatedTime": "2022-02-22T15:03:47.471-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "35ba0a33-5761-4395-8070-ad14919f07d5",
+			"name": "CirculationInterventionsSceneEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:44:45.928-05:00",
+			"updatedTime": "2022-02-22T15:44:45.928-05:00",
+			"children": [
+				{
+					"id": "2817a017-3a44-4b39-a742-54cf14cd2038",
+					"name": "CirculationInterventionsScene",
+					"value": "[\"Tourniquet\"]",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:44:45.925-05:00",
+					"updatedTime": "2022-02-22T15:44:45.925-05:00",
+					"children": []
+				},
+				{
+					"id": "cce2b2e6-f09f-4bc9-93dc-4b36e1ebe5a9",
+					"name": "CirculationInterventionsSceneTime",
+					"value": "2022-02-22T15:44:45.925-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:44:45.925-05:00",
+					"updatedTime": "2022-02-22T15:44:45.925-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "347313b5-1c31-3f24-eeee-9afefb65e2c1",
+			"name": "Weight",
+			"value": "80",
+			"unit": "kg",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.207-05:00",
+			"updatedTime": "2022-02-22T14:56:37.386-05:00",
+			"children": []
+		},
+		{
+			"id": "d79151a0-7525-458e-b97f-6e848b7d9aa1",
+			"name": "MRN",
+			"value": "10101010",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:02.402-05:00",
+			"updatedTime": "2022-02-22T14:56:02.402-05:00",
+			"children": []
+		},
+		{
+			"id": "3b50a7fe-3105-4a3e-b737-9ecaf3bb0443",
+			"name": "SceneBloodPressure",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:02:38.548-05:00",
+			"updatedTime": "2022-02-22T15:02:41.124-05:00",
+			"children": [
+				{
+					"id": "60dcde6e-28e2-40a4-b3cc-2175329b665e",
+					"name": "SceneBloodPressureSystolic",
+					"value": "125",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:38.546-05:00",
+					"updatedTime": "2022-02-22T15:02:41.105-05:00",
+					"children": []
+				},
+				{
+					"id": "b8a9a713-815e-4e0b-93f8-f26e181e0b59",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "80",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:41.105-05:00",
+					"updatedTime": "2022-02-22T15:02:41.105-05:00",
+					"children": []
+				},
+				{
+					"id": "39bb1d49-e12a-45a3-9366-1a8feafd9eb8",
+					"name": "SceneBloodPressureMAP",
+					"value": "95",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:41.124-05:00",
+					"updatedTime": "2022-02-22T15:02:41.124-05:00",
+					"children": []
+				},
+				{
+					"id": "231a6e14-7f11-43f4-bb38-83b0ba606c8d",
+					"name": "SceneBloodPressureTime",
+					"value": "2022-02-22T15:02:38.547-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:38.547-05:00",
+					"updatedTime": "2022-02-22T15:02:41.105-05:00",
+					"children": []
+				},
+				{
+					"id": "34f2fd05-3e17-4b37-a35f-95a017355c0a",
+					"name": "SceneBloodPressurePalpable",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:02:41.124-05:00",
+					"updatedTime": "2022-02-22T15:02:41.124-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7bf87396-b4e8-4f02-8c79-7e97d2ede87b",
+			"name": "SceneHeartPulse",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:03:10.599-05:00",
+			"updatedTime": "2022-02-22T15:03:10.599-05:00",
+			"children": [
+				{
+					"id": "da20240f-5ba7-4f0e-804e-4f86890b946f",
+					"name": "SceneHeartTime",
+					"value": "2022-02-22T15:03:10.596-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:10.596-05:00",
+					"updatedTime": "2022-02-22T15:03:10.596-05:00",
+					"children": []
+				},
+				{
+					"id": "225741c6-cf93-461e-80e7-627f87093130",
+					"name": "SceneHeartRate",
+					"value": "45",
+					"unit": "bpm",
+					"tag": "",
+					"createdTime": "2022-02-22T15:03:10.596-05:00",
+					"updatedTime": "2022-02-22T15:03:10.596-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "d1cb0746-f3e1-43b5-87e2-13ea746e135e",
+			"name": "SceneAirwayAdjunctsInSituEntry",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T15:16:15.453-05:00",
+			"updatedTime": "2022-02-22T15:16:15.453-05:00",
+			"children": [
+				{
+					"id": "1a355e45-cda1-4abe-8b67-32048b419cfe",
+					"name": "SceneAirwayAdjunctsInSitu",
+					"value": "Nasopharyngeal",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:16:15.447-05:00",
+					"updatedTime": "2022-02-22T15:16:15.447-05:00",
+					"children": []
+				},
+				{
+					"id": "a9e0eaa3-8343-4cc8-9f9b-37cf68580d37",
+					"name": "SceneAirwayAdjunctsInSituTime",
+					"value": "2022-02-22T15:16:15.448-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-02-22T15:16:15.448-05:00",
+					"updatedTime": "2022-02-22T15:16:15.448-05:00",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "d32fa8a8-ea13-4bf5-bd25-11a8eb2b4651",
+			"name": "Age",
+			"value": "46 years",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-02-22T14:56:11.183-05:00",
+			"updatedTime": "2022-02-22T14:56:25.778-05:00",
+			"children": []
+		}
+	]
+}

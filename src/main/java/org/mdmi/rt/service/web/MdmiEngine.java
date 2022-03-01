@@ -142,6 +142,8 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
 
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
+
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
 		return result;

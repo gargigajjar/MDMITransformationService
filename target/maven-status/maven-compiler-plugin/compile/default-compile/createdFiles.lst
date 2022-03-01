@@ -9,6 +9,7 @@ org/mdmi/rt/service/web/FHIRR4PostProcessorJson$2.class
 org/mdmi/rt/service/web/FHIRR4PostProcessorJson.class
 org/mdmi/rt/service/web/Application.class
 org/mdmi/rt/service/web/PreProcessorForFHIRJson$1.class
+org/mdmi/rt/service/web/JSON2XML.class
 org/mdmi/rt/service/web/CORSFilter.class
 org/mdmi/rt/service/web/HL7V2MessagePreProcessor.class
 org/mdmi/rt/service/web/MdmiEngine.class
