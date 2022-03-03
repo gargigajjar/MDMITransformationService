@@ -51,7 +51,7 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "updated");
+		System.setProperty("mdmi.maps", "maps");
 	}
 
 	@Autowired
