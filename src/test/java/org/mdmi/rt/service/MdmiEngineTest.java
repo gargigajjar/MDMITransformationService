@@ -15,7 +15,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -52,7 +51,7 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "maps");
+		System.setProperty("mdmi.maps", "updated");
 	}
 
 	@Autowired
@@ -124,44 +123,6 @@ public class MdmiEngineTest {
 	}
 
 	@Test
-	public void testFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.MasterBundle", "CDAR2.ContinuityOfCareDocument", document.get());
-			}
-		}
-	}
-
-	@Test
-	public void testFHIR2CDA2() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/FHIR").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.CompositionBundle", "CDAR2.ContinuityOfCareDocument", document.get());
-			}
-		}
-	}
-
-	@Test
 	public void testTEESIX1FHIR() throws Exception {
 		Set<String> documents = Stream.of(new File("src/test/resources/teesix1").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
@@ -175,7 +136,8 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+				runTransformation(
+					"testTEESIX1FHIR", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
 			}
 		}
 	}
@@ -194,7 +156,8 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+				runTransformation(
+					"testTEESIXXFHIR", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
 			}
 		}
 	}
@@ -213,103 +176,37 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+				runTransformation(
+					"testTEESIX2FHIR", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
 			}
 		}
 	}
 
-	@Test
-	public void testCDA2FHIR2() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/cda").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		File file = new File("src/test/resources/results/results.json");
-		FileWriter fw = new FileWriter(file, false);
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				String result = runTransformation(
-					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
-				fw.write(result);
-			}
-		}
-		fw.close();
-	}
-
-	@Test
-	public void testMMIStoFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/mmis").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("NJ.RCP_SPEC_PGM", "FHIRR4JSON.MasterBundle", document.get());
-			}
-		}
-	}
-
-	@Test
-	public void testCQL() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/cql").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 10; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("JSON.CQLCovidSeverity", "JSON.RiskScore", document.get());
-			}
-		}
-	}
-
-	@Test
-	public void testV2toFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/v2").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
-			}
-		}
-	}
-
-	private String runTransformation(String source, String target, String message) throws Exception {
+	private void runTransformation(String test, String source, String target, String message, String extension)
+			throws Exception {
 		MultiValueMap<String, Object> map = new LinkedMultiValueMap<String, Object>();
 		map.add("source", source);
 		map.add("target", target);
 		map.add("message", new FileSystemResource(Paths.get(message)));
 		ResponseEntity<String> response = template.postForEntity("/mdmi/transformation", map, String.class);
-		System.out.println(response.getStatusCode());
+		// System.out.println(response.getStatusCode());
 		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
-		System.out.println(response.getBody());
-		return response.getBody();
+		// System.out.println(response.getBody());
+
+		Path testPath = Paths.get("target/test-output/" + test);
+		if (!Files.exists(testPath)) {
+
+			Files.createDirectories(testPath);
+		}
+
+		Path path = Paths.get("target/test-output/" + test + "/" + "test_" + test + "." + extension);
+		byte[] strToBytes = response.getBody().getBytes();
+
+		Files.write(path, strToBytes);
+
+		hapiValidation(response.getBody());
+
+		return;
 	}
 
 	private void runTransformationWithValidation(String source, String target, String message) throws Exception {
@@ -324,7 +221,7 @@ public class MdmiEngineTest {
 		hapiValidation(response.getBody());
 	}
 
-	private String runTransformation2(String source, String target, String message) throws Exception {
+	private String runTransformation2(String test, String source, String target, String message) throws Exception {
 
 		HttpHeaders headers = new HttpHeaders();
 
@@ -339,12 +236,6 @@ public class MdmiEngineTest {
 		assertFalse(StringUtils.isEmpty(value));
 		System.out.println(value);
 		return value;
-	}
-
-	@Test
-	public void testCDA2FHIRByValue() throws Exception {
-		runTransformation2("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.PortalBundle", "messageexample");
-
 	}
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {

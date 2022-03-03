@@ -30,7 +30,7 @@ public class JSON2XML implements IPreProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		if ("xTeeSix".equals(messageModel.getGroup().getName())) {
+		if ("TeeSix".equals(messageModel.getGroup().getName())) {
 			return true;
 		}
 		return false;
