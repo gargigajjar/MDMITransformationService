@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?><Bundle>
+    <type value="transaction"/>
+    <entry>
+        <resource>
+            <Patient>
+                <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex">
+                    <valueCode value="M"/>
+                </extension>
+                <identifier>
+                    <type>
+                        <coding>
+                            <code value="MR"/>
+                            <display value="Medical record number"/>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                        </coding>
+                        <text value="Medical record number"/>
+                    </type>
+                </identifier>
+                <identifier>
+                    <system value="urn:us:gov:dod:osd:dodid"/>
+                    <type>
+                        <coding>
+                            <code value="MR"/>
+                            <display value="Medical record number"/>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                        </coding>
+                        <text value="Medical record number"/>
+                    </type>
+                    <value value="ORG-SM-91b4eb38-d1a0-453f-9cb0-b5de3a01b1bd"/>
+                </identifier>
+                <meta/>
+                <name>
+                    <family value="Padrón382"/>
+                    <given value="César846"/>
+                </name>
+                <birthDate value="2000-08-25T00:00:00.000-04:00"/>
+            </Patient>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="95e36e23-5e44-4d07-8156-69e3711f8d14"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="c8b83c2c-dc71-4813-91b2-140eae0c59b4"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="b62d4e8d-e89c-46d3-973c-5e113023f136"/>
+                </identifier>
+                <identifier>
+                    <value value="c0ff1ab0-aea4-46af-99f9-1477e44ddf9c"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:01:03.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="102.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="85.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="28e90a0f-7ee9-49a7-91f3-583c14c1a2cd"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="8867-4"/>
+                    </coding>
+                    <text value="Heart Rate"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8867-4"/>
+                        </coding>
+                        <text value="Heart Rate"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="bpm"/>
+                        <value value="110"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <text value="SceneHeartTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:02:10.000-04:00"/>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="6b7e2c77-d6b9-456a-ad1c-6ae816cc63eb"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="67708bb6-b64d-4729-8459-8a47513477cd"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="1837963d-809e-4ea1-9221-18a0293dbdea"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="416148d8-b4ec-41e5-b243-17f88a1bda90"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="f9b2153a-7748-4eb0-b062-fd04506d347c"/>
+                </identifier>
+                <identifier>
+                    <value value="382185e5-5b87-4f26-9a64-78183eef6a30"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:01:13.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="101.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="82.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="032aad98-4b24-4478-9c54-9a70626b92f6"/>
+                </identifier>
+                <identifier>
+                    <value value="9e002914-3ee0-41fe-9952-52a0b2382e6b"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="101.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:00:30.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="85.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="30953d04-44be-4eaa-83c5-e78b61764cb0"/>
+                </identifier>
+                <identifier>
+                    <value value="b70c0f99-b46e-48be-8fe0-f54245e92f33"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:00:48.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="136.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="72.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="319cb205-e196-48ba-9500-bb492fab82fe"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="c54d4556-1305-42bd-b3f8-85db72c96929"/>
+                </identifier>
+                <identifier>
+                    <value value="00425ed1-f554-491d-85d1-a95b642e3b6a"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="98"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:02:10.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="48"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="b39c6b59-345d-462c-8559-6f935a9c3c2d"/>
+                </identifier>
+                <identifier>
+                    <value value="7a122213-4d4a-4870-9ce1-0032433a6f72"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:01:04.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="135.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="73.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="51389272-e00f-451f-acd8-c983cb4e8877"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Meningococcal"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="c7a827c3-82bf-4b16-b762-259188eed1f4"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="29463-7"/>
+                    </coding>
+                    <text value="Body Weight"/>
+                </code>
+                <subject/>
+                <valueQuantity>
+                    <unit value="kg"/>
+                    <value value="70.37"/>
+                </valueQuantity>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="070b962c-f441-44d3-bb36-09f247bfb82f"/>
+                </identifier>
+                <identifier>
+                    <value value="809a6477-973a-47a0-9ece-bbae3432ab10"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:01:05.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="133.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="80.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="1b20f6a8-2326-43f6-a8d8-b6cd807e26cd"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="e3d12e30-4d8c-466b-96f7-8a8bf8177985"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="4aff13ee-b5bc-4e23-b347-26ac6e009585"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Influenza - Northern Hemisphere"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="6b69e529-807c-4b37-8e8f-348da2093ac2"/>
+                </identifier>
+                <identifier>
+                    <value value="3867387b-57bd-4429-8731-6d688fc0022f"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:00:55.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="103.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="84.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="7aad1bb1-9dc7-43f2-8e5c-971a1be763bb"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Tdap"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <MedicationAdministration>
+                <identifier>
+                    <value value="8bccf67b-68a6-4cda-badc-1171ddbcb82c"/>
+                </identifier>
+                <status value="unknown"/>
+                <medicationCodeableConcept>
+                    <text value="Meningococcal"/>
+                </medicationCodeableConcept>
+                <subject/>
+                <dosage>
+                    <rateQuantity>
+                        <value value="NA"/>
+                    </rateQuantity>
+                </dosage>
+            </MedicationAdministration>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="8f277a25-c269-4171-bbf2-fb7aff6c8537"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="80318-9"/>
+                    </coding>
+                    <text value="Respiratory assessment panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="9279-1"/>
+                        </coding>
+                        <text value="Respiratory rate"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="bpm"/>
+                        <value value="30"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <text value="SceneRespiratoryRateTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:02:10.000-04:00"/>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Observation>
+                <identifier>
+                    <value value="dbab2d0c-a3ae-4320-9b43-fd045c6ab8aa"/>
+                </identifier>
+                <identifier>
+                    <value value="c5493cdb-892c-41f5-b6b3-d04fb5fe4b73"/>
+                </identifier>
+                <meta/>
+                <status value="final"/>
+                <category>
+                    <coding>
+                        <code value="vital-signs"/>
+                    </coding>
+                    <text value="Vital Signs"/>
+                </category>
+                <code>
+                    <coding>
+                        <code value="35094-2"/>
+                    </coding>
+                    <text value="Blood pressure panel"/>
+                </code>
+                <subject/>
+                <component>
+                    <code>
+                        <text value="SceneBloodPressureTime"/>
+                    </code>
+                    <valueString value="2009-08-29T00:00:32.000-04:00"/>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8480-6"/>
+                        </coding>
+                        <text value="Systolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="107.000000000000"/>
+                    </valueQuantity>
+                </component>
+                <component>
+                    <code>
+                        <coding>
+                            <code value="8462-4"/>
+                        </coding>
+                        <text value="Diastolic blood pressure"/>
+                    </code>
+                    <valueQuantity>
+                        <unit value="mm Hg"/>
+                        <value value="74.000000000000"/>
+                    </valueQuantity>
+                </component>
+            </Observation>
+        </resource>
+    </entry>
+    <entry>
+        <resource>
+            <Encounter>
+                <identifier>
+                    <value value="d323faaf-ef98-4b80-aca3-5d9824e836cb"/>
+                </identifier>
+                <subject/>
+            </Encounter>
+        </resource>
+    </entry>
+</Bundle>
+

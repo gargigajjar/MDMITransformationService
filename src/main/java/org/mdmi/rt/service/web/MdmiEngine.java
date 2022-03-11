@@ -133,6 +133,7 @@ public class MdmiEngine {
 			throws Exception {
 		logger.debug("DEBUG Start transformation ");
 		loadMaps();
+
 		MdmiUow.setSerializeSemanticModel(false);
 
 		// Set Stylesheet for CDA document section generation

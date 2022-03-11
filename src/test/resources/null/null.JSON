@@ -1,0 +1,2432 @@
+{
+	"patientId": null,
+	"hospitalId": "T6 HL7 generator",
+	"mrn": "ORG-SM-91b4eb38-d1a0-453f-9cb0-b5de3a01b1bd",
+	"t6EncounterId": "d323faaf-ef98-4b80-aca3-5d9824e836cb",
+	"gerEncounterId": null,
+	"user": null,
+	"location": null,
+	"fields": [
+		{
+			"id": "95e36e23-5e44-4d07-8156-69e3711f8d14",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "d73ef0cb-bee0-4733-9438-56b3f5f5b7e6",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "d0a36b5e-149d-46d8-913e-26288f51b166",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "85647cf9-a186-46e5-b8ec-19083845f0b5",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-31T22:43:40.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e9f51a46-9e83-42d2-b884-6774f5e450fc",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "c8b83c2c-dc71-4813-91b2-140eae0c59b4",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "71ab0ac6-210c-4127-89a1-3893d770d3a6",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "f7a94a87-b3a9-4242-adc2-ed74c0485e96",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "c9a0b96d-5e21-4957-aa54-a18478b126fb",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-31T13:49:26.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "cb30073c-cfe2-4ab1-ac67-987ef92db6a2",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "e3ac2ee2-ecc4-4d20-8b5a-8a5778ea44ea",
+			"name": "BurnPercentage",
+			"value": "1.5",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:47.718Z",
+			"updatedTime": "2022-03-10T22:23:47.718Z",
+			"children": []
+		},
+		{
+			"id": "259b315f-d0f0-47fd-b0e0-fc2b27d279fa",
+			"name": "NaturePresentIllness",
+			"value": [
+				"MASCAL"
+			],
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:51.553Z",
+			"updatedTime": "2022-03-10T22:26:51.553Z",
+			"children": []
+		},
+		{
+			"id": "1b20a1d5-8353-42a7-adef-4f13a66d1898",
+			"name": "IVEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:25:29.912Z",
+			"updatedTime": "2022-03-10T22:25:32.09Z",
+			"children": [
+				{
+					"id": "e4c4eb43-1545-4a58-a8cd-2a62770d9d99",
+					"name": "Gauge",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:32.079Z",
+					"updatedTime": "2022-03-10T22:25:32.079Z",
+					"children": []
+				},
+				{
+					"id": "21c3628a-9245-4523-8962-b6791c546a56",
+					"name": "IVSiteCustom",
+					"value": "{\"IVSitePoint\":\"{565.72111553784873, 585.72609561752995}\",\"IVSiteSide\":\"front\",\"IVSiteIndex\":\"1\",\"IVSiteSite\":\"L antecubital\"}",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:29.912Z",
+					"updatedTime": "2022-03-10T22:25:29.912Z",
+					"children": []
+				},
+				{
+					"id": "3c333f1b-e6e4-48bb-8e0f-14dfdf804c43",
+					"name": "IVTime",
+					"value": "2022-03-10T17:25:32.080-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:32.08Z",
+					"updatedTime": "2022-03-10T22:25:32.08Z",
+					"children": []
+				},
+				{
+					"id": "74833ea0-2a73-4919-85df-60f5c2704ee3",
+					"name": "IVSite",
+					"value": "L antecubital",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:29.912Z",
+					"updatedTime": "2022-03-10T22:25:29.912Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "42c68000-6e04-4eb2-a56d-041ed8cc36ee",
+			"name": "EncounterID",
+			"value": "d323faaf-ef98-4b80-aca3-5d9824e836cb",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:03.348Z",
+			"updatedTime": "2022-03-10T22:22:03.348Z",
+			"children": []
+		},
+		{
+			"id": "c0ff1ab0-aea4-46af-99f9-1477e44ddf9c",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "2b3cd80c-b1b0-4cff-a23d-71b55b3e56a6",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:01:03.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "1076c5e2-f4ac-41ec-80e8-29768fe60299",
+					"name": "SceneBloodPressureSystolic",
+					"value": "102.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "b62d4e8d-e89c-46d3-973c-5e113023f136",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "85.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "6bec8f46-d3dc-4fe7-8616-b4419093a4af",
+			"name": "MRN",
+			"value": "ORG-SM-91b4eb38-d1a0-453f-9cb0-b5de3a01b1bd",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "9e7cf0a1-c4e0-4da5-9290-839e8faab9b4",
+			"name": "BloodTypeEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "26e9d921-8f6d-47d6-97ae-8aae8a82cab7",
+					"name": "BloodType",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "89abfcb0-fe4f-47f4-99dd-fba342a93d66",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "ece30e83-c43c-4869-9630-888c6752b618",
+					"name": "SpecificMedicationAllergy",
+					"value": "Tree Pollen",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "28e90a0f-7ee9-49a7-91f3-583c14c1a2cd",
+			"name": "SceneHeartPulse",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "a4b9d27c-f5a2-4ad4-810d-752a5dec0d18",
+					"name": "SceneHeartRate",
+					"value": "110",
+					"unit": "bpm",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "7649561f-2049-4a40-b50a-954dcc01c376",
+					"name": "SceneHeartTime",
+					"value": "2009-08-29T00:02:10.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "37f6df28-f602-4b30-aa8a-657ddd35fbcd",
+			"name": "TotalLengthOfStay",
+			"value": "1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:34.924Z",
+			"updatedTime": "2022-03-10T22:26:34.924Z",
+			"children": []
+		},
+		{
+			"id": "4526de1c-af9e-4ed9-9916-139226616345",
+			"name": "STARTRespiratoryRate",
+			"value": "less30",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:15.272Z",
+			"updatedTime": "2022-03-10T22:27:15.272Z",
+			"children": []
+		},
+		{
+			"id": "6b7e2c77-d6b9-456a-ad1c-6ae816cc63eb",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "a92c7e79-614b-4b0c-b99b-451d926d6722",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "6f53ec6e-3f14-4366-a7ac-18446d3647da",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e832f9af-99c4-4f10-8e26-194c578d0713",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "58649737-d9c1-4084-9a02-5f173648f045",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-30T09:25:55.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7e7c9691-0cf3-4ce6-a17c-ed458d122aed",
+			"name": "MISTInjury",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:53.905Z",
+			"updatedTime": "2022-03-10T22:23:57.734Z",
+			"children": [
+				{
+					"id": "548ed9f7-c5ef-4623-b035-e7f28f7d6017",
+					"name": "MISTInjuryLocation",
+					"value": "Left Lower Leg",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:53.905Z",
+					"updatedTime": "2022-03-10T22:23:53.905Z",
+					"children": []
+				},
+				{
+					"id": "c35d79ef-422d-49b2-8af2-36c3a7cbe49c",
+					"name": "MISTInjuryType",
+					"value": "Open Fracture",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:53.905Z",
+					"updatedTime": "2022-03-10T22:23:57.734Z",
+					"children": []
+				},
+				{
+					"id": "05d4878f-6295-48a9-921f-82ba155e0097",
+					"name": "MISTInjuryControlInfo",
+					"value": "{\"point\":\"{492.54377834799141, 1355.810562180242}\",\"side\":\"front\",\"color\":\"#B737DC\"}",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:53.905Z",
+					"updatedTime": "2022-03-10T22:23:53.905Z",
+					"children": []
+				},
+				{
+					"id": "76642375-2572-4d19-b8bb-9af0b144b75f",
+					"name": "MISTInjuryDescription",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:53.905Z",
+					"updatedTime": "2022-03-10T22:23:53.905Z",
+					"children": []
+				},
+				{
+					"id": "ee937910-fd92-4f6c-8fd8-d15cf122a03d",
+					"name": "MISTInjurySide",
+					"value": "front",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:53.905Z",
+					"updatedTime": "2022-03-10T22:23:53.905Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "93c35a6f-24aa-4cc5-ab94-9294d751021f",
+			"name": "SpontaneousBreathing",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:12.705Z",
+			"updatedTime": "2022-03-10T22:27:12.705Z",
+			"children": []
+		},
+		{
+			"id": "13c3e2fa-057a-4ef9-9462-a26c9b011575",
+			"name": "FirstName",
+			"value": "César846",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "ae440950-1cf4-4374-8b60-8edb60cf84e5",
+			"name": "PHPOCUSEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:24:27.193Z",
+			"updatedTime": "2022-03-10T22:24:33.945Z",
+			"children": [
+				{
+					"id": "dc9e00fb-ff44-492c-a2d4-13f8d21be89d",
+					"name": "PHPOCUS",
+					"value": "EFAST",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:27.188Z",
+					"updatedTime": "2022-03-10T22:24:27.188Z",
+					"children": []
+				},
+				{
+					"id": "1a1bc34e-8a7b-461c-90d0-1640e0df2722",
+					"name": "PHFASTHemothorax",
+					"value": "YES",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:33.472Z",
+					"updatedTime": "2022-03-10T22:24:33.472Z",
+					"children": []
+				},
+				{
+					"id": "734a33c5-c38e-4b42-a1ee-9e71d8cd6aac",
+					"name": "PHFASTPneumothorax",
+					"value": "YES",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:33.939Z",
+					"updatedTime": "2022-03-10T22:24:33.939Z",
+					"children": []
+				},
+				{
+					"id": "d7ab6ded-a09f-49d9-ab68-60eafd197f6e",
+					"name": "PHPOCUSResult",
+					"value": "POS",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:29.256Z",
+					"updatedTime": "2022-03-10T22:24:29.256Z",
+					"children": []
+				},
+				{
+					"id": "065362c1-f90c-42c5-869d-30cdada89603",
+					"name": "PHPOCUSTime",
+					"value": "2022-03-10T17:24:27.188-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:27.188Z",
+					"updatedTime": "2022-03-10T22:24:27.188Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "32632ac0-101d-4d7c-a933-28a09800f8d7",
+			"name": "PeripheralPulseIsPalpable",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:17.139Z",
+			"updatedTime": "2022-03-10T22:27:17.139Z",
+			"children": []
+		},
+		{
+			"id": "c6eee54f-816a-490d-b660-dff616410043",
+			"name": "SceneAirwayInterventionsEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "3525a2e7-e634-47e9-94b1-5094ea5d63a3",
+					"name": "Airway",
+					"value": "Oral ETT",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7a381ea8-8918-4336-8fb2-3b12ce4a0424",
+			"name": "TraumaArrestType",
+			"value": "Penetrating",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:33:02.967Z",
+			"updatedTime": "2022-03-10T22:33:02.967Z",
+			"children": []
+		},
+		{
+			"id": "bf87ed46-bf67-4f24-b6a1-1fdd984ba2cc",
+			"name": "FluidInputEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:25:29.917Z",
+			"updatedTime": "2022-03-10T22:26:04.067Z",
+			"children": [
+				{
+					"id": "68e54316-17a1-41f6-9fc0-79559024055e",
+					"name": "FluidIVSite",
+					"value": "1B20A1D5-8353-42A7-ADEF-4F13A66D1898",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:29.917Z",
+					"updatedTime": "2022-03-10T22:25:29.917Z",
+					"children": []
+				},
+				{
+					"id": "26ac3930-ff91-456f-af24-da77965bc6f9",
+					"name": "FluidBurnRangePeds",
+					"value": "316.665",
+					"unit": "mL",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:51.917Z",
+					"updatedTime": "2022-03-10T22:25:51.917Z",
+					"children": []
+				},
+				{
+					"id": "d7c6ca8e-8bc2-43fc-b9e8-fa2565d1966b",
+					"name": "FluidVolumeCalculated",
+					"value": "1000",
+					"unit": "mL",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:04.067Z",
+					"updatedTime": "2022-03-10T22:26:04.067Z",
+					"children": []
+				},
+				{
+					"id": "55a98158-0223-4de7-b3b2-0ddb4fccafea",
+					"name": "FluidSolutionDrugFlowrate",
+					"value": "Plasmalyte",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:51.901Z",
+					"updatedTime": "2022-03-10T22:25:51.901Z",
+					"children": []
+				},
+				{
+					"id": "ebb56286-adae-4ea6-86cb-2fa85a6045e7",
+					"name": "FluidAmountStart",
+					"value": "1 L",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:04.049Z",
+					"updatedTime": "2022-03-10T22:26:04.049Z",
+					"children": []
+				},
+				{
+					"id": "097876b5-1089-43b2-9e7b-a7d3f3df458b",
+					"name": "FluidBurnRangeShowPeds",
+					"value": "316.665",
+					"unit": "mL",
+					"tag": "",
+					"createdTime": "2022-03-10T22:25:51.917Z",
+					"updatedTime": "2022-03-10T22:25:51.917Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "9fbd8601-d42f-4555-99f3-0c62e1e4e52a",
+			"name": "SceneBreathingInterventionsEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:24:40.111Z",
+			"updatedTime": "2022-03-10T22:24:41.91Z",
+			"children": [
+				{
+					"id": "25ea555a-d166-47d8-be88-eed53af1a677",
+					"name": "BreathingInterventionsTime",
+					"value": "2022-03-10T17:24:40.107-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:40.107Z",
+					"updatedTime": "2022-03-10T22:24:40.107Z",
+					"children": []
+				},
+				{
+					"id": "4a8c8608-2621-4364-9f1e-4603fc7fb627",
+					"name": "SceneNeedleDecompression",
+					"value": "RIGHT Mid Axillary",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:41.907Z",
+					"updatedTime": "2022-03-10T22:24:41.907Z",
+					"children": []
+				},
+				{
+					"id": "619d84a2-8f19-42d8-a711-767d8e250956",
+					"name": "SceneBreathingInterventions",
+					"value": "Needle Decompression",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:40.107Z",
+					"updatedTime": "2022-03-10T22:24:40.107Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "50c7eb2a-3eed-e3f5-5475-9006e98acc20",
+			"name": "LevelOfConsciousness",
+			"value": "ABN",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:34:44.829Z",
+			"updatedTime": "2022-03-10T22:34:44.829Z",
+			"children": []
+		},
+		{
+			"id": "e3438959-e8d0-41ca-ad57-c4c09a3f1af6",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "30275158-8360-493b-8cbe-f9161ab9f126",
+					"name": "SpecificMedicationAllergy",
+					"value": "dander",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "63be9f15-6d49-4e56-92e9-ac7e093f78ba",
+			"name": "REBOASite",
+			"value": "RIGHT Femoral",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:33:19.168Z",
+			"updatedTime": "2022-03-10T22:33:19.168Z",
+			"children": []
+		},
+		{
+			"id": "67708bb6-b64d-4729-8459-8a47513477cd",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "18b09977-2f65-44b1-b3e1-fd3d3f1d985c",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-30T02:02:24.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "14e4fac6-75c3-444f-ad47-04861e7d19bd",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "269494a4-f001-4681-af09-7bacf0943cd3",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "97b2120e-a3d1-4ce6-9d0d-beab3f9dba98",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "cb19cd7c-8f45-4b50-be21-18fdd78a0da1",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "773af8bc-897c-4ab6-b911-f818fd120f8d",
+					"name": "SpecificMedicationAllergy",
+					"value": "Nuts",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "a8db945c-100f-4a89-b418-b1ee5ebb7a2f",
+			"name": "TotalICULengthOfStay",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:34.94Z",
+			"updatedTime": "2022-03-10T22:26:34.94Z",
+			"children": []
+		},
+		{
+			"id": "c8d4557f-daef-231a-521f-ae5e8e008b67",
+			"name": "EstimatedCalculation",
+			"value": "1.5",
+			"unit": "%",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:47.72Z",
+			"updatedTime": "2022-03-10T22:23:47.72Z",
+			"children": []
+		},
+		{
+			"id": "1837963d-809e-4ea1-9221-18a0293dbdea",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "44a7e8ae-813d-4406-b5cc-51d27709761e",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "2a6da2e8-f093-4430-9298-2dcd4a8b1c68",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-30T20:00:57.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "03b698ce-509a-44e2-80ab-263f1af0b554",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "766f469b-0a04-49cd-8c48-64bdb3aa0ff7",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7971878f-3c4f-4766-9da0-aa7872eb3407",
+			"name": "REBOAZone",
+			"value": "3.0",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:33:20.652Z",
+			"updatedTime": "2022-03-10T22:33:20.652Z",
+			"children": []
+		},
+		{
+			"id": "d9dcb063-0e4c-4003-834d-a9f75eb4f0db",
+			"name": "MISTInjury",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:45.91Z",
+			"updatedTime": "2022-03-10T22:23:47.681Z",
+			"children": [
+				{
+					"id": "a8a1a6b6-c741-4c12-8fe4-6122b58384cf",
+					"name": "MISTInjuryDescription",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:45.909Z",
+					"updatedTime": "2022-03-10T22:23:45.909Z",
+					"children": []
+				},
+				{
+					"id": "83a8d545-76f4-4e11-bd1b-37caeebea9c4",
+					"name": "MISTInjuryType",
+					"value": "3° Burn",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:45.909Z",
+					"updatedTime": "2022-03-10T22:23:47.681Z",
+					"children": []
+				},
+				{
+					"id": "cd1e8345-3838-42df-9102-e3668883d1ef",
+					"name": "MISTInjurySide",
+					"value": "front",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:45.91Z",
+					"updatedTime": "2022-03-10T22:23:45.91Z",
+					"children": []
+				},
+				{
+					"id": "0099a5e2-65a2-4e74-9146-7fa6383a10b0",
+					"name": "MISTInjuryLocation",
+					"value": "Right Arm",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:45.909Z",
+					"updatedTime": "2022-03-10T22:23:45.909Z",
+					"children": []
+				},
+				{
+					"id": "8d705937-ee31-4af2-9503-93cd1b7b506c",
+					"name": "MISTInjuryControlInfo",
+					"value": "{\"point\":\"{175.73754510321726, 527.00942117969544}\",\"side\":\"front\",\"color\":\"#B737DC\"}",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:45.909Z",
+					"updatedTime": "2022-03-10T22:23:45.909Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "9755df76-5215-45c6-aa7f-b8d68041c949",
+			"name": "ABX",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:32:40.195Z",
+			"updatedTime": "2022-03-10T22:32:40.195Z",
+			"children": []
+		},
+		{
+			"id": "8129fa93-37e3-42ac-833e-5072d1bfa83e",
+			"name": "T6CaseUniqueId",
+			"value": "CC22BIJY",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:03.368Z",
+			"updatedTime": "2022-03-10T22:22:03.368Z",
+			"children": []
+		},
+		{
+			"id": "91b186d1-46b3-efa4-5698-688f57d4db70",
+			"name": "PresenceOfLimbInjury",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:47.687Z",
+			"updatedTime": "2022-03-10T22:23:47.687Z",
+			"children": []
+		},
+		{
+			"id": "416148d8-b4ec-41e5-b243-17f88a1bda90",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "c2d646ce-e564-4445-a24b-f65cca13f2db",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "254272b8-455b-4899-98a0-ff6016b869d6",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-29T00:00:00.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e46c94ab-93ca-40bf-9ea4-1c9db21e32e0",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "60a9461d-0757-472e-986b-b4ace21da291",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "382185e5-5b87-4f26-9a64-78183eef6a30",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "92eea104-c7a7-41ba-aafe-7d83bba124ed",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:01:13.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "f9b2153a-7748-4eb0-b062-fd04506d347c",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "82.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "ec67d363-80d5-4d22-877b-088577297c06",
+					"name": "SceneBloodPressureSystolic",
+					"value": "101.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "03227b96-d2e9-40ab-86f4-349f960aa36f",
+			"name": "MoveToCT",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:33:29.41Z",
+			"updatedTime": "2022-03-10T22:33:29.41Z",
+			"children": []
+		},
+		{
+			"id": "9e002914-3ee0-41fe-9952-52a0b2382e6b",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "032aad98-4b24-4478-9c54-9a70626b92f6",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "85.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "041b951e-fdaf-4cb2-abef-dc72db64eb1d",
+					"name": "SceneBloodPressureSystolic",
+					"value": "101.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "0daeca4a-e031-4678-b7e4-4004cb0e1b9b",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:00:30.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "4a8dfd71-2e87-4ef7-8f0e-6bee1793b3da",
+			"name": "MISTInjury",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:48.968Z",
+			"updatedTime": "2022-03-10T22:23:51.903Z",
+			"children": [
+				{
+					"id": "cbe83b0a-547b-432d-9d1f-80b830eb619c",
+					"name": "MISTInjurySide",
+					"value": "front",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:48.968Z",
+					"updatedTime": "2022-03-10T22:23:48.968Z",
+					"children": []
+				},
+				{
+					"id": "57396cba-d15f-4064-9e9b-440f460ede34",
+					"name": "MISTInjuryDescription",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:48.968Z",
+					"updatedTime": "2022-03-10T22:23:48.968Z",
+					"children": []
+				},
+				{
+					"id": "c284501d-6a05-4cdd-8d25-f22072969143",
+					"name": "MISTInjuryLocation",
+					"value": "Left Lower Leg",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:48.968Z",
+					"updatedTime": "2022-03-10T22:23:48.968Z",
+					"children": []
+				},
+				{
+					"id": "5bc47496-7b05-4c78-bb3c-6c798e57560a",
+					"name": "MISTInjuryControlInfo",
+					"value": "{\"point\":\"{450.50314076100716, 1274.732189691058}\",\"side\":\"front\",\"color\":\"#B737DC\"}",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:48.968Z",
+					"updatedTime": "2022-03-10T22:23:48.968Z",
+					"children": []
+				},
+				{
+					"id": "9978c1ed-23fc-4f28-8a1e-a6f5ff9af965",
+					"name": "MISTInjuryType",
+					"value": "Mangled Extremity",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:48.967Z",
+					"updatedTime": "2022-03-10T22:23:51.903Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "b70c0f99-b46e-48be-8fe0-f54245e92f33",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "30953d04-44be-4eaa-83c5-e78b61764cb0",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "72.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "221249fd-3010-4d09-ac74-87a4bd7fa95f",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:00:48.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "76bad4ef-25f2-456b-affc-742e9b5c2168",
+					"name": "SceneBloodPressureSystolic",
+					"value": "136.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "15e7c10b-1a63-4c1e-a54d-c32651cb4866",
+			"name": "LastName",
+			"value": "Padrón382",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "dd13c3af-c218-4290-8c07-ad2345035fac",
+			"name": "MISTInjury",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:39.285Z",
+			"updatedTime": "2022-03-10T22:23:44.301Z",
+			"children": [
+				{
+					"id": "80db1e32-00bc-4a07-9652-f7a29eb47343",
+					"name": "MISTInjuryControlInfo",
+					"value": "{\"point\":\"{355.9117061902927, 418.90492452745019}\",\"side\":\"front\",\"color\":\"#B737DC\"}",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:39.285Z",
+					"updatedTime": "2022-03-10T22:23:39.285Z",
+					"children": []
+				},
+				{
+					"id": "990b40a2-9eeb-4fa8-b020-e06ae03f944e",
+					"name": "MISTInjuryType",
+					"value": "GSW",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:39.285Z",
+					"updatedTime": "2022-03-10T22:23:44.301Z",
+					"children": []
+				},
+				{
+					"id": "a800c992-f8b3-49cf-91ac-24c872569019",
+					"name": "MISTInjurySide",
+					"value": "front",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:39.285Z",
+					"updatedTime": "2022-03-10T22:23:39.285Z",
+					"children": []
+				},
+				{
+					"id": "b36f905f-ba8f-4cd7-a686-cc94029a2c5d",
+					"name": "MISTInjuryLocation",
+					"value": "Chest",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:39.285Z",
+					"updatedTime": "2022-03-10T22:23:39.285Z",
+					"children": []
+				},
+				{
+					"id": "f2f54958-eb9e-43e0-aab3-07a32aa1e9e6",
+					"name": "MISTInjuryDescription",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:23:39.285Z",
+					"updatedTime": "2022-03-10T22:23:39.285Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "319cb205-e196-48ba-9500-bb492fab82fe",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "9a19b44f-c96e-4a4c-b7de-b9a0d823b238",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e27c961d-6139-43af-ae70-0afe43828a10",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "fbd65cc8-660f-463b-a88e-82a01f31edaf",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "6aa6e95e-0291-4532-a578-c2981093d153",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-29T16:58:04.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "00425ed1-f554-491d-85d1-a95b642e3b6a",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "81572168-9f73-4489-b8a1-0989e6f02aa7",
+					"name": "SceneBloodPressureSystolic",
+					"value": "98",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "c54d4556-1305-42bd-b3f8-85db72c96929",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "48",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "8d78462e-4fae-4e5b-8ecd-c5e770884ab1",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:02:10.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "5a1fae52-10f8-4e2c-a063-871d4dc40e3a",
+			"name": "AirwayInterventionsEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:32:02.173Z",
+			"updatedTime": "2022-03-10T22:32:11.049Z",
+			"children": [
+				{
+					"id": "5c50928b-e43e-4ec8-b7ab-a38f16c5c88c",
+					"name": "AirwayInterventions",
+					"value": "Definitive Airway",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:02.164Z",
+					"updatedTime": "2022-03-10T22:32:02.164Z",
+					"children": []
+				},
+				{
+					"id": "eb34b864-2b74-4787-b844-972f0244e08e",
+					"name": "PrehospTubeVerificationDL",
+					"value": "YES",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:08.028Z",
+					"updatedTime": "2022-03-10T22:32:08.028Z",
+					"children": []
+				},
+				{
+					"id": "dd1519b4-f7de-4a7e-bab4-997aa7822b33",
+					"name": "TubeCmAtTeeth",
+					"value": null,
+					"unit": "cm",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:11.04Z",
+					"updatedTime": "2022-03-10T22:32:11.04Z",
+					"children": []
+				},
+				{
+					"id": "a92df11d-bd25-4194-a589-3fcee1f5145e",
+					"name": "ETTRepositionedTime",
+					"value": "2022-03-10T17:32:02.169-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:02.169Z",
+					"updatedTime": "2022-03-10T22:32:02.169Z",
+					"children": []
+				},
+				{
+					"id": "8c0a0ab4-dc3a-4eae-b75d-ae2a4edf58cb",
+					"name": "DefinitiveAirway",
+					"value": "Oral ETT",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:05.709Z",
+					"updatedTime": "2022-03-10T22:32:05.709Z",
+					"children": []
+				},
+				{
+					"id": "da1a401b-1749-45b1-a000-301ec3fde275",
+					"name": "PriortoArrivalAirway",
+					"value": "YES",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:32:03.891Z",
+					"updatedTime": "2022-03-10T22:32:03.891Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7a122213-4d4a-4870-9ce1-0032433a6f72",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "32a31b90-cd0c-462b-afb2-73a2279fa586",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:01:04.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "b39c6b59-345d-462c-8559-6f935a9c3c2d",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "73.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "5bd31150-557a-466e-bf67-9b6262950bc2",
+					"name": "SceneBloodPressureSystolic",
+					"value": "135.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "666bb269-84ce-35e2-1ac0-1f4eff316a84",
+			"name": "C_TA_I_Intubated",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:32:02.177Z",
+			"updatedTime": "2022-03-10T22:32:02.177Z",
+			"children": []
+		},
+		{
+			"id": "770dc189-f6ca-332f-5137-e63f521956b6",
+			"name": "Burns",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:47.687Z",
+			"updatedTime": "2022-03-10T22:23:47.687Z",
+			"children": []
+		},
+		{
+			"id": "51389272-e00f-451f-acd8-c983cb4e8877",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "92803ecb-3ef2-418c-94d0-203e5a1a48b7",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "a638e448-c6fa-4b41-a654-02d51dd79ade",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "87072762-603f-457b-b778-1c47dfe1100c",
+					"name": "PreArrivalMedication",
+					"value": "Meningococcal",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "9ce31031-589f-4e8b-ba19-77ecf3c09049",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-31T13:49:26.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "c7a827c3-82bf-4b16-b762-259188eed1f4",
+			"name": "Weight",
+			"value": "70.37",
+			"unit": "kg",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "7077c5d6-3acd-677e-03b3-5d9a8c8f3330",
+			"name": "ESI1_GCS9",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:34:44.829Z",
+			"updatedTime": "2022-03-10T22:34:44.829Z",
+			"children": []
+		},
+		{
+			"id": "809a6477-973a-47a0-9ece-bbae3432ab10",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "f7eb7deb-2ff4-4dbc-8826-db1c7cd1a312",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:01:05.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "070b962c-f441-44d3-bb36-09f247bfb82f",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "80.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "dde00176-5a1e-4211-a4c4-5fd254036aea",
+					"name": "SceneBloodPressureSystolic",
+					"value": "133.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7b9e3bf6-5dba-4c9e-9f44-cf0ebc154817",
+			"name": "BreathingChestTube1SizeFr",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:32:30.447Z",
+			"updatedTime": "2022-03-10T22:32:30.447Z",
+			"children": []
+		},
+		{
+			"id": "1b20f6a8-2326-43f6-a8d8-b6cd807e26cd",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "f5f202db-7949-4afb-8ed7-f9a5f23d2127",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "8919c1b0-4385-4124-9a64-367bffdb489f",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "5d1e0174-6496-4ead-b2e4-1b33236c6081",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e06121d9-63d2-4a3a-9ac3-4c7b24c1fca5",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-29T08:54:14.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "b4023c59-8007-414b-9881-819f21e811a2",
+			"name": "CirculationInterventionsSceneEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:24:51.925Z",
+			"children": [
+				{
+					"id": "384165f2-8b87-4637-8bed-e48a2ef5333b",
+					"name": "CirculationInterventionsScene",
+					"value": [
+						"Tourniquet"
+					],
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:24:51.925Z",
+					"children": []
+				},
+				{
+					"id": "a5b4ec23-9506-4056-a9c7-3208b694c2ea",
+					"name": "CirculationInterventionsSceneTime",
+					"value": "2022-03-10T17:24:51.558-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:24:51.558Z",
+					"updatedTime": "2022-03-10T22:24:51.558Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "e3d12e30-4d8c-466b-96f7-8a8bf8177985",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "c1d3f988-15b5-4dee-9a27-7616744637e0",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e7da1b8f-b8a4-4ad1-80da-456ad8023c3d",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-09-01T07:37:55.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "d98c3b1a-92ed-498a-a2cd-b9216fc41165",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "2d33a085-574b-4385-9ed2-6ab4b000ee72",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "d4b21a9e-2130-4dcb-9eb8-b9941017c5ae",
+			"name": "StartPrimary",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:31:43.154Z",
+			"updatedTime": "2022-03-10T22:31:43.154Z",
+			"children": []
+		},
+		{
+			"id": "6da84beb-8842-4dce-b0a0-82fef333c00a",
+			"name": "PatientLocationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:03.368Z",
+			"updatedTime": "2022-03-10T22:22:03.368Z",
+			"children": [
+				{
+					"id": "d8c0d87c-8034-4bae-836a-4caa43325fe6",
+					"name": "PatientLocationRoom",
+					"value": "",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:03.368Z",
+					"updatedTime": "2022-03-10T22:22:03.368Z",
+					"children": []
+				},
+				{
+					"id": "9830af53-f113-4a5e-a82e-fc0efab608af",
+					"name": "PatientLocationTime",
+					"value": "2022-03-10T17:22:03.368-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:03.368Z",
+					"updatedTime": "2022-03-10T22:22:03.368Z",
+					"children": []
+				},
+				{
+					"id": "e929ea3d-5778-44c5-80d9-ea91766f45cb",
+					"name": "PatientLocationUnit",
+					"value": "Field",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:03.368Z",
+					"updatedTime": "2022-03-10T22:22:03.368Z",
+					"children": []
+				},
+				{
+					"id": "4371fef8-af80-4d0a-b743-6def3d5d4d56",
+					"name": "PatientLocationLevelOfCare",
+					"value": "Forward",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:03.368Z",
+					"updatedTime": "2022-03-10T22:22:03.368Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "ba23705a-b38e-4007-be7b-4ba9830945c4",
+			"name": "PatientLocationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:34.912Z",
+			"updatedTime": "2022-03-10T22:26:34.912Z",
+			"children": [
+				{
+					"id": "dd4d8dc9-9764-405a-a8b5-b8d48d927dc0",
+					"name": "PatientLocationLevelOfCare",
+					"value": "ED",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:34.912Z",
+					"updatedTime": "2022-03-10T22:26:34.912Z",
+					"children": []
+				},
+				{
+					"id": "d646ec42-00fa-4bfb-ae00-31c10ff77a09",
+					"name": "PatientLocationRoom",
+					"value": "Ed",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:34.912Z",
+					"updatedTime": "2022-03-10T22:26:34.912Z",
+					"children": []
+				},
+				{
+					"id": "65d78d01-49ed-4fcd-8e5d-8d03ddcac6d6",
+					"name": "PatientLocationUnit",
+					"value": "Ed",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:34.912Z",
+					"updatedTime": "2022-03-10T22:26:34.912Z",
+					"children": []
+				},
+				{
+					"id": "083a64e1-9d69-4412-b8eb-3488f61c6c41",
+					"name": "PatientLocationTime",
+					"value": "2022-03-10T17:26:33.261-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:26:34.912Z",
+					"updatedTime": "2022-03-10T22:26:34.912Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "0c100702-d765-48af-b2c6-73bac05ec53a",
+			"name": "AbletoWalk",
+			"value": "NO",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:11.089Z",
+			"updatedTime": "2022-03-10T22:27:11.089Z",
+			"children": []
+		},
+		{
+			"id": "db30a313-3e74-45f9-8e0d-68397563faa3",
+			"name": "MoveToAdjuncts",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:24:24.054Z",
+			"updatedTime": "2022-03-10T22:24:24.054Z",
+			"children": []
+		},
+		{
+			"id": "4aff13ee-b5bc-4e23-b347-26ac6e009585",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "382833be-4262-4bea-9a36-85707cd78e08",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "2a3ec822-36c9-4c47-9b16-aa9bc2b15879",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "fa882513-3e42-4747-8511-063d4a61b0ff",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-31T04:55:12.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "3e7c8125-7fea-458e-87e6-ceae5b7de76f",
+					"name": "PreArrivalMedication",
+					"value": "Influenza - Northern Hemisphere",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "cf6e744e-f46f-441a-b87c-5cc57d6df6be",
+			"name": "GCSEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:34:41.79Z",
+			"updatedTime": "2022-03-10T22:34:44.825Z",
+			"children": [
+				{
+					"id": "f45c43ff-32bf-40b8-afc4-d6e37b23501f",
+					"name": "VerbalResponse",
+					"value": "Non-testable = NT",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:34:44.307Z",
+					"updatedTime": "2022-03-10T22:34:44.307Z",
+					"children": []
+				},
+				{
+					"id": "6d68dbe2-15f6-447a-bf9a-ce483fc62e99",
+					"name": "GCSTime",
+					"value": "2022-03-10T17:34:41.789-05:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:34:41.79Z",
+					"updatedTime": "2022-03-10T22:34:41.79Z",
+					"children": []
+				},
+				{
+					"id": "851e1d9c-f732-486d-8a37-bf380efc851f",
+					"name": "EyeResponse",
+					"value": "None = 1",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:34:41.79Z",
+					"updatedTime": "2022-03-10T22:34:41.79Z",
+					"children": []
+				},
+				{
+					"id": "70ba8ee9-2ec8-4ebf-b85a-9ab83767d293",
+					"name": "MotorResponse",
+					"value": "Flexion = 3",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:34:44.823Z",
+					"updatedTime": "2022-03-10T22:34:44.823Z",
+					"children": []
+				},
+				{
+					"id": "601843ea-c342-4d3e-abf7-f01752af9903",
+					"name": "TotalGCS",
+					"value": "4",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:34:44.825Z",
+					"updatedTime": "2022-03-10T22:34:44.825Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "3867387b-57bd-4429-8731-6d688fc0022f",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "6b69e529-807c-4b37-8e8f-348da2093ac2",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "84.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "35b85cd9-cf76-4332-873c-b95420baa492",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:00:55.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "0dbf41fd-3777-48bc-9205-8f1ad0b11dbc",
+					"name": "SceneBloodPressureSystolic",
+					"value": "103.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "19886867-85ae-48e1-87db-7bec065c6e82",
+			"name": "CapillaryRefill",
+			"value": "less2sec",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:20.056Z",
+			"updatedTime": "2022-03-10T22:27:20.056Z",
+			"children": []
+		},
+		{
+			"id": "7aad1bb1-9dc7-43f2-8e5c-971a1be763bb",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "c08d45d7-58fb-44ad-930e-15e35658dbd5",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-30T02:02:24.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "a5074586-4a9e-4c3a-b076-406df6bcd78b",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "57ec4751-5c2d-4d8a-8b35-82eebafd0bde",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "641f2bc8-9f27-4f26-be6f-78f4b95ec6f1",
+					"name": "PreArrivalMedication",
+					"value": "Tdap",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "a365cdf7-4413-41c4-853a-a4cc5d0efa32",
+			"name": "REBOA",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:33:16.791Z",
+			"updatedTime": "2022-03-10T22:33:16.791Z",
+			"children": []
+		},
+		{
+			"id": "5c4566b0-7f23-4b7f-8b3d-77c55ff04a63",
+			"name": "Sex",
+			"value": "M",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "0b34037a-6787-34f8-4b98-fc40f92c3094",
+			"name": "STARTClassification",
+			"value": "Immediate",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:21.514Z",
+			"updatedTime": "2022-03-10T22:27:21.514Z",
+			"children": []
+		},
+		{
+			"id": "8bccf67b-68a6-4cda-badc-1171ddbcb82c",
+			"name": "PreArrivalMedicationEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "f71f9317-4028-4259-8bc0-8aa4c9758aeb",
+					"name": "PreArrivalMedicationT",
+					"value": "2009-08-30T02:02:24.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "0f83e8f0-9854-4852-9928-cf5c85eb28ee",
+					"name": "PreArrivalMedicationUnit",
+					"value": null,
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "304c3d1f-d4dc-451c-871f-bcf8b11fd7f3",
+					"name": "PreArrivalMedication",
+					"value": "Meningococcal",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "61c1cc73-d9b0-4e15-9d17-ff3959cb2015",
+					"name": "PreArrivalMedicationDose",
+					"value": "N/A",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7bf95402-9825-4433-ba97-a57624374c67",
+			"name": "MasterUnit",
+			"value": "ED",
+			"unit": "",
+			"tag": "bedData",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "66c2a57c-5d1c-4dcb-b820-bea9fe6beff4",
+			"name": "DateOfBirth",
+			"value": "2000-08-25T00:00:00.000-04:00",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": []
+		},
+		{
+			"id": "fbf99e41-e25d-62db-afd9-1781b47c8977",
+			"name": "C_TA_I_GCS8",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:34:44.829Z",
+			"updatedTime": "2022-03-10T22:34:44.829Z",
+			"children": []
+		},
+		{
+			"id": "5d1f3401-1721-4a2d-8b27-828e796dd52c",
+			"name": "CensusAlerts",
+			"value": [
+				"Emergent Alerts"
+			],
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:51.57Z",
+			"updatedTime": "2022-03-10T22:26:51.57Z",
+			"children": []
+		},
+		{
+			"id": "8f277a25-c269-4171-bbf2-fb7aff6c8537",
+			"name": "SceneRespiratoryRateEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "eb3e19c4-258d-46ff-aa66-7ea8e4e5d075",
+					"name": "SceneRespiratoryRate",
+					"value": "30",
+					"unit": "bpm",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "ed5776b3-6263-4e32-a881-ee9d8a3a90eb",
+					"name": "SceneRespiratoryRateTime",
+					"value": "2009-08-29T00:02:10.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "f4128503-073b-49c8-aa33-d63339400ffc",
+			"name": "AbleFollowCommands",
+			"value": "NO",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:27:21.506Z",
+			"updatedTime": "2022-03-10T22:27:21.506Z",
+			"children": []
+		},
+		{
+			"id": "e05c3e3e-7138-4244-97a0-a2ccc6c837af",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "c0dce2b3-2a26-4717-9663-fe1c66a4dd65",
+					"name": "SpecificMedicationAllergy",
+					"value": "Fish",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "7fd1be76-957b-edf1-a122-a598b798c4c6",
+			"name": "QSOFA",
+			"value": "1",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:34:44.829Z",
+			"updatedTime": "2022-03-10T22:34:44.829Z",
+			"children": []
+		},
+		{
+			"id": "68295ef2-4e15-45b5-8766-d27abc03277f",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "97f95c19-955e-4765-9b94-88a1913dc4d2",
+					"name": "SpecificMedicationAllergy",
+					"value": "Grass Pollen",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "f45ff41e-367e-1712-9532-4d3a36d6381e",
+			"name": "PresenceOfChestInjury",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:44.309Z",
+			"updatedTime": "2022-03-10T22:23:44.309Z",
+			"children": []
+		},
+		{
+			"id": "e591873e-24d1-ff3c-7ae3-eaeda7a208c9",
+			"name": "C_TA_I_Penetrating",
+			"value": "YES",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:23:44.309Z",
+			"updatedTime": "2022-03-10T22:23:44.309Z",
+			"children": []
+		},
+		{
+			"id": "7b370321-9135-4381-908d-0c3c1809cff6",
+			"name": "MedicationAllergyEntry",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "4307399c-621f-4d81-b694-6775e08fdeb8",
+					"name": "SpecificMedicationAllergy",
+					"value": "Mould",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "c5493cdb-892c-41f5-b6b3-d04fb5fe4b73",
+			"name": "SceneBloodPressure",
+			"value": null,
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:22:02.019Z",
+			"updatedTime": "2022-03-10T22:22:02.019Z",
+			"children": [
+				{
+					"id": "47927116-f522-4d9b-94bc-b2a4bad7f169",
+					"name": "SceneBloodPressureTime",
+					"value": "2009-08-29T00:00:32.000-04:00",
+					"unit": "",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "dbab2d0c-a3ae-4320-9b43-fd045c6ab8aa",
+					"name": "SceneBloodPressureDiastolic",
+					"value": "74.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				},
+				{
+					"id": "e3d68c40-1750-4e9c-b785-4e8a07a70de5",
+					"name": "SceneBloodPressureSystolic",
+					"value": "107.000000000000",
+					"unit": "mm Hg",
+					"tag": "",
+					"createdTime": "2022-03-10T22:22:02.019Z",
+					"updatedTime": "2022-03-10T22:22:02.019Z",
+					"children": []
+				}
+			]
+		},
+		{
+			"id": "c130d753-28db-4f38-89a5-761430e15da6",
+			"name": "BreathingChestTube1Side",
+			"value": "RIGHT",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:32:22.409Z",
+			"updatedTime": "2022-03-10T22:32:22.409Z",
+			"children": []
+		},
+		{
+			"id": "78ce76ba-d295-f04d-fa12-6ab93845e825",
+			"name": "FluidsHighCrystalloidsTrigger",
+			"value": "NO",
+			"unit": "",
+			"tag": "",
+			"createdTime": "2022-03-10T22:26:04.067Z",
+			"updatedTime": "2022-03-10T22:26:04.067Z",
+			"children": []
+		}
+	]
+}

@@ -163,6 +163,44 @@ public class MdmiEngineTest {
 	}
 
 	@Test
+	public void testTEESIXNULL() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/null").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation("TestNULL", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
+			}
+		}
+	}
+
+	@Test
+	public void testTEESIXNULL2() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/null2").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation("TestNULL2", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
+			}
+		}
+	}
+
+	@Test
 	public void testTEESIX2FHIR() throws Exception {
 		Set<String> documents = Stream.of(new File("src/test/resources/teesix2").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
@@ -236,6 +274,26 @@ public class MdmiEngineTest {
 		assertFalse(StringUtils.isEmpty(value));
 		System.out.println(value);
 		return value;
+	}
+
+	@Test
+	public void testTEESIXYYYFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/yyy").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				runTransformation(
+					"testTEESIXXFHIR", "TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get(), "json");
+			}
+		}
 	}
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {

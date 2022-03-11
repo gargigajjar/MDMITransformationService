@@ -1,0 +1,43 @@
+{
+	"patientId": "ORG-SM-91b4eb38-d1a0-453f-9cb0-b5de3a01b1bd",
+	"hospitalId": "T6 HL7 generator",
+	"mrn": "ORG-SM-91b4eb38-d1a0-453f-9cb0-b5de3a01b1bd",
+	"t6EncounterId": "c134952d-daf4-49d1-8735-4405269fb4d1",
+	"location": "",
+	"fields": [
+		{
+			"container": "T6Observation",
+			"updatedTime": "2022-03-10T00:41:02.646Z",
+			"unit": "",
+			"children": [
+				{
+					"updatedTime": "2022-03-10T00:41:02.646Z",
+					"unit": "",
+					"children": [],
+					"name": "AntivenomVialsGivenTime",
+					"createdTime": "2022-03-10T00:40:50.127Z",
+					"id": "d3c87be5-c84b-4736-af06-c5078db3bc51",
+					"tag": "",
+					"value": ""
+				},
+				{
+					"updatedTime": "2022-03-10T00:41:02.646Z",
+					"unit": "",
+					"children": [],
+					"name": "SpecificMechanism",
+					"createdTime": "2022-03-10T00:40:50.124Z",
+					"id": "5a60b7b3-9b58-4b5e-95fb-3c623b9412cc",
+					"tag": "",
+					"value": ""
+				}
+			],
+			"name": "SpecificMechanismEntry",
+			"createdTime": "2022-03-10T00:40:50.128Z",
+			"id": "96c7a3ea-74e7-4af9-b118-f13df1fb6855",
+			"tag": "",
+			"value": ""
+		}
+	],
+	"user": "",
+	"gerEncounterId": ""
+}
