@@ -19,9 +19,8 @@ import javax.ws.rs.core.Context;
 
 import org.mdmi.core.Mdmi;
 import org.mdmi.core.engine.MdmiUow;
+import org.mdmi.core.engine.javascript.Utils;
 import org.mdmi.core.engine.postprocessors.CDAPostProcessor;
-import org.mdmi.core.engine.semanticprocessors.LogSemantic;
-import org.mdmi.core.engine.semanticprocessors.LogSemantic.DIRECTION;
 import org.mdmi.core.engine.terminology.FHIRTerminologyTransform;
 import org.mdmi.core.runtime.RuntimeService;
 import org.slf4j.Logger;
@@ -31,7 +30,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -133,49 +131,25 @@ public class MdmiEngine {
 			throws Exception {
 		logger.debug("DEBUG Start transformation ");
 		loadMaps();
-
 		MdmiUow.setSerializeSemanticModel(false);
+
+		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_ELG_PGM_STS_CDE.properties");
+		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_PLAN_CDE.properties");
+		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_HBIS_IND.properties");
+		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_SPEC_PGM_CDE.properties");
 
 		// Set Stylesheet for CDA document section generation
 		CDAPostProcessor.setStylesheet("perspectasections.xsl");
 
 		// add in fhir post processor
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new Deliminated2XML("NJ", "\\|"));
 		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
-
-		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new LogSemantic(DIRECTION.TO));
-		Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
 
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
-		return result;
-	}
-
-	@PostMapping(path = "byvalue", consumes = {
-			MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE }, produces =
-
-	{ MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE })
-	public String transformation2(@Context HttpServletRequest req, @RequestParam("source") String source,
-			@RequestParam("target") String target, @RequestBody String message) throws Exception {
-		logger.debug("DEBUG Start transformation ");
-		loadMaps();
-		MdmiUow.setSerializeSemanticModel(false);
-
-		// Set Stylesheet for CDA document section generation
-		CDAPostProcessor.setStylesheet("perspectasections.xsl");
-		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
-		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new LogSemantic(DIRECTION.TO));
-		Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
-
-		String result = RuntimeService.runTransformation(
-			source, message.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
 		return result;
 	}
 

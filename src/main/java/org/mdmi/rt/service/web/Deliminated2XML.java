@@ -47,12 +47,6 @@ public class Deliminated2XML implements IPreProcessor {
 		this.name = name;
 		this.delim = delim;
 
-		// ParseException asdfasfd;
-
-		// EcoreResourceFactoryImpl asdf;
-
-		// TreeWalker l;
-
 	}
 
 	/*
@@ -103,7 +97,7 @@ public class Deliminated2XML implements IPreProcessor {
 				Bag rootBag = (Bag) messageModel.getSyntaxModel().getRoot();
 				if (!rootBag.getNodes().isEmpty()) {
 					String root = rootBag.getLocation();
-					String element = rootBag.getNodes().get(0).getLocation();
+					String element = messageModel.getMessageModelName();
 					message.setData(toXML(lines, delim, root, element).getBytes());
 				}
 
@@ -127,8 +121,9 @@ public class Deliminated2XML implements IPreProcessor {
 			List<String> cells = Arrays.asList(line.split(delim));
 			return "<" + elementName + ">" + System.lineSeparator() +
 					IntStream.range(0, cells.size()).mapToObj(
-						i -> "<" + header.get(i) + ">" + cells.get(i).replaceAll("\"", "") + "</" + header.get(i) +
-								">").collect(Collectors.joining(System.lineSeparator())) +
+						i -> "<" + header.get(i) + ">" +
+								cells.get(i).replaceAll("\"", "").replaceAll("<", "&lt;").replaceAll(">", "&gt;") +
+								"</" + header.get(i) + ">").collect(Collectors.joining(System.lineSeparator())) +
 					"</" + elementName + ">" + System.lineSeparator();
 		}).collect(Collectors.joining(System.lineSeparator())).replaceAll("&", "&amp;") + System.lineSeparator() +
 				"</" + root + ">";

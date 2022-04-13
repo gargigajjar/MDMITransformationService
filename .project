@@ -3,7 +3,6 @@
 	<name>org.mdmi.transformation.service</name>
 	<comment></comment>
 	<projects>
-		<project>org.mdmi.core.runtime</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

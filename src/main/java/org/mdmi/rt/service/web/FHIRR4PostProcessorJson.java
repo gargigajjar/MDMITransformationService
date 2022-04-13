@@ -21,18 +21,10 @@ import org.apache.commons.text.StringEscapeUtils;
 import org.hl7.fhir.r4.model.Bundle;
 import org.hl7.fhir.r4.model.Bundle.BundleEntryComponent;
 import org.hl7.fhir.r4.model.Bundle.HTTPVerb;
-import org.hl7.fhir.r4.model.Condition;
-import org.hl7.fhir.r4.model.Encounter;
 import org.hl7.fhir.r4.model.Identifier;
-import org.hl7.fhir.r4.model.Immunization;
 import org.hl7.fhir.r4.model.Medication;
-import org.hl7.fhir.r4.model.MedicationStatement;
-import org.hl7.fhir.r4.model.Observation;
 import org.hl7.fhir.r4.model.Organization;
-import org.hl7.fhir.r4.model.Patient;
 import org.hl7.fhir.r4.model.Practitioner;
-import org.hl7.fhir.r4.model.Procedure;
-import org.hl7.fhir.r4.model.ResourceType;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -142,131 +134,36 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			};
 			parse.setParserErrorHandler(aaa);
 
+			// Bundle bundle = parse.parseResource(Bundle.class, content);
+
+			// // System.out.println(ctx.newJsonParser().encodeResourceToString(bundle));
+			// Bundle bundle = parse.parseResource(Bundle.class, mdmiMessage.getDataAsString());
+			// Bundle dedupBundle = deduplicate(bundle);
+			// mdmiMessage.setData(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(dedupBundle));
+
 			HashMap<String, String> referenceMappings = new HashMap<String, String>();
-
-			System.err.println(mdmiMessage.getDataAsString());
 			Bundle bundle = parse.parseResource(Bundle.class, mdmiMessage.getDataAsString());
-
-			for (BundleEntryComponent bundleEntry : bundle.getEntry()) {
-
+			Bundle dedupBundle = deduplicate(bundle);
+			for (BundleEntryComponent bundleEntry : dedupBundle.getEntry()) {
 				UUID uuid = UUID.randomUUID();
-				String theId = uuid.toString();
-				if (bundleEntry.getResource().getResourceType() != null) {
-
-					ResourceType theResourceType = bundleEntry.getResource().getResourceType();
-					if (theResourceType.equals(ResourceType.Patient)) {
-						Patient domainResource = (Patient) bundleEntry.getResource();
-
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-
-					}
-
-					if (theResourceType.equals(ResourceType.Encounter)) {
-						Encounter domainResource = (Encounter) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
-					if (theResourceType.equals(ResourceType.Immunization)) {
-						Immunization domainResource = (Immunization) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
-					if (theResourceType.equals(ResourceType.Procedure)) {
-						Procedure domainResource = (Procedure) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
-					if (theResourceType.equals(ResourceType.Condition)) {
-						Condition domainResource = (Condition) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
-					if (theResourceType.equals(ResourceType.Observation)) {
-						Observation domainResource = (Observation) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
-					if (theResourceType.equals(ResourceType.MedicationStatement)) {
-						MedicationStatement domainResource = (MedicationStatement) bundleEntry.getResource();
-						if (!domainResource.getIdentifier().isEmpty()) {
-							Identifier theDomainID = domainResource.getIdentifier().get(0);
-							theId = theDomainID.getValue();
-
-						} else {
-							domainResource.addIdentifier().setValue(theId);
-						}
-					}
-
+				bundleEntry.setFullUrl("urn:uuid:" + uuid);
+				String k = bundleEntry.getResource().getId();
+				if (k != null) {
+					referenceMappings.put(k, "urn:uuid:" + uuid);
 				}
-
-				// bundleEntry.getResource().ca
-
-				//
-				// case foo.Patient:
-				//
-				// "Medication"
-				// }
-				//
-				// Patient dr = (Patient) bundleEntry.getResource();
-				//
-				// dr.getid
-				// UUID uuid = UUID.randomUUID();
-				// String resourceId = "urn:uuid:" + uuid;
-				// bundleEntry.setFullUrl(resourceId);
-				// String k = bundleEntry.getResource().getId();
-				// if (k != null) {
-				// referenceMappings.put(k, resourceId);
-				// }
-				bundleEntry.getRequest().setUrl(bundleEntry.getResource().getResourceType().name() + "/" + theId);
+				bundleEntry.getRequest().setUrl(bundleEntry.getResource().getResourceType().name());
 				HTTPVerb post = null;
-				bundleEntry.getRequest().setMethod(post.PUT);
-				bundleEntry.getResource().setId(theId);
+				bundleEntry.getRequest().setMethod(post.POST);
 			}
 
-			String result = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(bundle);
-			System.out.println(result);
+			String result = ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(dedupBundle);
+			// System.out.println(result);
 			JSONParser parser = new JSONParser();
 
 			try {
 				Object obj = parser.parse(result);
 				JSONObject jsonObject = (JSONObject) obj;
-				// walk(jsonObject, referenceMappings);
+				walk(jsonObject, referenceMappings);
 				mdmiMessage.setData(StringEscapeUtils.unescapeJson(jsonObject.toJSONString()));
 				return;
 
@@ -316,7 +213,7 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			if (bundleEntry.getResource().fhirType().equals("Practitioner")) {
 				Practitioner practitioner = (Practitioner) bundleEntry.getResource();
 				for (Identifier id : practitioner.getIdentifier()) {
-					String sid = id.getSystem() + "::" + id.getValue();
+					String sid = "Prac" + id.getSystem() + "::" + id.getValue();
 					if (!map.containsKey(sid)) {
 						map.put(sid, "");
 					} else {
@@ -326,7 +223,7 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			} else if (bundleEntry.getResource().fhirType().equals("Organization")) {
 				Organization organization = (Organization) bundleEntry.getResource();
 				for (Identifier id : organization.getIdentifier()) {
-					String sid = id.getSystem() + "::" + id.getValue();
+					String sid = "Org" + id.getSystem() + "::" + id.getValue();
 					if (!map.containsKey(sid)) {
 						map.put(sid, "");
 					} else {
@@ -336,7 +233,7 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			} else if (bundleEntry.getResource().fhirType().equals("Medication")) {
 				Medication medication = (Medication) bundleEntry.getResource();
 				for (Identifier id : medication.getIdentifier()) {
-					String sid = id.getSystem() + "::" + id.getValue();
+					String sid = "Med" + id.getSystem() + "::" + id.getValue();
 					if (!map.containsKey(sid)) {
 						map.put(sid, "");
 					} else {
