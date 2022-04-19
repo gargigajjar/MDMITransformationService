@@ -52,7 +52,11 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "src/test/resources/testmaps");
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/cleanup/MDMITransformationService/maps");
+
+		System.setProperty(
+			"mdmi.terminologies", "/Users/seanmuir/git/cleanup/MDMITransformationService/testterminologies");
+
 	}
 
 	@Autowired
@@ -63,25 +67,6 @@ public class MdmiEngineTest {
 		ResponseEntity<String> response = template.getForEntity("/mdmi/transformation", String.class);
 		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
 		System.out.println(response.getBody());
-	}
-
-	public void hapiValidation(String result) throws Exception {
-
-		// FhirContext ctx = FhirContext.forR4();
-		// FhirValidator module = new FhirValidator(ctx);
-		//
-		// IValidatorModule module1 = new SchemaBaseValidator(ctx);
-		// IValidatorModule module2 = new SchematronBaseValidator(ctx);
-		// module.registerValidatorModule(module1);
-		// module.registerValidatorModule(module2);
-		//
-		// ValidationResult valresult = module.validateWithResult(result);
-		// if (valresult.isSuccessful() == false) {
-		// for (SingleValidationMessage next : valresult.getMessages()) {
-		// System.out.println(next.getLocationString() + " " + next.getMessage());
-		// }
-		// }
-
 	}
 
 	@Test
@@ -207,26 +192,28 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testPeraton() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/peraton/t6").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
+		Set<String> documents = Stream.of(
+			new File(
+				"/Users/seanmuir/git/cleanup/MDMITransformationService/src/test/resources/teesix1").listFiles()).filter(
+					file -> !file.isDirectory()).map(t -> {
+						try {
+							return t.getCanonicalPath();
+						} catch (IOException e) {
+							return "";
+						}
+					}).collect(Collectors.toSet());
 
-		File file = new File("src/test/resources/results/results.json");
-		FileWriter fw = new FileWriter(file, false);
+		// File file = new File("src/test/resources/results/results.json");
+		// FileWriter fw = new FileWriter(file, false);
 
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
 				String result = runTransformation("TeeSix.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
-				fw.write(result);
+				// fw.write(result);
 			}
 		}
-		fw.close();
+		// fw.close();
 	}
 
 	@Test
@@ -312,7 +299,6 @@ public class MdmiEngineTest {
 		System.out.println(response.getStatusCode());
 		assertTrue(response.getStatusCode().equals(HttpStatus.OK));
 		System.out.println(response.getBody());
-		hapiValidation(response.getBody());
 	}
 
 	private String runTransformation2(String source, String target, String message) throws Exception {

@@ -17,6 +17,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
+import org.apache.commons.io.FilenameUtils;
 import org.mdmi.core.Mdmi;
 import org.mdmi.core.engine.MdmiUow;
 import org.mdmi.core.engine.javascript.Utils;
@@ -51,6 +52,9 @@ public class MdmiEngine {
 	@Value("#{systemProperties['mdmi.maps'] ?: '/maps'}")
 	private String mapsFolder;
 
+	@Value("#{systemProperties['mdmi.terminologies'] ?: '/terminologies'}")
+	private String terminologiesFolder;
+
 	private HashMap<String, Properties> mapProperties = new HashMap<String, Properties>();
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiEngine.class);
@@ -78,6 +82,20 @@ public class MdmiEngine {
 				InputStream targetStream = new FileInputStream(mapsFolder + "/" + map);
 				Mdmi.INSTANCE().getResolver().resolve(targetStream);
 			}
+
+			Path terminologyDirectory = Path.of(terminologiesFolder);
+
+			if (Files.exists(terminologyDirectory)) {
+				Set<String> terminologies = Stream.of(new File(terminologiesFolder).listFiles()).filter(
+					file -> (!file.isDirectory() && file.toString().endsWith("properties"))).map(File::getName).collect(
+						Collectors.toSet());
+				for (String terminology : terminologies) {
+					InputStream targetStream = new FileInputStream(terminologiesFolder + "/" + terminology);
+					Utils.mapOfTransforms.put(FilenameUtils.removeExtension(terminology), new Properties());
+					Utils.mapOfTransforms.get(FilenameUtils.removeExtension(terminology)).load(targetStream);
+				}
+			}
+
 			loaded = Boolean.TRUE;
 		}
 	}
@@ -132,11 +150,6 @@ public class MdmiEngine {
 		logger.debug("DEBUG Start transformation ");
 		loadMaps();
 		MdmiUow.setSerializeSemanticModel(false);
-
-		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_ELG_PGM_STS_CDE.properties");
-		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_PLAN_CDE.properties");
-		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_HBIS_IND.properties");
-		Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_SPEC_PGM_CDE.properties");
 
 		// Set Stylesheet for CDA document section generation
 		CDAPostProcessor.setStylesheet("perspectasections.xsl");

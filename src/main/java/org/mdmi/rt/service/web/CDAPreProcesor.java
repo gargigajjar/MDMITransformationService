@@ -129,7 +129,7 @@ public class CDAPreProcesor implements IPreProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		if ("CDAR2".equals(messageModel.getGroup().getName())) {
+		if (System.getProperty("CDAPREPROCESS") != null && "CDAR2".equals(messageModel.getGroup().getName())) {
 			return true;
 		}
 		return false;
