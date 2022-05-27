@@ -145,12 +145,17 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			Bundle bundle = parse.parseResource(Bundle.class, mdmiMessage.getDataAsString());
 			Bundle dedupBundle = deduplicate(bundle);
 			for (BundleEntryComponent bundleEntry : dedupBundle.getEntry()) {
+
 				UUID uuid = UUID.randomUUID();
 				bundleEntry.setFullUrl("urn:uuid:" + uuid);
-				String k = bundleEntry.getResource().getId();
-				if (k != null) {
-					referenceMappings.put(k, "urn:uuid:" + uuid);
-				}
+				bundleEntry.getResource().setId(uuid.toString());
+				/*
+				 * String k = bundleEntry.getResource().getId();
+				 * if (k != null) {
+				 * referenceMappings.put(k, "urn:uuid:" + uuid);
+				 * }
+				 */
+
 				bundleEntry.getRequest().setUrl(bundleEntry.getResource().getResourceType().name());
 				HTTPVerb post = null;
 				bundleEntry.getRequest().setMethod(post.POST);
@@ -210,6 +215,11 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 		HashMap<String, String> map = new HashMap<String, String>();
 		ArrayList<BundleEntryComponent> removelist = new ArrayList<>();
 		for (BundleEntryComponent bundleEntry : bundle.getEntry()) {
+
+			if (bundleEntry.getResource().isEmpty()) {
+				removelist.add(bundleEntry);
+			}
+
 			if (bundleEntry.getResource().fhirType().equals("Practitioner")) {
 				Practitioner practitioner = (Practitioner) bundleEntry.getResource();
 				for (Identifier id : practitioner.getIdentifier()) {
