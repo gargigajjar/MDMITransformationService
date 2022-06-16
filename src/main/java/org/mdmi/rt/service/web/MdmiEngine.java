@@ -144,6 +144,7 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
 		// Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
 
 		String result = RuntimeService.runTransformation(
