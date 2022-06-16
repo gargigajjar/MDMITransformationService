@@ -207,7 +207,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testPeraton() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/peraton/jonis").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/peraton/t6").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -222,7 +222,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("PERATON.JONIS", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("PERATON.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}

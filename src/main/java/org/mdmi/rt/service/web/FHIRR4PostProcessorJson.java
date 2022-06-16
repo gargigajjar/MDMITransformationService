@@ -147,8 +147,14 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 			for (BundleEntryComponent bundleEntry : dedupBundle.getEntry()) {
 
 				UUID uuid = UUID.randomUUID();
-				bundleEntry.setFullUrl("urn:uuid:" + uuid);
-				bundleEntry.getResource().setId(uuid.toString());
+				String resName = bundleEntry.getResource().getResourceType().name();
+				String ide = bundleEntry.getResource().getId();
+				if (ide == null) {
+					ide = resName + "/" + uuid.toString();
+					bundleEntry.getResource().setId(uuid.toString());
+				}
+				bundleEntry.setFullUrl(ide);
+
 				/*
 				 * String k = bundleEntry.getResource().getId();
 				 * if (k != null) {
@@ -156,7 +162,7 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 				 * }
 				 */
 
-				bundleEntry.getRequest().setUrl(bundleEntry.getResource().getResourceType().name());
+				bundleEntry.getRequest().setUrl(resName);
 				HTTPVerb post = null;
 				bundleEntry.getRequest().setMethod(post.POST);
 			}
