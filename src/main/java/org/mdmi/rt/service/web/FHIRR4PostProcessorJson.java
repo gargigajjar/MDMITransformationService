@@ -149,19 +149,11 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 				UUID uuid = UUID.randomUUID();
 				String resName = bundleEntry.getResource().getResourceType().name();
 				String ide = bundleEntry.getResource().getId();
-				if (ide == null) {
-					ide = resName + "/" + uuid.toString();
-					bundleEntry.getResource().setId(uuid.toString());
-				}
-				bundleEntry.setFullUrl(ide);
-
-				/*
-				 * String k = bundleEntry.getResource().getId();
-				 * if (k != null) {
-				 * referenceMappings.put(k, "urn:uuid:" + uuid);
-				 * }
-				 */
-
+				String furl = resName + "/" + uuid.toString();
+				bundleEntry.getResource().setId("");
+				bundleEntry.setFullUrl(furl);
+				referenceMappings.put(ide, furl);
+				// System.out.println(ide + ":::::" + furl);
 				bundleEntry.getRequest().setUrl(resName);
 				HTTPVerb post = null;
 				bundleEntry.getRequest().setMethod(post.POST);
