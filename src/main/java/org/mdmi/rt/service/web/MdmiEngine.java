@@ -132,14 +132,6 @@ public class MdmiEngine {
 		loadMaps();
 		MdmiUow.setSerializeSemanticModel(false);
 
-		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_ELG_PGM_STS_CDE.properties");
-		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_PLAN_CDE.properties");
-		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_HBIS_IND.properties");
-		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_SPEC_PGM_CDE.properties");
-
-		// Set Stylesheet for CDA document section generation
-		// CDAPostProcessor.setStylesheet("perspectasections.xsl");
-
 		// add in fhir post processor
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new Deliminated2XML("NJ", "\\|"));
 		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
