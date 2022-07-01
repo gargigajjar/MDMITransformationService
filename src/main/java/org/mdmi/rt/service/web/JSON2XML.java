@@ -11,11 +11,18 @@
  *******************************************************************************/
 package org.mdmi.rt.service.web;
 
+import java.io.IOException;
+import java.util.Properties;
+
+import javax.servlet.ServletContext;
+
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.XML;
 import org.mdmi.MessageModel;
 import org.mdmi.core.MdmiMessage;
 import org.mdmi.core.engine.preprocessors.IPreProcessor;
+import org.springframework.core.io.ClassPathResource;
 
 /**
  * @author seanmuir
@@ -23,17 +30,16 @@ import org.mdmi.core.engine.preprocessors.IPreProcessor;
  */
 public class JSON2XML implements IPreProcessor {
 
-	/*
-	 * String container = "QSOFA\n" + "S_NEWS\n" + "PresenceOfAbdominalInjury\n" + "MISTInjury\n" + "POCUSEntry\n" +
-	 * "ESI1_SBP90\n" + "IntubationMedicationEntry\n" + "PainEntry\n" + "IVEntry\n" + "AndjunctRRSaO2Entry\n" +
-	 * "MechSupDeviceEntry3C\n" + "AirwayInterventionsEntry\n" + "RenalReplacementEntry\n" + "S_MT\n" +
-	 * "PresenceOfChestInjury\n" + "AndjunctRRSaO2Entry3C\n" + "VentilationEntry\n" + "C_TA_I_Hypotension\n" +
-	 * "CirculationInterventionsSceneEntry\n" + "C_TA_I_Intubated\n" + "FluidInputEntry\n" + "O2Entry\n" +
-	 * "MESS_Shock\n" + "FluidsHighCrystalloidsTrigger\n" + "BloodTypeEntry\n" + "CovidCaseDayEntry\n" +
-	 * "SceneAirwayInterventionsEntry\n" +
-	 * "S_ULTIMAO2Entry MESS_Shock FluidsHighCrystalloidsTrigger BloodTypeEntry SceneAirwayInterventionsEntry PatientLocationEntry QSOFA MoveToAdjuncts S_NEWS T6CaseUniqueId PresenceOfAbdominalInjury CensusAlerts S_ULTIMA"
-	 * ;
+	ServletContext context;
+
+	/**
+	 * @param context
 	 */
+	public JSON2XML(ServletContext context) {
+		super();
+		this.context = context;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 *
@@ -64,52 +70,71 @@ public class JSON2XML implements IPreProcessor {
 	 */
 	@Override
 	public void processMessage(MessageModel arg0, MdmiMessage mdmiMessage) {
-
 		JSONObject json = new JSONObject(mdmiMessage.getDataAsString().replace("null", "\"\"").replace("N/A", "NA"));
-
-		/*
-		 * JSONArray fields = json.getJSONArray("fields");
-		 *
-		 * ArrayList<JSONObject> tobecloned = new ArrayList<JSONObject>();
-		 *
-		 * for (int fctr = 0; fctr < fields.length(); fctr++) {
-		 * JSONObject field = (JSONObject) fields.get(fctr);
-		 *
-		 * if (field.has("name")) {
-		 * String fieldName = field.getString("name");
-		 * if (container.contains(fieldName)) {
-		 * field.put("container", "T6Observation");
-		 * }
-		 * }
-		 *
-		 * if (field.has("value")) {
-		 *
-		 * Object value = field.get("value");
-		 *
-		 * if (value instanceof JSONArray) {
-		 *
-		 * JSONArray values = (JSONArray) value;
-		 *
-		 * for (int vctr = 1; vctr < values.length(); vctr++) {
-		 * JSONObject clone = new JSONObject(field.toString());
-		 * clone.remove("value");
-		 * clone.put("value", values.get(vctr));
-		 * tobecloned.add(clone);
-		 * }
-		 * String value0 = values.getString(0);
-		 * field.remove("value");
-		 * field.put("value", value0);
-		 * }
-		 * }
-		 *
-		 * }
-		 * for (JSONObject cloned : tobecloned) {
-		 * fields.put(cloned);
-		 * }
-		 */
-
-		System.err.println(json.toString());
+		String tagmessage = walkFields(json);
 		mdmiMessage.setData("<root>" + XML.toString(json) + "</root>");
+		// System.err.println("xxxxx" + "<root>" + tagmessage + "</root>");
+	}
+
+	Properties readClarification() {
+
+		ClassPathResource clarifications = new ClassPathResource("clarification.properties");
+
+		Properties properties = new Properties();
+		if (clarifications != null && clarifications.exists()) {
+			try {
+				properties.load(clarifications.getInputStream());
+			} catch (IOException e) {
+
+			}
+		}
+		return properties;
+	}
+
+	String walkFields(JSONObject json) {
+		Properties clarifications = readClarification();
+		org.json.JSONArray fields = (JSONArray) json.get("fields");
+		for (int fctr = 0; fctr < fields.length(); fctr++) {
+			org.json.JSONObject field = (JSONObject) fields.get(fctr);
+
+			// org.json.JSONArray tags = (JSONArray) field.get("tags");
+			if (clarifications.getProperty(field.getString("name")) != null) {
+				String[] parts = clarifications.getProperty(field.getString("name")).split(",");
+				for (String part : parts) {
+					if (field.has("tags")) {
+						org.json.JSONArray tags = (JSONArray) field.get("tags");
+						tags.put(part);
+					} else {
+						field.append("tags", parts);
+					}
+				}
+			}
+			walkChildren(field, clarifications);
+		}
+		return json.toString();
+
+	}
+
+	void walkChildren(JSONObject parent, Properties clarifications) {
+		org.json.JSONArray children = (JSONArray) parent.get("children");
+		for (int fctr = 0; fctr < children.length(); fctr++) {
+			org.json.JSONObject child = (JSONObject) children.get(fctr);
+			// org.json.JSONArray ctags = (JSONArray) child.get("tags");
+			if (clarifications.getProperty(child.getString("name")) != null) {
+				String[] parts = clarifications.getProperty(child.getString("name")).split(",");
+				for (String part : parts) {
+					// ctags.put(part);
+					if (child.has("tags")) {
+						org.json.JSONArray ctags = (JSONArray) child.get("tags");
+						ctags.put(part);
+					} else {
+						child.append("tags", parts);
+					}
+				}
+			}
+			walkChildren(child, clarifications);
+		}
+
 	}
 
 }

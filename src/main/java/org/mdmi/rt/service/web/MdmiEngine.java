@@ -132,12 +132,20 @@ public class MdmiEngine {
 		loadMaps();
 		MdmiUow.setSerializeSemanticModel(false);
 
+		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_ELG_PGM_STS_CDE.properties");
+		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_PLAN_CDE.properties");
+		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_MC_HBIS_IND.properties");
+		// Utils.class.getClassLoader().getResourceAsStream("src/main/resources/RCP_SPEC_PGM_CDE.properties");
+
+		// Set Stylesheet for CDA document section generation
+		// CDAPostProcessor.setStylesheet("perspectasections.xsl");
+
 		// add in fhir post processor
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new Deliminated2XML("NJ", "\\|"));
 		Mdmi.INSTANCE().getPostProcessors().addPostProcessor(new FHIRR4PostProcessorJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new HL7V2MessagePreProcessor());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML(context));
 		// Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
 
 		String result = RuntimeService.runTransformation(
@@ -162,7 +170,7 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
 		// Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new LogSemantic(DIRECTION.TO));
 		// Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
-		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML());
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML(context));
 
 		String result = RuntimeService.runTransformation(
 			source, message.getBytes(), target, null, getMapProperties(source), getMapProperties(target));

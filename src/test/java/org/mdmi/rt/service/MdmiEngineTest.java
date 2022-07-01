@@ -246,7 +246,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("NJ.Claim", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("NJ.Person", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -283,12 +283,17 @@ public class MdmiEngineTest {
 				}
 			}).collect(Collectors.toSet());
 
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
 			}
 		}
+		fw.close();
 	}
 
 	private String runTransformation(String source, String target, String message) throws Exception {
