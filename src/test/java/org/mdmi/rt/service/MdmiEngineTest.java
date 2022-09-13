@@ -31,6 +31,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mdmi.rt.service.web.Application;
+import org.mdmi.rt.service.web.SBHA2XML;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -49,6 +50,8 @@ import org.springframework.util.MultiValueMap;
 
 @SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 public class MdmiEngineTest {
+
+	SBHA2XML sb;
 
 	@BeforeClass
 	public static void setEnvironment() {
@@ -198,7 +201,7 @@ public class MdmiEngineTest {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
 				String result = runTransformation(
-					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
+					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.DiagnosticReport", document.get());
 				fw.write(result);
 			}
 		}
@@ -222,7 +225,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("PERATON.TeeSix", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("Legacy.Patient", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -231,7 +234,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testMMIStoFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/NJ").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/MGCARE").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -246,7 +249,55 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("NJ.Person", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("NJ.RCPMGCARE", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testMMIS_CLAIM_toFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/NJ/claim").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("NJ.Claim", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testSampletoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/Students").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("CSV2XML.STUDENTS", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -290,6 +341,103 @@ public class MdmiEngineTest {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
 				String result = runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testSBHA_AdministrativetoFHIR() throws Exception {
+		Set<String> documents = Stream.of(
+			new File("src/test/resources/samples/SBHA/Administrative").listFiles()).filter(
+				file -> !file.isDirectory()).map(t -> {
+					try {
+						return t.getCanonicalPath();
+					} catch (IOException e) {
+						return "";
+					}
+				}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("SBHA.Administrative", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testSBHA_DemographicstoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/SBHA/Demographics").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("SBHA.Demographics", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testSBHA_DisciplinetoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/SBHA/Discipline").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("SBHA.Discipline", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testSBHA_AttendancetoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/SBHA/Attendance").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("SBHA.Attendance", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -340,7 +488,6 @@ public class MdmiEngineTest {
 	@Test
 	public void testCDA2FHIRByValue() throws Exception {
 		runTransformation2("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.PortalBundle", "messageexample");
-
 	}
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {

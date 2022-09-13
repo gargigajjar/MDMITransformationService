@@ -30,7 +30,7 @@ import org.mdmi.core.engine.preprocessors.IPreProcessor;
  * @author seanmuir
  *
  */
-public class Deliminated2XML implements IPreProcessor {
+public class SBHA2XML implements IPreProcessor {
 
 	// private static final String CSV2XML = "CSV2XML";
 
@@ -42,7 +42,7 @@ public class Deliminated2XML implements IPreProcessor {
 	 * @param name
 	 * @param delim
 	 */
-	public Deliminated2XML(String name, String delim) {
+	public SBHA2XML(String name, String delim) {
 		super();
 		this.name = name;
 		this.delim = delim;
@@ -122,12 +122,15 @@ public class Deliminated2XML implements IPreProcessor {
 			List<String> cells = Arrays.asList(line.split(delim));
 			return "<" + elementName + ">" + System.lineSeparator() +
 					IntStream.range(0, cells.size()).mapToObj(
-						i -> "<" + header.get(i) + ">" +
+						i -> "<" + header.get(i).replaceAll(" ", "_") + ">" +
 								cells.get(i).replaceAll("\"", "").replaceAll("<", "&lt;").replaceAll(">", "&gt;") +
-								"</" + header.get(i) + ">").collect(Collectors.joining(System.lineSeparator())) +
+								"</" + header.get(i).replaceAll(" ", "_") + ">").collect(
+									Collectors.joining(System.lineSeparator())) +
 					"</" + elementName + ">" + System.lineSeparator();
 		}).collect(Collectors.joining(System.lineSeparator())).replaceAll("&", "&amp;") + System.lineSeparator() +
 				"</" + root + ">";
+
+		System.out.println("<?xml version=\"1.0\" ?>" + System.lineSeparator() + output + System.lineSeparator());
 		return "<?xml version=\"1.0\" ?>" + System.lineSeparator() + output + System.lineSeparator();
 	}
 
