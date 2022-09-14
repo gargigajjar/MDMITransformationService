@@ -22,6 +22,7 @@ import org.hl7.fhir.r4.model.Bundle;
 import org.hl7.fhir.r4.model.Bundle.BundleEntryComponent;
 import org.hl7.fhir.r4.model.Bundle.HTTPVerb;
 import org.hl7.fhir.r4.model.Identifier;
+import org.hl7.fhir.r4.model.Location;
 import org.hl7.fhir.r4.model.Medication;
 import org.hl7.fhir.r4.model.Organization;
 import org.hl7.fhir.r4.model.Practitioner;
@@ -251,6 +252,16 @@ public class FHIRR4PostProcessorJson implements IPostProcessor {
 				Medication medication = (Medication) bundleEntry.getResource();
 				for (Identifier id : medication.getIdentifier()) {
 					String sid = "Med" + id.getSystem() + "::" + id.getValue();
+					if (!map.containsKey(sid)) {
+						map.put(sid, "");
+					} else {
+						removelist.add(bundleEntry);
+					}
+				}
+			} else if (bundleEntry.getResource().fhirType().equals("Location")) {
+				Location location = (Location) bundleEntry.getResource();
+				for (Identifier id : location.getIdentifier()) {
+					String sid = "Loc" + id.getSystem() + "::" + id.getValue();
 					if (!map.containsKey(sid)) {
 						map.put(sid, "");
 					} else {
