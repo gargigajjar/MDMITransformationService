@@ -142,8 +142,9 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new PreProcessorForFHIRJson());
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML(context));
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new SBHA2XML("SBHA", "\\|"));
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new SBHA2XML("HSDS", "\\,"));
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
-		// Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new CDAPreProcesor());
 
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
@@ -169,6 +170,7 @@ public class MdmiEngine {
 		// Mdmi.INSTANCE().getTargetSemanticModelProcessors().addTargetSemanticProcessor(new LogSemantic(DIRECTION.FROM));
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new JSON2XML(context));
 		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new SBHA2XML("SBHA", "\\|"));
+		Mdmi.INSTANCE().getPreProcessors().addPreProcessor(new SBHA2XML("HSDS", "\\,"));
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 
 		String result = RuntimeService.runTransformation(

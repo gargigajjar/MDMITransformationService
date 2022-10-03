@@ -201,7 +201,7 @@ public class MdmiEngineTest {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
 				String result = runTransformation(
-					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.DiagnosticReport", document.get());
+					"CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -488,6 +488,78 @@ public class MdmiEngineTest {
 	@Test
 	public void testCDA2FHIRByValue() throws Exception {
 		runTransformation2("CDAR2.ContinuityOfCareDocument", "FHIRR4JSON.PortalBundle", "messageexample");
+	}
+
+	@Test
+	public void testHSDS_LocationstoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/HSDS/Locations").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("HSDS.Locations", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testHSDS_OrganizationstoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/HSDS/Organizations").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("HSDS.Organizations", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
+	public void testHSDS_ServicestoFHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/HSDS/Services").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("HSDS.Services", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
 	}
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {

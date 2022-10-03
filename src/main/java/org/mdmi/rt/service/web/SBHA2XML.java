@@ -119,7 +119,7 @@ public class SBHA2XML implements IPreProcessor {
 				Collectors.toList());
 
 		String output = "<" + root + ">" + System.lineSeparator() + inputLines.stream().skip(1).map(line -> {
-			List<String> cells = Arrays.asList(line.split(delim));
+			List<String> cells = split2(line, delim); // Arrays.asList(line.split(delim));
 			return "<" + elementName + ">" + System.lineSeparator() +
 					IntStream.range(0, cells.size()).mapToObj(
 						i -> "<" + header.get(i).replaceAll(" ", "_") + ">" +
@@ -132,6 +132,30 @@ public class SBHA2XML implements IPreProcessor {
 
 		System.out.println("<?xml version=\"1.0\" ?>" + System.lineSeparator() + output + System.lineSeparator());
 		return "<?xml version=\"1.0\" ?>" + System.lineSeparator() + output + System.lineSeparator();
+	}
+
+	/**
+	 * @param line
+	 * @param delim2
+	 * @return
+	 */
+	private List<String> split2(String line, String delim2) {
+		if (line.contains("\"")) {
+			ArrayList<String> words = new ArrayList<String>();
+			boolean notInsideComma = true;
+			int start = 0;
+			for (int i = 0; i < line.length(); i++) {
+				if (line.charAt(i) == ',' && notInsideComma) {
+					words.add(line.substring(start, i));
+					start = i + 1;
+				} else if (line.charAt(i) == '"')
+					notInsideComma = !notInsideComma;
+			}
+			words.add(line.substring(start));
+			return words;
+		} else {
+			return Arrays.asList(line.split(delim));
+		}
 	}
 
 }

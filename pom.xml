@@ -150,11 +150,8 @@
 			<version>2.15.0</version>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>org.eclipse.platform</groupId>
-			<artifactId>org.eclipse.core.runtime</artifactId>
-			<version>3.15.200</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.eclipse.platform</groupId> <artifactId>org.eclipse.core.runtime</artifactId> 
+			<version>3.15.200</version> </dependency> -->
 
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
@@ -326,7 +323,6 @@
 			<artifactId>httpcore5-h2</artifactId>
 			<version>5.0.2</version>
 		</dependency>
-
 
 	</dependencies>
 	<build>
