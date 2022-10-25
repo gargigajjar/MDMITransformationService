@@ -47,7 +47,8 @@ public class JSON2XML implements IPreProcessor {
 	 */
 	@Override
 	public boolean canProcess(MessageModel messageModel) {
-		if ("PERATON".equals(messageModel.getGroup().getName())) {
+		if ("PERATON".equals(messageModel.getGroup().getName()) ||
+				"HSDSJSON".equals(messageModel.getGroup().getName())) {
 			return true;
 		}
 		return false;
@@ -71,9 +72,9 @@ public class JSON2XML implements IPreProcessor {
 	@Override
 	public void processMessage(MessageModel arg0, MdmiMessage mdmiMessage) {
 		JSONObject json = new JSONObject(mdmiMessage.getDataAsString().replace("null", "\"\"").replace("N/A", "NA"));
-		String tagmessage = walkFields(json);
-		mdmiMessage.setData("<root>" + XML.toString(json) + "</root>");
-		// System.err.println("xxxxx" + "<root>" + tagmessage + "</root>");
+		// String tagmessage = walkFields(json);
+		mdmiMessage.setData("<root><row>" + XML.toString(json) + "</row></root>");
+
 	}
 
 	Properties readClarification() {
