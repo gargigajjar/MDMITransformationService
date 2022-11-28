@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  eclipse:
+    image: mdmiservices/eclipseservice:latest
+    container_name: eclipseservice
+    environment:
+      - JAVA_OPTS="-Xmx6048m"
+    network_mode: default
+    ports:
+      - "8080:8080"
+    restart: always
+    volumes:
+     - /Users/seanmuir/Workspaces/runtime-New_configuration/SQLExample/maps2:/maps/sql
+     - /Users/seanmuir/git/MDMITransformationService/src/test/resources/ccd:/maps/ccd
+     - /Users/seanmuir/git/MDMITransformationService/src/test/resources/processor:/maps/mdmi
+     - /Users/seanmuir/git/MDMITransformationService/src/test/resources/fhir:/maps/fhir
+     - /Users/seanmuir/git/sample_ccdas/AAA/smash:/maps/smash

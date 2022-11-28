@@ -1,0 +1,11 @@
+MSH|^~\&|NORTONHOSPITAL^1245329069^|NORTONHOSPITAL^1245329069^DNS|KHIE|KHIE|20220725000000|ECFSERV|ADT^A03^|MID1888514|P|2.5.1|||
+EVN|A03|20220725000000|20190408234708|1|551585^NORRIS^MARGARET^A^^^^^BH^^^^^BHLOU^^^^^^^^^|20220101000000-0400|
+PID|1|178753328|d10ece8ae38241cabcdfe9a9^^^2.16.840.1.113883.3.6731.200^RRI~MRN5825^2^1^NORTONHOSPITAL^MR^^^||Lopez^Colin^^^^^^^^^G^||20010409|M||2076-8^Native Hawaiian or Other Pacific Islander^CDCREC|3 Owar Bvld^Cop Town^Augusta^KY^40342^USA^^^||||1^English|B||^^^||||U^Unknown^ACR|Montana|||Y|N|US||N||||^^|^^^^^||||
+ROL|1|UP|GENERAL^HelloRole|618618^JONES^HEATHER^E^^^^^PROVID|20190905||||GENERAL|EXTERNAL|886 Happy Valley Ln^OCROBKQYX^Huntington^WV^25704^US|994485|
+NK1|1|Omi^Su^Min^^^^|PAR|^^^^^^^|26^^Internet^^^36926^3|^^^^^^|Emergency Contact 1^^|||^^|^||||||||||||||||||||||
+PV1|1|E|ICU^302^23^County Hospital|R|231||437^GRANT^RAMSEY^C^2^Sir^BE^^^^^^^^|235^Go^Jun^|001591^WEALER^LILLY^JOHNSON|NP||||02|||762^Chan^Yeol^^^^^^^^|||BB^||||||||||||||||H||||||||20220504030100|20220506030100||573|||1768|
+PR1|1|HAND|EW1|Desc|20190923143553|A|3|DERRY|3|23|DERRY|DERRY|2|2|1|32|3|1|23|A|
+IN1|1|^|||^^^^||^^^^^^|||||||||^|||584 Dobson Dr^^Sylmar^CA^91342^US|||
+GT1|1|1303^^^^|Finley^Clayton||572 Dempsey Loop^^Saint Michael^ND^58370^US^^^|7150815210^^^^^70^3691^^^^^||19801027|F|P/F|OAD|441-727-0180||||^||||UNKNOWN||||||||||||
+DG1|1||F17.210^Nicotine dependence, cigarettes, uncomplicated^ICD10|Nicotine Consumption|20220101|A|||||||||1|101^Lisa^John|
+DG1|2||C222^Depression^ICD10|Depression|20221201|F|||||||||1|102^Johnson^Martin|

@@ -58,7 +58,7 @@ public class ProcessRelationships implements ISemanticProcessor {
 				for (SemanticElementRelationship r : element.getSemanticElement().getRelationships()) {
 
 					List<IElementValue> relatedElements = semanticModel.getElementValuesByName(
-						r.getRelatedSemanticElement().getName());
+						r.getRelatedSemanticElement());
 
 					for (IElementValue relatedElement : relatedElements) {
 						for (IElementValue correctParent : relatedElement.getParent().getChildren()) {

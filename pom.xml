@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi.transformation</groupId>
 	<artifactId>org.mdmi.transformation.service</artifactId>
-	<version>1.0.0</version>
+	<version>3.0.0</version>
 	<packaging>jar</packaging>
 	<name>MDMI Transformation Service</name>
 	<description>MDMI Transformation Service</description>
 
 	<properties>
-		<mdmi.runtime.version>2.6.1-SNAPSHOT</mdmi.runtime.version>
+		<mdmi.runtime.version>3.0.0-SNAPSHOT</mdmi.runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>11</java.version>
-		<skipTests>true</skipTests>
+<tycho-version>2.7.5</tycho-version>
 	</properties>
 
 
@@ -26,6 +24,11 @@
 	</parent>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -60,6 +63,25 @@
 			<artifactId>org.mdmi.core.runtime</artifactId>
 			<version>${mdmi.runtime.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mdmi</groupId>
+			<artifactId>org.mdmi.processors</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.fhir</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.cda</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
@@ -160,109 +182,6 @@
 		</dependency>
 
 
-		<!-- cda -->
-
-		<dependency>
-			<groupId>org.eclipse.mdht</groupId>
-			<artifactId>org.eclipse.mdht.emf.runtime</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.mdht</groupId>
-			<artifactId>org.eclipse.mdht.uml.hl7.vocab</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.mdht</groupId>
-			<artifactId>org.eclipse.mdht.uml.hl7.datatypes</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.mdht</groupId>
-			<artifactId>org.eclipse.mdht.uml.hl7.rim</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.eclipse.mdht</groupId>
-			<artifactId>org.eclipse.mdht.uml.cda</artifactId>
-			<version>3.0.0-SNAPSHOT</version>
-		</dependency>
-
-
-
-
-		<dependency>
-			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-base</artifactId>
-			<version>2.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-structures-v26</artifactId>
-			<version>2.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-structures-v251</artifactId>
-			<version>2.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.clerezza.ext</groupId>
-			<artifactId>org.json.simple</artifactId>
-			<version>0.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ca.uhn.hapi.fhir</groupId>
-			<artifactId>hapi-fhir-client</artifactId>
-			<version>3.8.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ca.uhn.hapi.fhir</groupId>
-			<artifactId>hapi-fhir-structures-dstu3</artifactId>
-			<version>3.8.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>ca.uhn.hapi.fhir</groupId>
-			<artifactId>hapi-fhir-structures-r4</artifactId>
-			<version>3.8.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.helger</groupId>
-			<artifactId>ph-schematron</artifactId>
-			<version>5.0.4</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.helger</groupId>
-			<artifactId>ph-commons</artifactId>
-			<version>9.1.1</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v28 -->
-		<dependency>
-			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-structures-v28</artifactId>
-			<version>2.3</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/ca.uhn.hapi/hapi-structures-v23 -->
-		<dependency>
-			<groupId>ca.uhn.hapi</groupId>
-			<artifactId>hapi-structures-v23</artifactId>
-			<version>2.3</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
@@ -323,11 +242,39 @@
 			<artifactId>httpcore5-h2</artifactId>
 			<version>5.0.2</version>
 		</dependency>
+		
+		
+		<dependency>
+    <groupId>org.testcontainers</groupId>
+    <artifactId>testcontainers</artifactId>
+    <version>1.17.5</version>
+    <scope>test</scope>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp -->
+<dependency>
+    <groupId>com.squareup.okhttp</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>2.7.5</version>
+</dependency>
 
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
+		
+		 
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+				</configuration>
+				<extensions>true</extensions>
+			</plugin>
+		 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -352,14 +299,21 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>11</source>
+					<target>11</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<repositories>
+	
+	<repository>
+			<id>2022-12</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/2022-12</url>
+		</repository>
+ 
 		<repository>
 			<id>spring-snapshots</id>
 			<name>Spring Snapshots</name>
@@ -377,8 +331,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-
-
 
 
 		<repository>

@@ -1,0 +1,7 @@
+MSH|^~\&|NORTONHOSPITAL^NORTONHOSPITAL_NPI|NORTONHOSPITAL^NORTONHOSPITAL_NPI^DNS|AB|KY0000|20200828000000||VXU^V04^VXU_V04|VPN_VXU_TEST_success|P|2.5.1|||AL|NE
+PID|1|178753328|bde1668513ba439a9feae0ee^^^2.16.840.1.113883.3.6731.200^RRI~MRN4958^2^1^NORTONHOSPITAL^MR^^^||Rodriguez^Catherine^^^^^^^^^G^||19870117|M||2076-8^Native Hawaiian or Other Pacific Islander^CDCREC|1 Owar Bvld^Tuscany Street^Albany^KY^40117^USA^^^||||1^English|B||^^^||||U^Unknown^ACR|Montana|||Y|N|US||N||||^^|^^^^^||||\r\nPD1||||1467420018^Gaines^Brandi^C^^^^^^^^^NPI^^^^^^^^APRN||||||||||||A|20200223
+ORC|RE|IZZZZZ01IVV^e-MDs|IZZZZZ01IVV^e-MDs|||||||^Booth (Employee)^Patricia^^^^^^e-MDs
+RXA|0|1|20220605030100|20220615030100|114^Meningococcal MCV4P^CVX|999|||01^Historical information - source unspecified^NIP001|||||||||||CP|A
+OBX|1|CE|64994-7^Vaccine Funding Program Eligibility Cat^LN|1|V00^Unknown Eligibility^HL70189||||||F|||20220905|||VXC40^Per Immunization^CDCPHINVS
+OBX|2|CE|30956-7^VIS vaccine type^LN|2|114^Meningococcal MCV4P^CVX||||||F
+OBX|3|TS|29768-9^Date vaccine information statement published^LN|2|20220318||||||F

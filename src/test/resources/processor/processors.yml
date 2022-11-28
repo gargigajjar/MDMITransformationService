@@ -1,0 +1,56 @@
+version: 2.1
+preprocessors:
+    cda:
+       name: CDAPreProcesor
+       class: org.mdmi.processors.cda.CDAPreProcesor
+       groups:
+         - CDAR2
+    fhir:
+       name: PreProcessorForFHIRJson
+       class: org.mdmi.processors.fhir.PreProcessorForFHIRJson
+       groups:
+         - FHIRR4JSON
+    commadelimitated:
+       name: CommaDeliminated2XML
+       class: org.mdmi.processors.cda.Deliminated2XML
+       groups:
+         - CSVComma
+       arguments:
+         delimiter: COMMA           
+         
+postprocessors:
+    fhir:
+       name: FHIRR4PostProcessorJson
+       class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
+       groups:
+         - FHIRR4JSON
+       arguments:
+         resolveFhirreferences:
+           -Patient
+         omitresources:
+           -Patient  
+    cda:
+       name: CDAPostProcessor
+       class: org.mdmi.processors.cda.CDAPostProcessor
+       groups:
+         - CDAR2
+    sql:
+       name: SQLInsertPostProcessor
+       class: org.mdmi.processors.cda.SQLInsertPostProcessor  
+       groups:
+         - SQL         
+    commadelimitated:
+       name: XML2Deliminated
+       class: org.mdmi.processors.cda.XML2Deliminated 
+       groups:
+         - CSVComma
+         - hsds
+       arguments:
+         useQuotes: true             
+
+         
+                  
+           
+           
+           
+
