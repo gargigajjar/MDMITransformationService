@@ -21,10 +21,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.BeforeClass;
@@ -45,6 +54,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 @RunWith(SpringRunner.class)
 
@@ -147,7 +160,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testFHIR2CDA2() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/FHIR").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/fhir").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -156,12 +169,18 @@ public class MdmiEngineTest {
 				}
 			}).collect(Collectors.toSet());
 
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.CompositionBundle", "CDAR2.ContinuityOfCareDocument", document.get());
+				String result = runTransformation(
+					"FHIRR4JSON.MasterBundle", "CDAR2.ContinuityOfCareDocument", document.get());
+				fw.write(result);
 			}
 		}
+		fw.close();
 	}
 
 	@Test
@@ -209,6 +228,30 @@ public class MdmiEngineTest {
 	}
 
 	@Test
+	public void testApex2FHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/apex").listFiles()).filter(
+			file -> !file.isDirectory()).map(t -> {
+				try {
+					return t.getCanonicalPath();
+				} catch (IOException e) {
+					return "";
+				}
+			}).collect(Collectors.toSet());
+
+		File file = new File("src/test/resources/results/results.json");
+		FileWriter fw = new FileWriter(file, false);
+
+		for (int count = 0; count < 1; count++) {
+			Optional<String> document = getRandom(documents);
+			if (document.isPresent()) {
+				String result = runTransformation("APEX.Demo", "FHIRR4JSON.MasterBundle", document.get());
+				fw.write(result);
+			}
+		}
+		fw.close();
+	}
+
+	@Test
 	public void testPeraton() throws Exception {
 		Set<String> documents = Stream.of(new File("src/test/resources/samples/peraton/t6").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
@@ -234,7 +277,7 @@ public class MdmiEngineTest {
 
 	@Test
 	public void testMMIStoFHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/MGCARE").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/NJ/claim").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -249,7 +292,7 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("NJ.RCPMGCARE", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation("NJ.PROVIDER", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -507,7 +550,8 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("HSDS.Locations", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation(
+					"HSDSJSON.LocationComplete", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -531,7 +575,8 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("HSDS.Organizations", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation(
+					"HSDSJSON.OrganizationComplete", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
@@ -555,11 +600,55 @@ public class MdmiEngineTest {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				String result = runTransformation("HSDS.Services", "FHIRR4JSON.MasterBundle", document.get());
+				String result = runTransformation(
+					"HSDSJSON.ServicesComplete", "FHIRR4JSON.MasterBundle", document.get());
 				fw.write(result);
 			}
 		}
 		fw.close();
+	}
+
+	@Test
+	public void testUniqueSENames() throws Exception {
+		File file = new File("src/test/resources/testmaps/fhirR4MasterV2Bundle.mdmi");
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		// an instance of builder to parse the specified xml file
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document doc = db.parse(file);
+		doc.getDocumentElement().normalize();
+		NodeList nodeList = doc.getElementsByTagName("semanticElements");
+		HashMap<String, Integer> hmap = new HashMap<String, Integer>();
+
+		for (int itr = 0; itr < nodeList.getLength(); itr++) {
+			Node node = nodeList.item(itr);
+			if (node.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) node;
+				String seName = eElement.getAttribute("name").replaceAll("\\d", "");
+
+				int temp;
+				if (hmap.containsKey(seName)) {
+					temp = hmap.get(seName) + 1;
+					hmap.replace(seName, temp);
+				} else {
+					temp = 1;
+					hmap.put(seName, temp);
+				}
+				System.out.println(seName + " :: " + (seName + temp));
+
+				seName += temp;
+				eElement.setAttribute("name", seName);
+
+				Transformer tf = TransformerFactory.newInstance().newTransformer();
+				tf.setOutputProperty(OutputKeys.INDENT, "yes");
+				tf.setOutputProperty(OutputKeys.METHOD, "xml");
+				tf.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+				DOMSource domSource = new DOMSource(doc);
+				StreamResult sr = new StreamResult(new File("src/test/resources/testmaps/newMap.mdmi"));
+				tf.transform(domSource, sr);
+
+			}
+		}
 	}
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {
