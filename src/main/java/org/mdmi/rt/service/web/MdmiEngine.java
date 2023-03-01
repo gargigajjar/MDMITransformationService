@@ -22,9 +22,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
 import org.mdmi.core.Mdmi;
-import org.mdmi.core.engine.MdmiUow;
 import org.mdmi.core.engine.postprocessors.ConfigurablePostProcessor;
 import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
+import org.mdmi.core.engine.semanticprocessors.ConfigurableSemanticProcessor;
 import org.mdmi.core.engine.terminology.FHIRTerminologyTransform;
 import org.mdmi.core.runtime.RuntimeService;
 import org.slf4j.Logger;
@@ -65,13 +65,57 @@ public class MdmiEngine {
 
 	private static Logger logger = LoggerFactory.getLogger(MdmiEngine.class);
 
+	static List<Map<String, Object>> preprocessors = new ArrayList<Map<String, Object>>();
+
 	static List<Map<String, Object>> postprocessors = new ArrayList<Map<String, Object>>();
 
-	static List<Map<String, Object>> preprocessors = new ArrayList<Map<String, Object>>();
+	static List<Map<String, Object>> sourcesemanticprocessors = new ArrayList<Map<String, Object>>();
+
+	static List<Map<String, Object>> targetsemanticprocessors = new ArrayList<Map<String, Object>>();
+
+	static long lastModified;
 
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
 		synchronized (this) {
+
+			if (loaded || lastModified == 0) {
+				long currentModified = 0;
+				for (String mapsFolder : Stream.of(mapsFolders.split(",", -1)).collect(Collectors.toList())) {
+
+					Set<Path> folders = Files.find(
+						Paths.get(mapsFolder), Integer.MAX_VALUE,
+						(filePath, fileAttr) -> fileAttr.isDirectory()).collect(Collectors.toSet());
+
+					for (Path folder : folders) {
+
+						Set<File> maps2 = Stream.of(new File(folder.toString()).listFiles()).filter(
+							file -> (!file.isDirectory() && file.toString().endsWith("mdmi"))).collect(
+								Collectors.toSet());
+
+						for (File map : maps2) {
+							if (map.lastModified() > currentModified) {
+								currentModified = map.lastModified();
+							}
+
+						}
+
+					}
+				}
+
+				if (currentModified > lastModified) {
+					loaded = false;
+					mapProperties.clear();
+					preprocessors.clear();
+					postprocessors.clear();
+					targetsemanticprocessors.clear();
+					sourcesemanticprocessors.clear();
+					lastModified = currentModified;
+
+				}
+
+			}
+
 			if (loaded) {
 				return;
 			}
@@ -93,6 +137,7 @@ public class MdmiEngine {
 						Collectors.toSet());
 
 				for (Path folder : folders) {
+
 					Set<String> maps = Stream.of(new File(folder.toString()).listFiles()).filter(
 						file -> (!file.isDirectory() && file.toString().endsWith("mdmi"))).map(File::getName).collect(
 							Collectors.toSet());
@@ -100,12 +145,25 @@ public class MdmiEngine {
 						InputStream targetStream = new FileInputStream(folder.toString() + "/" + map);
 						Mdmi.INSTANCE().getResolver().resolve(targetStream);
 					}
+
+					logger.trace("Check for processors.yml ");
+					logger.trace("Looking for " + folder.toString() + "/" + "processors.yml");
+					logger.trace("EXISTS " + Files.exists(Paths.get(folder.toString() + "/" + "processors.yml")));
 					if (Files.exists(Paths.get(folder.toString() + "/" + "processors.yml"))) {
+						logger.trace("Found processors.yml ");
 						Yaml processorYaml = new Yaml();
 						InputStream inputStream = new FileInputStream(folder.toString() + "/" + "processors.yml");
 						Map<String, Object> obj = processorYaml.load(inputStream);
 						postprocessors.add((Map<String, Object>) obj.get("postprocessors"));
 						preprocessors.add((Map<String, Object>) obj.get("preprocessors"));
+						if (obj.get("sourcesemanticprocessors") != null) {
+							sourcesemanticprocessors.add((Map<String, Object>) obj.get("sourcesemanticprocessors"));
+						}
+
+						if (obj.get("targetsemanticprocessors") != null) {
+							targetsemanticprocessors.add((Map<String, Object>) obj.get("targetsemanticprocessors"));
+						}
+
 					}
 
 				}
@@ -122,8 +180,10 @@ public class MdmiEngine {
 		synchronized (this) {
 			loaded = false;
 			mapProperties.clear();
-			postprocessors.clear();
 			preprocessors.clear();
+			postprocessors.clear();
+			targetsemanticprocessors.clear();
+			sourcesemanticprocessors.clear();
 			loadMaps();
 		}
 	}
@@ -157,6 +217,8 @@ public class MdmiEngine {
 		loadMaps();
 		loadPreProcessors(Mdmi.INSTANCE());
 		loadPostProcessors(Mdmi.INSTANCE());
+		loadsourcesemanticprocessors(Mdmi.INSTANCE());
+		loadTargetSemanticProcessors(Mdmi.INSTANCE());
 		return Mdmi.INSTANCE().getResolver().getEngineConfigurations();
 	}
 
@@ -175,7 +237,9 @@ public class MdmiEngine {
 		loadMaps();
 		loadPreProcessors(Mdmi.INSTANCE());
 		loadPostProcessors(Mdmi.INSTANCE());
-		MdmiUow.setSerializeSemanticModel(false);
+		loadsourcesemanticprocessors(Mdmi.INSTANCE());
+		loadTargetSemanticProcessors(Mdmi.INSTANCE());
+		// MdmiUow.setSerializeSemanticModel(false);
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
@@ -191,7 +255,9 @@ public class MdmiEngine {
 		loadMaps();
 		loadPreProcessors(Mdmi.INSTANCE());
 		loadPostProcessors(Mdmi.INSTANCE());
-		MdmiUow.setSerializeSemanticModel(false);
+		loadsourcesemanticprocessors(Mdmi.INSTANCE());
+		loadTargetSemanticProcessors(Mdmi.INSTANCE());
+		// MdmiUow.setSerializeSemanticModel(false);
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 
 		String result = RuntimeService.runTransformation(
@@ -208,8 +274,10 @@ public class MdmiEngine {
 				for (Object key : p.keySet()) {
 
 					try {
+						logger.trace("Adding postprocessors " + key);
 						Class<?> clazz;
 						clazz = Class.forName((String) ((Map) p.get(key)).get("class"));
+						logger.trace("Loaded java postprocessors " + clazz.getCanonicalName());
 						Constructor<?> ctors = clazz.getConstructors()[0];
 						ConfigurablePostProcessor postProcessor = (ConfigurablePostProcessor) ctors.newInstance();
 						postProcessor.setName((String) ((Map) p.get(key)).get("name"));
@@ -224,6 +292,8 @@ public class MdmiEngine {
 				}
 			}
 
+		} else {
+			logger.trace("No postprocessors registered");
 		}
 
 	}
@@ -234,16 +304,68 @@ public class MdmiEngine {
 			for (Map<String, Object> p : preprocessors) {
 				for (Object key : p.keySet()) {
 					try {
+						logger.trace("Adding preprocessors " + key);
 						Class<?> clazz;
 						clazz = Class.forName((String) ((Map) p.get(key)).get("class"));
+						logger.trace("Loaded java preprocessors " + clazz.getCanonicalName());
 						Constructor<?> ctors = clazz.getConstructors()[0];
 						ConfigurablePreProcessor preProcessor = (ConfigurablePreProcessor) ctors.newInstance();
 						preProcessor.setName((String) ((Map) p.get(key)).get("name"));
+						logger.trace("Loaded java preprocessors groups " + ((Map) p.get(key)).get("groups").toString());
 						preProcessor.setGroups((ArrayList<String>) ((Map) p.get(key)).get("groups"));
 						preProcessor.setArguments(((Map) p.get(key)).get("arguments"));
 						instance.getPreProcessors().addPreProcessor(preProcessor);
 					} catch (Exception e) {
-						logger.error("Error loading  PreProcessor " + key, e.getMessage());
+						logger.error("Error loading  PostProcessor " + key, e.getMessage());
+						e.printStackTrace();
+					}
+
+				}
+			}
+		}
+
+	}
+
+	private void loadsourcesemanticprocessors(Mdmi instance) {
+		if (!sourcesemanticprocessors.isEmpty()) {
+			for (Map<String, Object> p : sourcesemanticprocessors) {
+				for (Object key : p.keySet()) {
+					try {
+						Class<?> clazz;
+						clazz = Class.forName((String) ((Map) p.get(key)).get("class"));
+						Constructor<?> ctors = clazz.getConstructor(null);
+						ConfigurableSemanticProcessor sourceSemanticProcessor = (ConfigurableSemanticProcessor) ctors.newInstance();
+						sourceSemanticProcessor.setName((String) ((Map) p.get(key)).get("name"));
+						sourceSemanticProcessor.setGroups((ArrayList<String>) ((Map) p.get(key)).get("groups"));
+						sourceSemanticProcessor.setArguments(((Map) p.get(key)).get("arguments"));
+						instance.getSourceSemanticModelProcessors().addSourceSemanticProcessor(sourceSemanticProcessor);
+					} catch (Exception e) {
+						logger.error("Error loading  sourceSemanticProcessor " + key, e.getMessage());
+						e.printStackTrace();
+					}
+
+				}
+			}
+		}
+
+	}
+
+	private void loadTargetSemanticProcessors(Mdmi instance) {
+
+		if (!targetsemanticprocessors.isEmpty()) {
+			for (Map<String, Object> p : targetsemanticprocessors) {
+				for (Object key : p.keySet()) {
+					try {
+						Class<?> clazz;
+						clazz = Class.forName((String) ((Map) p.get(key)).get("class"));
+						Constructor<?> ctors = clazz.getConstructor(null);
+						ConfigurableSemanticProcessor targetSemanticProcessor = (ConfigurableSemanticProcessor) ctors.newInstance();
+						targetSemanticProcessor.setName((String) ((Map) p.get(key)).get("name"));
+						targetSemanticProcessor.setGroups((ArrayList<String>) ((Map) p.get(key)).get("groups"));
+						targetSemanticProcessor.setArguments(((Map) p.get(key)).get("arguments"));
+						instance.getTargetSemanticModelProcessors().addTargetSemanticProcessor(targetSemanticProcessor);
+					} catch (Exception e) {
+						logger.error("Error loading  targetSemanticProcessor " + key, e.getMessage());
 						e.printStackTrace();
 					}
 

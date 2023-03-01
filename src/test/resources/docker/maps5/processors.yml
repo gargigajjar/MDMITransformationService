@@ -1,0 +1,34 @@
+version: 2.1
+preprocessors:
+    hl7v2preprocessor:
+       name: HL7V2Processor
+       class:  org.mdmi.processors.v2.HL7V2MessagePreProcessor
+       groups:
+         - HL7V2
+         
+postprocessors:
+   fhir:
+       name: FHIRR4PostProcessorJson
+       class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
+       groups:
+         - FHIRR4JSON
+       arguments:
+         resolveFhirreferences:
+           -Patient
+         omitresources:
+           -Patient                  
+
+#sourcesemanticprocessors:
+#    sourcelog:
+#        name: SourceLogSemantic
+#        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+#        arguments:
+#          direction: FROM         
+
+#targetsemanticprocessors:
+#    targetlog:
+#        name: TargetLogSemantic
+#        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+#        arguments:
+#          direction: TO
+                     

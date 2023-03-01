@@ -49,9 +49,7 @@ public class MdmiEngineTest {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty(
-			"mdmi.maps",
-			"/Users/seanmuir/git/sample_ccdas/AAA/smash,/Users/seanmuir/git/MDMITransformationService/src/test/resources/processor,/Users/seanmuir/Workspaces/runtime-New_configuration/SQLExample/maps2,/Users/seanmuir/git/MDMITransformationService/src/test/resources/ccd");
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker");
 	}
 
 	@Autowired

@@ -1,0 +1,64 @@
+version: 2.1
+preprocessors:
+    cda:
+       name: CDAPreProcesor
+       class: org.mdmi.processors.cda.CDAPreProcesor
+       groups:
+         - CDAR2
+    fhir:
+       name: PreProcessorForFHIRJson
+       class: org.mdmi.processors.fhir.PreProcessorForFHIRJson
+       groups:
+         - FHIRR4JSON
+    commadelimitated:
+       name: CommaDeliminated2XML
+       class: org.mdmi.processors.cda.Deliminated2XML
+       groups:
+         - CSVComma
+       arguments:
+         delimiter: COMMA           
+         
+postprocessors:
+    fhir:
+       name: FHIRR4PostProcessorJson
+       class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
+       groups:
+         - FHIRR4JSON
+       arguments:
+         resolveFhirreferences:
+           -Patient
+         omitresources:
+           -Patient  
+    cda:
+       name: CDAPostProcessor
+       class: org.mdmi.processors.cda.CDAPostProcessor
+       groups:
+         - CDAR2
+    sql:
+       name: SQLInsertPostProcessor
+       class: org.mdmi.processors.cda.SQLInsertPostProcessor  
+       groups:
+         - SQL         
+    commadelimitated:
+       name: xxxXML2Delimited
+       class: org.mdmi.processors.delimited.XML2Delimited
+       groups:
+         - aaaCSVComma
+         - hsds
+       arguments:
+         useQuotes: true             
+
+sourcesemanticprocessors:
+    sourcelog:
+        name: SourceLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: FROM         
+
+targetsemanticprocessors:
+    targetlog:
+        name: TargetLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: TO
+                     

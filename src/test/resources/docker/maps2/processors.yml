@@ -1,0 +1,37 @@
+version: 2.1
+preprocessors:
+    commadelimitated:
+       name: CommaDeliminated2XML
+       class:  org.mdmi.processors.delimited.Delimited2XML
+       groups:
+         - CSVComma
+         - APEX
+       arguments:
+         delimiter: COMMA           
+         
+postprocessors:
+   fhir:
+       name: FHIRR4PostProcessorJson
+       class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
+       groups:
+         - FHIRR4JSON
+       arguments:
+         resolveFhirreferences:
+           -Patient
+         omitresources:
+           -Patient           
+
+sourcesemanticprocessors:
+    sourcelog:
+        name: SourceLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: FROM         
+
+targetsemanticprocessors:
+    targetlog:
+        name: TargetLogSemantic
+        class: org.mdmi.core.engine.semanticprocessors.LogSemantic
+        arguments:
+          direction: TO
+                     
