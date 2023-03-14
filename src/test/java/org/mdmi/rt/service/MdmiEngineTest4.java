@@ -40,7 +40,7 @@ import org.springframework.util.MultiValueMap;
 
 //@SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT)
 
-public class MdmiEngineTest2 {
+public class MdmiEngineTest4 {
 
 	@Test
 	void test() {

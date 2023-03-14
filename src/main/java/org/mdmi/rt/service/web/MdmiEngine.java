@@ -267,7 +267,7 @@ public class MdmiEngine {
 
 	private void loadPostProcessors(Mdmi instance) {
 
-		if (postprocessors != null) {
+		if (postprocessors != null && (!postprocessors.isEmpty())) {
 
 			for (Map<String, Object> p : postprocessors) {
 
@@ -300,7 +300,7 @@ public class MdmiEngine {
 
 	private void loadPreProcessors(Mdmi instance) {
 
-		if (preprocessors != null) {
+		if (preprocessors != null && (!preprocessors.isEmpty())) {
 			for (Map<String, Object> p : preprocessors) {
 				for (Object key : p.keySet()) {
 					try {
@@ -327,7 +327,7 @@ public class MdmiEngine {
 	}
 
 	private void loadsourcesemanticprocessors(Mdmi instance) {
-		if (!sourcesemanticprocessors.isEmpty()) {
+		if (sourcesemanticprocessors != null && !sourcesemanticprocessors.isEmpty()) {
 			for (Map<String, Object> p : sourcesemanticprocessors) {
 				for (Object key : p.keySet()) {
 					try {
@@ -352,7 +352,7 @@ public class MdmiEngine {
 
 	private void loadTargetSemanticProcessors(Mdmi instance) {
 
-		if (!targetsemanticprocessors.isEmpty()) {
+		if (targetsemanticprocessors != null && !targetsemanticprocessors.isEmpty()) {
 			for (Map<String, Object> p : targetsemanticprocessors) {
 				for (Object key : p.keySet()) {
 					try {

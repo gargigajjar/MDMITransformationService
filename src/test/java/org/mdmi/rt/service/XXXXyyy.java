@@ -26,6 +26,10 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.commons.io.FilenameUtils;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -48,20 +52,46 @@ import org.springframework.util.MultiValueMap;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT)
-class TestTestTest {
-
-	@Autowired
-	private TestRestTemplate template;
-
-	@BeforeAll
-	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
-	}
+class XXXXyyy {
 
 	@Test
 	void test() {
 		fail("Not yet implemented");
 	}
+
+	@BeforeClass
+	public static void setEnvironment() {
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+	}
+
+	@BeforeAll
+	public static void beforeClass() {
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+	}
+
+	@Before
+	public void before() {
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+	}
+
+	@Test
+	public void test2() {
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+	}
+
+	@After
+	public void after() {
+		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+	}
+
+	@AfterClass
+	public static void afterClass() {
+
+		System.out.println("@AfterClass");
+	}
+
+	@Autowired
+	private TestRestTemplate template;
 
 	@Test
 	public void testGetTransformations() {
@@ -115,27 +145,8 @@ class TestTestTest {
 	}
 
 	@Test
-	public void testCDA2FHIR2() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/fhir2").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.MasterBundle", "CSVComma.DocumentRoot", document.get());
-			}
-		}
-	}
-
-	@Test
 	public void testCDA2FHIR3() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/fhir3").listFiles()).filter(
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/fhir").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -154,73 +165,6 @@ class TestTestTest {
 
 	public static <E> Optional<E> getRandom(Collection<E> e) {
 		return e.stream().skip((int) (e.size() * Math.random())).findFirst();
-	}
-
-	@Test
-	public void testAPEX2FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/apex").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				for (int a = 0; a < 5; a++) {
-					runTransformation("APEX.Sample1", "FHIRR4JSON.MasterBundle", document.get());
-				}
-			}
-		}
-	}
-
-	// source=NJ.RCPMGCARE&target=FHIRR4JSON.MasterBundle
-
-	@Test
-	public void testNJ2FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/nj").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				for (int a = 0; a < 5; a++) {
-					runTransformation("NJ.RCPMGCARE", "FHIRR4JSON.MasterBundle", document.get());
-				}
-			}
-		}
-	}
-
-	// source=NJ.RCPMGCARE&target=FHIRR4JSON.MasterBundle
-
-	@Test
-	public void testV22FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/hl7v2").listFiles()).filter(
-			file -> !file.isDirectory()).map(t -> {
-				try {
-					return t.getCanonicalPath();
-				} catch (IOException e) {
-					return "";
-				}
-			}).collect(Collectors.toSet());
-
-		for (int count = 0; count < 1; count++) {
-			Optional<String> document = getRandom(documents);
-			if (document.isPresent()) {
-				for (int a = 0; a < 5; a++) {
-					runTransformation("HL7V2.ADTA01CONTENT", "FHIRR4JSON.MasterBundle", document.get());
-				}
-			}
-		}
 	}
 
 }
