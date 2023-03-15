@@ -243,6 +243,7 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
+		// System.out.println("result" + result);
 		return result;
 	}
 

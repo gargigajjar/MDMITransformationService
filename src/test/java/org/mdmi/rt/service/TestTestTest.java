@@ -55,7 +55,8 @@ class TestTestTest {
 
 	@BeforeAll
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@Test

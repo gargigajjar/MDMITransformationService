@@ -61,27 +61,32 @@ class XXXXyyy {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@BeforeAll
 	public static void beforeClass() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@Before
 	public void before() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@Test
 	public void test2() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@After
 	public void after() {
-		System.setProperty("mdmi.maps", "/Users/seanmuir/git/MDMITransformationService/src/test/resources/docker/maps");
+		System.setProperty(
+			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
 	}
 
 	@AfterClass
@@ -126,8 +131,8 @@ class XXXXyyy {
 	}
 
 	@Test
-	public void testCDA2FHIR() throws Exception {
-		Set<String> documents = Stream.of(new File("src/test/resources/samples/fhir").listFiles()).filter(
+	public void testAPEX2FHIR() throws Exception {
+		Set<String> documents = Stream.of(new File("src/test/resources/samples/apex").listFiles()).filter(
 			file -> !file.isDirectory()).map(t -> {
 				try {
 					return t.getCanonicalPath();
@@ -139,7 +144,7 @@ class XXXXyyy {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.MasterBundle", "CSVComma.DocumentRoot", document.get());
+				runTransformation("APEX.Massachusetts", "FHIRR4JSON.MasterBundle", document.get());
 			}
 		}
 	}
@@ -158,7 +163,7 @@ class XXXXyyy {
 		for (int count = 0; count < 1; count++) {
 			Optional<String> document = getRandom(documents);
 			if (document.isPresent()) {
-				runTransformation("FHIRR4JSON.MasterBundle", "CSVComma.DocumentRoot", document.get());
+				runTransformation("FHIRR4JSON.MasterBundle", "APEX.Massachusetts", document.get());
 			}
 		}
 	}

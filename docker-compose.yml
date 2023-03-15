@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   eclipse:
-    image: mdmiservices/eclipseservice:latest
+    image: trial:latest
     container_name: eclipseservice
     environment:
       - JAVA_OPTS="-Xmx6048m"
@@ -11,7 +11,5 @@ services:
     restart: always
     volumes:
    
-     - ./maps/ccd:/maps/ccd
-     - ./maps/processor:/maps/mdmi
-     - ./maps/fhir:/maps/fhir
+     - C:/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex:/maps/apex
 
