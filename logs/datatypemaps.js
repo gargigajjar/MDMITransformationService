@@ -18,6 +18,14 @@ function mapStringToCodedElement(source,target) {
 	target.setValue('code', source);
 }
 
+function mapStringToOBSStatus(source,target) {
+	target.setValue('code', "final");
+}
+
+function mapStringToPROCStatus(source,target) {
+	target.setValue('code', "completed");
+}
+
 function mapStringToEnrollmentCodedElement(source,target) {
 	target.setValue('code', "50001-2");
 	target.setValue('codeSystem', "urn:guid:94458cc8-b2dd-4d4b-9b99-8b955f7ac708");
@@ -28,6 +36,12 @@ function mapStringToBMICode(source,target) {
 	target.setValue('code', '39156-5');
 	target.setValue('codeSystem', 'http://loinc.org');
 	target.setValue('displayName', 'Body mass index (BMI)');
+}
+
+function mapStringToSexualOrientationCode(source,target) {
+	target.setValue('code', '76690-7');
+	target.setValue('codeSystem', 'http://loinc.org');
+	target.setValue('displayName', 'Sexual orientation');
 }function mapCodedElementToString(source,target) {
 	target.setValue(source.getValue('code'));	
 }
@@ -35,6 +49,7 @@ function mapStringToBMICode(source,target) {
  
 function mapStringToPersonName(source,target) {
 	Utils.StringToPatientName(source,target);
+	target.setValue("fullName", source);
 }
 
  function mapPersonNameToString(source,target) {
@@ -1132,4 +1147,4 @@ function mapDateTimeToFHIR_time(source,target) {}function mapFHIR_timeToDateTime
 	}
 }function mapFHIR_positiveIntToInteger(source,target) {}function mapRatioToFHIR_Ratio(source,target) {}function mapFHIR_RatioToRatio(source,target) {}function mapStringToFHIR_markdown(source,target) {
 	target.setValue('value', source.getValue());
-}function mapFHIR_markdownToString(source,target) {}
+}function mapFHIR_markdownToString(source,target) {}function mapTimePeriodToFHIR_id(source,target) {}function mapFHIR_idToTimePeriod(source,target) {}

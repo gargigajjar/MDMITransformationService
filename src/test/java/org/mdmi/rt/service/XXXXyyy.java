@@ -61,32 +61,27 @@ class XXXXyyy {
 
 	@BeforeClass
 	public static void setEnvironment() {
-		System.setProperty(
-			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
+		System.setProperty("mdmi.maps", "src/test/resources/docker/apex");
 	}
 
 	@BeforeAll
 	public static void beforeClass() {
-		System.setProperty(
-			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
+		System.setProperty("mdmi.maps", "src/test/resources/docker/apex");
 	}
 
 	@Before
 	public void before() {
-		System.setProperty(
-			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
+		System.setProperty("mdmi.maps", "src/test/resources/docker/apex");
 	}
 
 	@Test
 	public void test2() {
-		System.setProperty(
-			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
+		System.setProperty("mdmi.maps", "src/test/resources/docker/apex");
 	}
 
 	@After
 	public void after() {
-		System.setProperty(
-			"mdmi.maps", "/Users/Gargi Gajjar/git/MDMITransformationServiceThreeOh/src/test/resources/docker/apex");
+		System.setProperty("mdmi.maps", "src/test/resources/docker/apex");
 	}
 
 	@AfterClass
