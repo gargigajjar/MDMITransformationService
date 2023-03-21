@@ -1,4 +1,9 @@
-FROM openjdk:11.0.6-jdk
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar","-DMDMI_LOG_LEVEL=TRACE"]
+FROM alpine/git
+WORKDIR /app
+RUN git clone --branch mdmiThreeOh https://github.com/MDMI/MDMITransformationService.git
+
+FROM maven:3.9-eclipse-temurin-19
+WORKDIR /app
+COPY --from=0 /app/MDMITransformationService /app 
+RUN mvn install 
+ENTRYPOINT ["java","-jar","/app/target/org.mdmi.transformation.service.jar"]
