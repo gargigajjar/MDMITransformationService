@@ -2,7 +2,7 @@ version: 2.1
 preprocessors:
     commadelimitated:
        name: CommaDeliminated2XML
-       class: org.mdmi.processors.cda.Deliminated2XML
+       class: org.mdmi.processors.delimited.Delimited2XML
        groups:
          - CSVComma
        arguments:
@@ -10,10 +10,10 @@ preprocessors:
          
 postprocessors:  
     commadelimitated:
-       name: xxxXML2Delimited
+       name: XML2Delimited
        class: org.mdmi.processors.delimited.XML2Delimited
        groups:
-         - aaaCSVComma
+         - CSVComma
          - hsds
        arguments:
          useQuotes: true             

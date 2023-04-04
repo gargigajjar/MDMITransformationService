@@ -27,6 +27,7 @@ import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
 import org.mdmi.core.engine.semanticprocessors.ConfigurableSemanticProcessor;
 import org.mdmi.core.engine.terminology.FHIRTerminologyTransform;
 import org.mdmi.core.runtime.RuntimeService;
+import org.mdmi.processors.delimited.Delimited2XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,8 @@ import org.yaml.snakeyaml.Yaml;
 @RestController
 @RequestMapping("/mdmi/transformation")
 public class MdmiEngine {
+
+	Delimited2XML asdf;
 
 	@Autowired
 	private ConfigurableApplicationContext applicationContext;

@@ -280,7 +280,7 @@
                                        <effectiveDateTime value="2014-06-23T08:34:32-04:00"/>
                                        <issued value="2014-06-23T08:34:32.208-04:00"/>
                                        <valueQuantity>
-                                          <value value="168.8"/>
+                                          <value value="99999"/>
                                           <unit value="cm"/>
                                           <system value="http://unitsofmeasure.org"/>
                                           <code value="cm"/>
