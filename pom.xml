@@ -106,13 +106,27 @@
 			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
 			<version>2.15.0</version>
 		</dependency>
-		
-<dependency>
-<groupId>org.eclipse.ocl</groupId>
-  <artifactId>org.eclipse.ocl</artifactId>
-  <version>3.6.200.v20170522</version>
-	  </dependency>
-	  		
+
+		<dependency>
+			<groupId>org.eclipse.ocl</groupId>
+			<artifactId>org.eclipse.ocl</artifactId>
+			<version>3.6.200.v20170522</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.ocl.ecore</groupId>
+			<artifactId>org.eclipse.ocl.ecore</artifactId>
+			<version>3.6.200.v20170522</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.cda</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
@@ -186,11 +200,7 @@
 			<artifactId>org.mdmi.processors</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>org.mdmi.processors</groupId>
-			<artifactId>org.mdmi.processors.cda</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.fhir</artifactId>
@@ -211,6 +221,86 @@
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.14</version>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore</artifactId>
+			<version>2.15.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.common </artifactId>
+			<version>2.15.0</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.eclipse.platform</groupId> <artifactId>org.eclipse.core.runtime</artifactId> 
+			<version>3.15.200</version> </dependency> -->
+
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+			<version>2.15.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+		<!-- cda -->
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.emf.runtime</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.vocab</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.datatypes</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.hl7.rim</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.mdht</groupId>
+			<artifactId>org.eclipse.mdht.uml.cda</artifactId>
+			<version>3.0.0-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.uml2</groupId>
+			<artifactId>org.eclipse.uml2.types</artifactId>
+			<version>2.5.0.v20210228</version>
+		</dependency>
+
+		<dependency>
+			<groupId>lpg.runtime.java</groupId>
+			<artifactId>lpg.runtime.java</artifactId>
+			<version>2.0.17.v201004271640</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -240,7 +330,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-			 
+
 				<executions>
 					<execution>
 						<goals>
@@ -306,6 +396,12 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
+		</repository>
+
+		<repository>
+			<id>xxx</id>
+			<name>yyy</name>
+			<url>https://mdix.jfrog.io/artifactory/mdix2/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
