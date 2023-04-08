@@ -300,6 +300,14 @@
 			<artifactId>lpg.runtime.java</artifactId>
 			<version>2.0.17.v201004271640</version>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    
+</dependency>
+
 
 	</dependencies>
 	<build>
@@ -422,4 +430,27 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
+		<profiles>
+		<profile>
+			<id>mdmiartifactory</id>
+			<distributionManagement>
+
+				<repository>
+					<id>mdix</id>
+					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
+				</repository>
+				<snapshotRepository>
+					<id>mdix</id>
+					<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
+					<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</snapshotRepository>
+
+
+			</distributionManagement>
+		</profile>
+	</profiles>
 </project>
