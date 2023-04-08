@@ -145,8 +145,10 @@ public class MdmiEngine {
 						file -> (!file.isDirectory() && file.toString().endsWith("mdmi"))).map(File::getName).collect(
 							Collectors.toSet());
 					for (String map : maps) {
+						logger.trace("Loading map  " + map);
 						InputStream targetStream = new FileInputStream(folder.toString() + "/" + map);
 						Mdmi.INSTANCE().getResolver().resolve(targetStream);
+						logger.trace("Loaded map  " + map);
 					}
 
 					logger.trace("Check for processors.yml ");
