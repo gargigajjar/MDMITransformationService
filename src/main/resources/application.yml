@@ -9,10 +9,9 @@ spring:
 
 logging:
   level:
-    root: OFF
-    org.mdmi: INFO
-    org.springframework: INFO
-    #org.springframework.security: INFO
+    root: ${LOGGING_LEVEL_ROOT:info}
+    org.mdmi: ${LOGGING_LEVEL_MDMI:info}
+    org.springframework: ${LOGGING_LEVEL_SPRING:info}
 
 fhirterminology:
     userName: user
