@@ -1,5 +1,0 @@
-MSH|^~\&|SCRMC^SCRMC^|SCRMC^SCRMC^DNS|KHIE|KHIE|20220824010600|ECFSERV|ORU^R01^|ORU_R01|P|2.5.1||
-PID|1|2824991|7212763477d34b07b17d3e0f^^^2.16.840.1.113883.3.6731.200^RRI~MRN3537^2^1^SCRMC^MR^^^||Johnson^Phillip^^^^^^^^^G^||19580427|M||U^Unknown^CDCREC|9 Owar Bvld^Monroe Street^Barbourmeade^KY^40342^USA||||1^English|B||^^^||||U^Unknown^ACR|Montana|||Y|N|US||N||||^^|^^^^^||||
-ORC|1|500126536^CarrollHosp|3546812201^CarrollHosp||CM||||20220130232811|BAM^^^^^^^||000037^MADISON^BRENT^A^^^^|||||||^^^^^^^||City Hospital^D^^^^CPSI&1.3.6.1.4.1.27248.2.1273.1&ISO^XX^^^000|309 11TH ST^^CARROLLTON^KY^41008^US^|^^^^^502^7324321|21 NORTH STREET^^HARTFORD^KY^40006^US^|||||||||
-OBR|1|3303996^LAB.STC^2.16.840.1.113883.3.3292^ISO|ADOH623RAD^LAB.STC^2.16.840.1.113883.3.3292^ISO|77754-0^2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine cutoff:MCnc:Pt:Urine:Qn:Confirm^LN||20220504030100|20210506030100|||^^^^^^^||||||000039^Teveta^Verona^A^JR^DR^MD^|||||||||F||
-OBX|1|CE|77754-0^2-Ethylidene-1,5-Dimethyl-3,3-Diphenylpyrrolidine cutoff:MCnc:Pt:Urine:Qn:Confirm^LN|1|10828004^POSITIVE^SCT||||||F|||20210506030100|||||
