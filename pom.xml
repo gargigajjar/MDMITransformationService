@@ -290,9 +290,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.eclipse.uml2</groupId>
-			<artifactId>org.eclipse.uml2.types</artifactId>
-			<version>2.5.0.v20210228</version>
+			 <groupId>org.eclipse.uml2.types</groupId>
+  <artifactId>org.eclipse.uml2.types</artifactId>
+  <version>2.0.0.v20170605</version>
 		</dependency>
 
 		<dependency>
@@ -414,9 +414,9 @@
 		</repository>
 
 		<repository>
-			<id>xxx</id>
-			<name>yyy</name>
-			<url>https://mdix.jfrog.io/artifactory/mdix2/</url>
+			<id>mdix</id>
+			<name>mdmiartifactory</name>
+			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory/</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
