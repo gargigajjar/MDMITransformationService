@@ -9,8 +9,8 @@ spring:
 
 logging:
   level:
-    root: ${LOGGING_LEVEL_ROOT:info}
-    org.mdmi: ${LOGGING_LEVEL_MDMI:info}
+    root: ${LOGGING_LEVEL_ROOT:trace}
+    org.mdmi: ${LOGGING_LEVEL_MDMI:trace}
     org.springframework: ${LOGGING_LEVEL_SPRING:info}
 
 fhirterminology:
