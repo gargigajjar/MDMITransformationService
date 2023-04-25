@@ -159,13 +159,19 @@ public class MdmiEngine {
 						Yaml processorYaml = new Yaml();
 						InputStream inputStream = new FileInputStream(folder.toString() + "/" + "processors.yml");
 						Map<String, Object> obj = processorYaml.load(inputStream);
-						postprocessors.add((Map<String, Object>) obj.get("postprocessors"));
-						preprocessors.add((Map<String, Object>) obj.get("preprocessors"));
-						if (obj.get("sourcesemanticprocessors") != null) {
+
+						if (obj.containsKey("preprocessors")) {
+							preprocessors.add((Map<String, Object>) obj.get("preprocessors"));
+						}
+						if (obj.containsKey("postprocessors")) {
+							postprocessors.add((Map<String, Object>) obj.get("postprocessors"));
+						}
+
+						if (obj.containsKey("sourcesemanticprocessors")) {
 							sourcesemanticprocessors.add((Map<String, Object>) obj.get("sourcesemanticprocessors"));
 						}
 
-						if (obj.get("targetsemanticprocessors") != null) {
+						if (obj.containsKey("targetsemanticprocessors")) {
 							targetsemanticprocessors.add((Map<String, Object>) obj.get("targetsemanticprocessors"));
 						}
 
