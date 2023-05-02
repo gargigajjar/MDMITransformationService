@@ -120,11 +120,7 @@
 		</dependency>
 
 
-		<dependency>
-			<groupId>org.mdmi.processors</groupId>
-			<artifactId>org.mdmi.processors.cda</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
 
 
 		<dependency>
@@ -213,9 +209,17 @@
 		</dependency>
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
-			<artifactId>org.mdmi.processors.v2</artifactId>
+			<artifactId>org.mdmi.processors.hl7v2</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.cda</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
