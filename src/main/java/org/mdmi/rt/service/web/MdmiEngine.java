@@ -21,7 +21,9 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
+import org.apache.commons.io.FilenameUtils;
 import org.mdmi.core.Mdmi;
+import org.mdmi.core.engine.javascript.Utils;
 import org.mdmi.core.engine.postprocessors.ConfigurablePostProcessor;
 import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
 import org.mdmi.core.engine.semanticprocessors.ConfigurableSemanticProcessor;
@@ -151,6 +153,25 @@ public class MdmiEngine {
 						logger.trace("Loaded map  " + map);
 					}
 
+					Path termsPath = Paths.get(folder.toString() + "/terms");
+					if (Files.isDirectory(termsPath)) {
+						Set<String> datatypeterms = Stream.of(
+							new File(folder.toString() + "/terms").listFiles()).filter(
+								file -> (!file.isDirectory() && file.toString().endsWith("properties"))).map(
+									File::getName).collect(Collectors.toSet());
+						for (String datatypeterm : datatypeterms) {
+							logger.trace("Loading datatypeterm  " + datatypeterm);
+							InputStream datatypetermStream = new FileInputStream(
+								folder.toString() + "/terms/" + datatypeterm);
+							Utils.mapOfTransforms.put(FilenameUtils.removeExtension(datatypeterm), new Properties());
+							Utils.mapOfTransforms.get(FilenameUtils.removeExtension(datatypeterm)).load(
+								datatypetermStream);
+
+							// Mdmi.INSTANCE().getResolver().resolve(targetStream);
+							logger.trace("Loaded map  " + datatypeterm);
+						}
+					}
+
 					logger.trace("Check for processors.yml ");
 					logger.trace("Looking for " + folder.toString() + "/" + "processors.yml");
 					logger.trace("EXISTS " + Files.exists(Paths.get(folder.toString() + "/" + "processors.yml")));
@@ -254,7 +275,6 @@ public class MdmiEngine {
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 		String result = RuntimeService.runTransformation(
 			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
-		// System.out.println("result" + result);
 		return result;
 	}
 
