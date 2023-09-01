@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Constructor;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -22,6 +23,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.IOUtils;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.mdmi.core.Mdmi;
 import org.mdmi.core.engine.javascript.Utils;
 import org.mdmi.core.engine.postprocessors.ConfigurablePostProcessor;
@@ -68,6 +73,8 @@ public class MdmiEngine {
 
 	private HashMap<String, Properties> mapProperties = new HashMap<>();
 
+	private HashMap<String, JSONObject> mapValues = new HashMap<>();
+
 	private static Logger logger = LoggerFactory.getLogger(MdmiEngine.class);
 
 	static List<Map<String, Object>> preprocessors = new ArrayList<Map<String, Object>>();
@@ -111,6 +118,7 @@ public class MdmiEngine {
 				if (currentModified > lastModified) {
 					loaded = false;
 					mapProperties.clear();
+					mapValues.clear();
 					preprocessors.clear();
 					postprocessors.clear();
 					targetsemanticprocessors.clear();
@@ -198,6 +206,43 @@ public class MdmiEngine {
 
 					}
 
+					Set<String> propertyFiles = Stream.of(new File(folder.toString()).listFiles()).filter(
+						file -> (!file.isDirectory() && file.toString().endsWith("properties"))).map(
+							File::getName).collect(Collectors.toSet());
+
+					for (String propertyFile : propertyFiles) {
+						logger.trace("Loading property  " + propertyFile);
+						InputStream targetStream = new FileInputStream(folder.toString() + "/" + propertyFile);
+						Properties properties = new Properties();
+						properties.load(targetStream);
+						mapProperties.put(FilenameUtils.removeExtension(propertyFile), properties);
+						logger.trace("Loaded property  " + propertyFile);
+					}
+
+					Set<String> valuesFiles = Stream.of(new File(folder.toString()).listFiles()).filter(
+						file -> (!file.isDirectory() && file.toString().endsWith("json"))).map(File::getName).collect(
+							Collectors.toSet());
+
+					for (String valuesFile : valuesFiles) {
+						logger.trace("Loading property  " + valuesFile);
+
+						// Files.readString()
+
+						InputStream targetStream = new FileInputStream(folder.toString() + "/" + valuesFile);
+
+						String body = IOUtils.toString(targetStream, StandardCharsets.UTF_8.name());
+
+						JSONParser parser = new JSONParser();
+						JSONObject jsonObject;
+						try {
+							jsonObject = (JSONObject) parser.parse(body);
+							mapValues.put(FilenameUtils.removeExtension(valuesFile), jsonObject);
+							logger.trace("Loaded property  " + valuesFile);
+						} catch (ParseException e) {
+							logger.error(e.getLocalizedMessage());
+						}
+					}
+
 				}
 
 			}
@@ -225,6 +270,7 @@ public class MdmiEngine {
 			if (!mapProperties.containsKey(target)) {
 				Properties properties = new Properties();
 				Path propertyFile = Paths.get(context.getRealPath(mapsFolder + "/" + target + ".properties"));
+
 				if (Files.exists(propertyFile)) {
 					try {
 						properties.load(Files.newInputStream(propertyFile));
@@ -271,10 +317,13 @@ public class MdmiEngine {
 		loadPostProcessors(Mdmi.INSTANCE());
 		loadsourcesemanticprocessors(Mdmi.INSTANCE());
 		loadTargetSemanticProcessors(Mdmi.INSTANCE());
-		// MdmiUow.setSerializeSemanticModel(false);
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
+		getMapProperties(source);
+		getMapProperties(target);
+
 		String result = RuntimeService.runTransformation(
-			source, uploadedInputStream.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
+			source, uploadedInputStream.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
+			mapValues.get(source), mapValues.get(target));
 		return result;
 	}
 
@@ -291,9 +340,12 @@ public class MdmiEngine {
 		loadTargetSemanticProcessors(Mdmi.INSTANCE());
 		// MdmiUow.setSerializeSemanticModel(false);
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
+		getMapProperties(source);
+		getMapProperties(target);
 
 		String result = RuntimeService.runTransformation(
-			source, message.getBytes(), target, null, getMapProperties(source), getMapProperties(target));
+			source, message.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
+			mapValues.get(source), mapValues.get(target));
 		return result;
 	}
 
