@@ -119,7 +119,11 @@
 			<version>3.6.200.v20170522</version>
 		</dependency>
 
-
+<dependency>
+ <groupId>com.github.ben-manes.caffeine</groupId>
+ <artifactId>caffeine</artifactId>
+ 
+</dependency>
 		
 
 
