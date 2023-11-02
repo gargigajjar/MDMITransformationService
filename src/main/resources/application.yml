@@ -15,9 +15,9 @@ logging:
     com.google: ${LOGGING_LEVEL_JSCOMP:OFF}
 
 fhirterminology:
-    userName: user
-    password: user
-    url: http://terminologyservice.mdixinc.net:8080/fhir
-
+    userName: ${FHIR_TERMINOLOGY_NAME:user}
+    password: ${FHIR_TERMINOLOGY_PASSWORD:user}
+    url: ${FHIR_TERMINOLOGY_URL:http://terminologyservice.mdixinc.net:8080/fhir}
+    
 origins:
   url: ""
