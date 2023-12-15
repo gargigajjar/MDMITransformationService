@@ -161,6 +161,27 @@ public class MdmiEngine {
 						logger.trace("Loaded map  " + map);
 					}
 
+					Path datatypemapsPath = Paths.get(folder.toString() + "/datatypemaps");
+					if (Files.isDirectory(datatypemapsPath)) {
+						Set<String> datatypemaps = Stream.of(
+							new File(folder.toString() + "/datatypemaps").listFiles()).filter(
+								file -> (!file.isDirectory() && file.toString().endsWith("js"))).map(
+									File::getName).collect(Collectors.toSet());
+						for (String datatypemap : datatypemaps) {
+							logger.trace("Loading datatypemap  " + datatypemap);
+							InputStream datatypetermStream = new FileInputStream(
+								folder.toString() + "/datatypemaps/" + datatypemap);
+							String mapsource = IOUtils.toString(datatypetermStream, StandardCharsets.UTF_8.name());
+
+							for (String key : Mdmi.INSTANCE().getResolver().getMaps().keySet()) {
+								if (key.startsWith(FilenameUtils.removeExtension(datatypemap))) {
+									Mdmi.INSTANCE().getResolver().getMaps().get(key).datatypemappings = mapsource;
+								}
+							}
+							logger.trace("Loaded datatypemap  " + datatypemap);
+						}
+					}
+
 					Path termsPath = Paths.get(folder.toString() + "/terms");
 					if (Files.isDirectory(termsPath)) {
 						Set<String> datatypeterms = Stream.of(
