@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,6 +25,7 @@ import javax.ws.rs.core.Context;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -184,6 +186,47 @@ public class MdmiEngine {
 
 					Path termsPath = Paths.get(folder.toString() + "/terms");
 					if (Files.isDirectory(termsPath)) {
+
+						Set<String> valusets = Stream.of(new File(folder.toString() + "/terms").listFiles()).filter(
+							file -> (!file.isDirectory() && file.toString().endsWith("json"))).map(
+								File::getName).collect(Collectors.toSet());
+						for (String valuset : valusets) {
+
+							try {
+
+								JSONParser parser = new JSONParser();
+
+								Path file = Path.of(folder.toString() + "/terms/" + valuset);
+
+								logger.trace("Loading valuset  " + valuset);
+
+								String json = Files.readString(file, StandardCharsets.UTF_8);
+								JSONObject jsonObject;
+
+								jsonObject = (JSONObject) parser.parse(json);
+
+								JSONObject expansion = (JSONObject) jsonObject.get("expansion");
+
+								JSONArray contains = (JSONArray) expansion.get("contains");
+
+								Utils.mapOfTransforms.put(FilenameUtils.removeExtension(valuset), new Properties());
+
+								Consumer<JSONObject> getcode = new Consumer<JSONObject>() {
+
+									@Override
+									public void accept(JSONObject element) {
+										Utils.mapOfTransforms.get(FilenameUtils.removeExtension(valuset)).put(
+											element.get("code"), element.get("code"));
+
+									}
+
+								};
+								contains.forEach(getcode);
+							} catch (ParseException e) {
+								logger.error(e.getMessage());
+							}
+						}
+
 						Set<String> datatypeterms = Stream.of(
 							new File(folder.toString() + "/terms").listFiles()).filter(
 								file -> (!file.isDirectory() && file.toString().endsWith("properties"))).map(
@@ -196,9 +239,9 @@ public class MdmiEngine {
 							Utils.mapOfTransforms.get(FilenameUtils.removeExtension(datatypeterm)).load(
 								datatypetermStream);
 
-							// Mdmi.INSTANCE().getResolver().resolve(targetStream);
 							logger.trace("Loaded map  " + datatypeterm);
 						}
+
 					}
 
 					logger.trace("Check for processors.yml ");
