@@ -97,7 +97,7 @@ public class MdmiEngine {
 	private void loadMaps() throws IOException {
 		synchronized (this) {
 
-			MdmiUow.sourceFilter = Boolean.valueOf(sourceFilterFlag);
+			MdmiUow.sourceFilter = true;
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
