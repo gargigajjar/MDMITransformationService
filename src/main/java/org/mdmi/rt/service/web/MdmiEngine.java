@@ -30,6 +30,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.mdmi.core.Mdmi;
+import org.mdmi.core.engine.MdmiUow;
 import org.mdmi.core.engine.javascript.Utils;
 import org.mdmi.core.engine.postprocessors.ConfigurablePostProcessor;
 import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
@@ -73,6 +74,9 @@ public class MdmiEngine {
 	@Value("#{systemProperties['mdmi.maps'] ?: '/maps'}")
 	private String mapsFolders;
 
+	@Value("#{systemProperties['mdmi.sourceFilterFlag'] ?: 'false'}")
+	private String sourceFilterFlag;
+
 	private HashMap<String, Properties> mapProperties = new HashMap<>();
 
 	private HashMap<String, JSONObject> mapValues = new HashMap<>();
@@ -92,6 +96,8 @@ public class MdmiEngine {
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
 		synchronized (this) {
+
+			MdmiUow.sourceFilter = Boolean.valueOf(sourceFilterFlag);
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
