@@ -10,7 +10,7 @@ spring:
 logging:
   level:
     root: ${LOGGING_LEVEL_ROOT:INFO}
-    org.mdmi: ${LOGGING_LEVEL_MDMI:INFO}
+    org.mdmi: ${LOGGING_LEVEL_MDMI:TRACE}
     org.springframework: ${LOGGING_LEVEL_SPRING:info}
     com.google: ${LOGGING_LEVEL_JSCOMP:OFF}
 
