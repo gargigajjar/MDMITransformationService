@@ -22,6 +22,7 @@ import java.util.stream.Stream;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
+import javax.xml.stream.XMLInputFactory;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
@@ -37,7 +38,6 @@ import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
 import org.mdmi.core.engine.semanticprocessors.ConfigurableSemanticProcessor;
 import org.mdmi.core.engine.terminology.FHIRTerminologyTransform;
 import org.mdmi.core.runtime.RuntimeService;
-import org.mdmi.processors.delimited.Delimited2XML;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,8 +57,6 @@ import org.yaml.snakeyaml.Yaml;
 @RestController
 @RequestMapping("/mdmi/transformation")
 public class MdmiEngine {
-
-	Delimited2XML asdf;
 
 	@Autowired
 	private ConfigurableApplicationContext applicationContext;
@@ -95,9 +93,10 @@ public class MdmiEngine {
 
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
+
 		synchronized (this) {
 
-			MdmiUow.sourceFilter = true;
+			MdmiUow.sourceFilter = false;
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
