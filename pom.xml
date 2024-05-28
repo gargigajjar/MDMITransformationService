@@ -25,13 +25,15 @@
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
 		 
-		
+		 
+		 <dependency>
+           <groupId>javax.annotation</groupId>
+           <artifactId>javax.annotation-api</artifactId>
+       </dependency>		
 		<dependency>
-    <groupId>jakarta.annotation</groupId>
-    <artifactId>jakarta.annotation-api</artifactId>
-   
-</dependency>
-
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+       </dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
