@@ -22,7 +22,6 @@ import java.util.stream.Stream;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
-import javax.xml.stream.XMLInputFactory;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
@@ -53,6 +52,8 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.yaml.snakeyaml.Yaml;
+
+import jakarta.annotation.PostConstruct;
 
 @RestController
 @RequestMapping("/mdmi/transformation")
@@ -93,6 +94,8 @@ public class MdmiEngine {
 
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
+
+		PostConstruct wtf;
 
 		synchronized (this) {
 
