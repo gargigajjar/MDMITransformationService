@@ -58,8 +58,6 @@ import org.yaml.snakeyaml.Yaml;
 @RequestMapping("/mdmi/transformation")
 public class MdmiEngine {
 
-	jakarta.annotation.PostConstruct asdf;
-
 	@Autowired
 	private ConfigurableApplicationContext applicationContext;
 
