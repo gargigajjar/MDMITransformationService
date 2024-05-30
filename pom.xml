@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi.transformation</groupId>
 	<artifactId>org.mdmi.transformation.service</artifactId>
@@ -23,28 +21,6 @@
 		<version>2.4.13</version>
 	</parent>
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
-		 
-		 
-			
-		<dependency>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-            <version>3.0.0</version>
-       </dependency>
-       
-       
-        <dependency>
-           <groupId>javax.annotation</groupId>
-           <artifactId>javax.annotation-api</artifactId>
-       </dependency>	
-       
-       
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.14.0</version>
-		</dependency>
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
@@ -125,25 +101,35 @@
 			<artifactId>org.eclipse.emf.common </artifactId>
 			<version>2.15.0</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.ocl</groupId>
 			<artifactId>org.eclipse.ocl</artifactId>
 			<version>3.6.200.v20170522</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.ocl.ecore</groupId>
 			<artifactId>org.eclipse.ocl.ecore</artifactId>
 			<version>3.6.200.v20170522</version>
 		</dependency>
-		<dependency>
-			<groupId>com.github.ben-manes.caffeine</groupId>
-			<artifactId>caffeine</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ognl</groupId>
-			<artifactId>ognl</artifactId>
-			<version>3.1.12</version>
-		</dependency>
+
+<dependency>
+ <groupId>com.github.ben-manes.caffeine</groupId>
+ <artifactId>caffeine</artifactId>
+ 
+</dependency>
+
+<dependency>
+    <groupId>ognl</groupId>
+    <artifactId>ognl</artifactId>
+    <version>3.1.12</version> 
+</dependency>
+		
+		
+		
+
+
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
@@ -164,6 +150,11 @@
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
 			<version>v20191111</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
@@ -212,6 +203,7 @@
 			<artifactId>org.mdmi.processors</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.fhir</artifactId>
@@ -227,26 +219,36 @@
 			<artifactId>org.mdmi.processors.hl7v2</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.cda</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
 			<version>1.6.14</version>
 		</dependency>
+
+
+	 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
+		 
 		</dependency>
+ 
+
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
 			<version>2.15.0</version>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -254,46 +256,51 @@
 			<version>3.12.0</version>
 		</dependency>
 		<!-- cda -->
+
 		<dependency>
 			<groupId>org.eclipse.mdht</groupId>
 			<artifactId>org.eclipse.mdht.emf.runtime</artifactId>
 			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.mdht</groupId>
 			<artifactId>org.eclipse.mdht.uml.hl7.vocab</artifactId>
 			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.mdht</groupId>
 			<artifactId>org.eclipse.mdht.uml.hl7.datatypes</artifactId>
 			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.mdht</groupId>
 			<artifactId>org.eclipse.mdht.uml.hl7.rim</artifactId>
 			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.eclipse.mdht</groupId>
 			<artifactId>org.eclipse.mdht.uml.cda</artifactId>
 			<version>3.0.0-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
-			<groupId>org.eclipse.uml2.types</groupId>
-			<artifactId>org.eclipse.uml2.types</artifactId>
-			<version>2.0.0.v20170605</version>
+			 <groupId>org.eclipse.uml2.types</groupId>
+  <artifactId>org.eclipse.uml2.types</artifactId>
+  <version>2.0.0.v20170605</version>
 		</dependency>
+
 		<dependency>
 			<groupId>lpg.runtime.java</groupId>
 			<artifactId>lpg.runtime.java</artifactId>
 			<version>2.0.17.v201004271640</version>
 		</dependency>
-		<dependency>
-			<groupId>org.mdmi.processor</groupId>
-			<artifactId>org.mdmi.processor.x12</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+		
+ 
+
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -318,9 +325,12 @@
 					</execution>
 				</executions>
 			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+
 				<executions>
 					<execution>
 						<goals>
@@ -334,6 +344,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -386,6 +397,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+
 		<repository>
 			<id>mdix</id>
 			<name>mdmiartifactory</name>
@@ -410,10 +422,11 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-	<profiles>
+		<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
+
 				<repository>
 					<id>mdix</id>
 					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
@@ -427,6 +440,8 @@
 						<enabled>true</enabled>
 					</snapshots>
 				</snapshotRepository>
+
+
 			</distributionManagement>
 		</profile>
 	</profiles>
