@@ -73,7 +73,7 @@ public class MdmiEngine {
 	private String mapsFolders;
 
 	@Value("#{systemProperties['mdmi.sourceFilterFlag'] ?: 'false'}")
-	private String sourceFilterFlag;
+	private Boolean sourceFilterFlag;
 
 	private HashMap<String, Properties> mapProperties = new HashMap<>();
 
@@ -98,7 +98,7 @@ public class MdmiEngine {
 
 		synchronized (this) {
 
-			MdmiUow.sourceFilter = false;
+			MdmiUow.sourceFilter = sourceFilterFlag.booleanValue();
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
