@@ -19,5 +19,8 @@ fhirterminology:
     password: ${FHIR_TERMINOLOGY_PASSWORD:user}
     url: ${FHIR_TERMINOLOGY_URL:http://terminologyservice.mdixinc.net:8080/fhir}
 
+mdmi:
+    sourceFilterFlag: ${MDMI_SOURCE_FILTER_FLAG:false}    
+
 origins:
   url: ""

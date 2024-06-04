@@ -65,15 +65,15 @@ public class MdmiEngine {
 	FHIRTerminologySettings terminologySettings;
 
 	@Autowired
+	MDMISettings mdmiSettings;
+
+	@Autowired
 	ServletContext context;
 
 	static Boolean loaded = Boolean.FALSE;
 
 	@Value("#{systemProperties['mdmi.maps'] ?: '/maps'}")
 	private String mapsFolders;
-
-	@Value("#{systemProperties['mdmi.sourceFilterFlag'] ?: 'false'}")
-	private Boolean sourceFilterFlag;
 
 	private HashMap<String, Properties> mapProperties = new HashMap<>();
 
@@ -98,7 +98,13 @@ public class MdmiEngine {
 
 		synchronized (this) {
 
-			MdmiUow.sourceFilter = sourceFilterFlag.booleanValue();
+			MdmiUow.sourceFilter = mdmiSettings.getSourceFilterFlag();
+
+			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
+			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
+			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
+			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
+			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
