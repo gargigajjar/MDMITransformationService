@@ -101,10 +101,6 @@ public class MdmiEngine {
 			MdmiUow.sourceFilter = mdmiSettings.getSourceFilterFlag();
 
 			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
-			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
-			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
-			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
-			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
