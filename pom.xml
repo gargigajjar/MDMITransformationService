@@ -300,6 +300,11 @@
 		</dependency>
 		
  
+ <dependency>
+  <groupId>org.mdmi.x12</groupId>
+    <artifactId>org.mdmi.x12</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+ </dependency>
 
 	</dependencies>
 	<build>

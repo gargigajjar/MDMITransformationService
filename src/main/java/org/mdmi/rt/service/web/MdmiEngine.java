@@ -19,7 +19,6 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.annotation.PostConstruct;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
@@ -94,13 +93,11 @@ public class MdmiEngine {
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
 
-		PostConstruct wtf;
-
 		synchronized (this) {
 
 			MdmiUow.sourceFilter = mdmiSettings.getSourceFilterFlag();
 
-			logger.info("sourceFiltersourceFiltersourceFiltersourceFiltersourceFilter" + MdmiUow.sourceFilter);
+			logger.info("sourceFilter status" + MdmiUow.sourceFilter);
 
 			if (loaded || lastModified == 0) {
 				long currentModified = 0;
