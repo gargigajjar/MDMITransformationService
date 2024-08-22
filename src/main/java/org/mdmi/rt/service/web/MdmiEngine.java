@@ -19,8 +19,6 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
 
 import org.apache.commons.io.FilenameUtils;
@@ -53,11 +51,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.yaml.snakeyaml.Yaml;
 
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("/mdmi/transformation")
 public class MdmiEngine {
 
-	jakarta.annotation.PostConstruct thepost;
+	// jakarta.annotation.PostConstruct thepost;
+
+	// javax.annotation.PostConstruct the otherone;
 
 	@Autowired
 	private ConfigurableApplicationContext applicationContext;
