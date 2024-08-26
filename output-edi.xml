@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <X12005010X217278A3>
+      <BHTBeginningOfHierarchicalTransaction>
+         <BHT01HierarchicalStructureCode>0007</BHT01HierarchicalStructureCode>
+         <BHT02TransactionSetPurposeCode>13</BHT02TransactionSetPurposeCode>
+         <BHT03SubmitterTransactionIdentifier>https://smiledigitalhealth.com/priorauth/pas-request-bundle-identifier:0aca4804-1e8c-4101-afeb-9daca6419131</BHT03SubmitterTransactionIdentifier>
+         <BHT04TransactionSetCreationDate>2024-04-18</BHT04TransactionSetCreationDate>
+         <BHT05TransactionSetCreationTime>18:21:13.350Z</BHT05TransactionSetCreationTime>
+      </BHTBeginningOfHierarchicalTransaction>
+      <Loop2000A>
+         <Loop2010A>
+            <NM1UtilizationManagementOrganizationUMOName2010A>
+               <NM101EntityIdentifierCode>ins</NM101EntityIdentifierCode>
+               <NM102EntityTypeQualifier>2</NM102EntityTypeQualifier>
+               <NM103UtilizationManagementOrganizationUMOLastOrOrganizationName>Health Level Seven International Insurance</NM103UtilizationManagementOrganizationUMOLastOrOrganizationName>
+               <NM108IdentificationCodeQualifier/>
+               <NM109UtilizationManagementOrganizationUMOIdentifier>http://smiledigitalhealth.com/pa-org-identifier:Payer-A Insurance</NM109UtilizationManagementOrganizationUMOIdentifier>
+            </NM1UtilizationManagementOrganizationUMOName2010A>
+         </Loop2010A>
+         <Loop2000B>
+            <Loop2010B>
+               <NM1RequesterName2010B>
+                  <NM101EntityIdentifierCode>prov</NM101EntityIdentifierCode>
+                  <NM102EntityTypeQualifier>2</NM102EntityTypeQualifier>
+                  <NM103RequesterLastOrOrganizationName>1ST CARE MEDICAL CLINIC</NM103RequesterLastOrOrganizationName>
+                  <NM108IdentificationCodeQualifier>xx</NM108IdentificationCodeQualifier>
+                  <NM109RequesterIdentifier>http://hl7.org/fhir/sid/us-npi:1407805088</NM109RequesterIdentifier>
+               </NM1RequesterName2010B>
+               <N3RequesterAddress2010B>
+                  <N301RequesterAddressLine>1635 W. Glendale Ave.</N301RequesterAddressLine>
+                  <N302RequesterAddressLine>asdf</N302RequesterAddressLine>
+               </N3RequesterAddress2010B>
+               <N4RequesterCityStateZIPCode2010B>
+                  <N401RequesterCityName>PHOENIX</N401RequesterCityName>
+                  <N402RequesterStateOrProvinceCode>AZ</N402RequesterStateOrProvinceCode>
+                  <N403RequesterPostalZoneOrZIPCode>85021</N403RequesterPostalZoneOrZIPCode>
+                  <N404CountryCode>USA</N404CountryCode>
+               </N4RequesterCityStateZIPCode2010B>
+            </Loop2010B>
+            <Loop2000C>
+               <Loop2010C>
+                  <NM1SubscriberName2010C>
+                     <NM101EntityIdentifierCode>IL</NM101EntityIdentifierCode>
+                     <NM102EntityTypeQualifier>2</NM102EntityTypeQualifier>
+                     <NM103SubscriberLastName>Homenick806</NM103SubscriberLastName>
+                     <NM104SubscriberFirstName>Dianna917</NM104SubscriberFirstName>
+                     <NM105SubscriberMiddleNameOrInitial>Kiersten731</NM105SubscriberMiddleNameOrInitial>
+                     <NM106SubscriberNamePrefix>
+                     </NM106SubscriberNamePrefix>
+                     <NM107SubscriberNameSuffix>
+                     </NM107SubscriberNameSuffix>
+                     <NM108IdentificationCodeQualifier>xx</NM108IdentificationCodeQualifier>
+                     <NM109SubscriberPrimaryIdentifier>https://github.com/synthetichealth/synthea:85e086aa-c117-6cbf-e2b4-4a9e621a73c1</NM109SubscriberPrimaryIdentifier>
+                  </NM1SubscriberName2010C>
+                  <N3SubscriberAddress2010C>
+                     <N301SubscriberAddressLine>607 Boyle Plaza Apt 43</N301SubscriberAddressLine>
+                     <N302SubscriberAddressLine>asdf</N302SubscriberAddressLine>
+                  </N3SubscriberAddress2010C>
+                  <N4SubscriberCityStateZIPCode2010C>
+                     <N401SubscriberCityName>North Brookfield</N401SubscriberCityName>
+                     <N402SubscriberStateOrProvinceCode>MA</N402SubscriberStateOrProvinceCode>
+                     <N403SubscriberPostalZoneOrZIPCode>01535</N403SubscriberPostalZoneOrZIPCode>
+                     <N404CountryCode>US</N404CountryCode>
+                  </N4SubscriberCityStateZIPCode2010C>
+                  <DMGSubscriberDemographicInformation2010C>
+                     <DMG01DateTimePeriodFormatQualifier>D8</DMG01DateTimePeriodFormatQualifier>
+                     <DMG02SubscriberBirthDate>2007-03-31</DMG02SubscriberBirthDate>
+                     <DMG03SubscriberGenderCode>female</DMG03SubscriberGenderCode>
+                  </DMGSubscriberDemographicInformation2010C>
+               </Loop2010C>
+               <Loop2000D>
+                  <Loop2010D/>
+               </Loop2000D>
+            </Loop2000C>
+         </Loop2000B>
+      </Loop2000A>
+   </X12005010X217278A3>

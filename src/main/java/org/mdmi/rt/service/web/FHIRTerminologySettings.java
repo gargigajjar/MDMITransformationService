@@ -11,17 +11,21 @@
  *******************************************************************************/
 package org.mdmi.rt.service.web;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
 /**
  * @author seanmuir
  *
  */
 
-@Component
-@ConfigurationProperties("fhirterminology")
 public class FHIRTerminologySettings {
+
+	/**
+	 *
+	 */
+	public FHIRTerminologySettings() {
+		super();
+		url = "http://terminologyservice.mdixinc.net:8080/fhir";
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @return the url

@@ -11,16 +11,11 @@
  *******************************************************************************/
 package org.mdmi.rt.service.web;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
-
 /**
  * @author seanmuir
  *
  */
 
-@Component
-@ConfigurationProperties("mdmi")
 public class MDMISettings {
 
 	private Boolean sourceFilterFlag;
