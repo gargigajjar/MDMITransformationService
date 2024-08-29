@@ -15,7 +15,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.junit.jupiter.api.Test;
-import org.mdmi.rt.service.web.EDIProcessor;
 import org.mdmi.rt.service.web.MdmiEngine;
 import org.smooks.support.StreamUtils;
 
@@ -43,51 +42,23 @@ class TestTranscorm {
 		}
 	}
 
-	private static byte[] readEDIXMLRMessage() {
-		try {
-			return StreamUtils.readStream(new FileInputStream("output-edi.xml"));
-		} catch (IOException e) {
-			e.printStackTrace();
-			return "<no-message/>".getBytes();
-		}
-	}
-
-	// @Test
-	// void testEDI2FHIR() throws Exception {
-	// MdmiEngine mdmiEngine = new MdmiEngine();
-	// // mdmiEngine.mdmiSettings = new MDMISettings();
-	// String result = mdmiEngine.transformation2(
-	// "X12.278", "FHIRR4JSON.MasterBundleReference", new String(readInputMessage()));
-	// System.err.println(result);
-	//
-	// }
-
 	@Test
-	void testFHIR2EDI() throws Exception {
+	void testEDI2FHIR() throws Exception {
 		MdmiEngine mdmiEngine = new MdmiEngine();
 		// mdmiEngine.mdmiSettings = new MDMISettings();
-		String result = mdmiEngine.transformation2(
-			"FHIRR4JSON.MasterBundleReference", "X12.278", new String(readFHIRMessage()));
+		String result = mdmiEngine.transformation(
+			"X12.278", "FHIRR4JSON.MasterBundleReference", new String(readInputMessage()));
 		System.err.println(result);
 
 	}
 
 	@Test
-	void testXML2EDI() throws Exception {
-
-		// String message = readEDIXMLRMessage();
-
-		String message = new String(readEDIXMLRMessage()).replaceAll("[\\n\\r]", "");
-
-		String messageOut = EDIProcessor.transformXML2EDI(message.getBytes());
-		System.err.println(messageOut);
-
-		//
-		// MdmiEngine mdmiEngine = new MdmiEngine();
-		// // mdmiEngine.mdmiSettings = new MDMISettings();
-		// String result = mdmiEngine.transformation2(
-		// "FHIRR4JSON.MasterBundleReference", "X12.278", new String(readFHIRMessage()));
-		// System.err.println(result);
+	void testFHIR2EDI() throws Exception {
+		MdmiEngine mdmiEngine = new MdmiEngine();
+		// mdmiEngine.mdmiSettings = new MDMISettings();
+		String result = mdmiEngine.transformation(
+			"FHIRR4JSON.MasterBundleReference", "X12.278", new String(readFHIRMessage()));
+		System.err.println(result);
 
 	}
 

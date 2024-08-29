@@ -1,0 +1,7 @@
+
+
+    String result = mdmiEngine.transformation(
+			"X12.278", "FHIRR4JSON.MasterBundleReference", new String(readInputMessage()));
+
+	String result = mdmiEngine.transformation(
+			"FHIRR4JSON.MasterBundleReference", "X12.278", new String(readFHIRMessage()));

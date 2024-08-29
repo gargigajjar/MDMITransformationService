@@ -380,7 +380,7 @@ public class MdmiEngine {
 
 	}
 
-	public String transformation2(String source, String target, String message) throws Exception {
+	public String transformation(String source, String target, String message) throws Exception {
 		System.out.println("DEBUG Start transformation ");
 		loadMaps();
 		loadPreProcessors(Mdmi.INSTANCE());
