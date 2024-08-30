@@ -437,7 +437,7 @@
                                                                                                 <xsd:element minOccurs="0" name="INS14" type="xsd:string" />
                                                                                                 <xsd:element minOccurs="0" name="INS15" type="xsd:string" />
                                                                                                 <xsd:element minOccurs="0" name="INS16" type="xsd:string" />
-                                                                                                <xsd:element minOccurs="0" name="INS17" type="xsd:string" />
+                                                                                                <xsd:element minOccurs="0" name="INS17BirthSequenceNumber" type="xsd:string" />
                                                                                             </xsd:sequence>
                                                                                         </xsd:sequence>
                                                                                     </xsd:complexType>

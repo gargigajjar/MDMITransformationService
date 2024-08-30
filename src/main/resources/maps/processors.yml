@@ -12,15 +12,19 @@ postprocessors:
        groups:
          - FHIRR4JSON
 sourcesemanticprocessors:
+    normalize:
+        name: Normalize
+        class: org.mdmi.rt.service.web.Normalizer 
+        groups:
+         - FHIRR4JSON
     sourcelog:
         name: SourceLogSemantic
         class: org.mdmi.core.engine.semanticprocessors.LogSemantic
         arguments:
-          direction: FROM         
+          direction: FROM
 targetsemanticprocessors:
     targetlog:
         name: TargetLogSemantic
         class: org.mdmi.core.engine.semanticprocessors.LogSemantic
         arguments:
           direction: TO
-                     
