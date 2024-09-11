@@ -90,4 +90,70 @@ class TestConversion {
 		}
 	}
 
+	/*
+	 * @Test
+	 * void testJavaEDI2XML() throws IOException, ParserConfigurationException, TransformerException {
+	 *
+	 * String inputData = "ST*278*0001*005010X217~" + "BHT*0007*11*200300114000001*20050501*1400*18~" + "";
+	 * Path testPath = Paths.get("target/test-output/java/javaConversion");
+	 * if (!Files.exists(testPath)) {
+	 * Files.createDirectories(testPath);
+	 * }
+	 * inputData = sanitizeInputData(inputData);
+	 *
+	 * // Create an empty XML document
+	 * DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	 * DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+	 * Document doc = docBuilder.newDocument();
+	 *
+	 * // Root element
+	 * Element rootElement = doc.createElement("Segments");
+	 * doc.appendChild(rootElement);
+	 *
+	 * // Split the input data by tilde (~) to get each segment
+	 * String[] segments = inputData.split("~");
+	 *
+	 * // Process each segment
+	 * for (String segment : segments) {
+	 * if (segment.trim().isEmpty())
+	 * continue; // Skip empty lines
+	 *
+	 * // Split the segment by asterisk (*) to get each part
+	 * String[] elements = segment.split("\\*");
+	 *
+	 * // Use the first element as the tag name (e.g., HL, NM1)
+	 * if (elements.length > 0) {
+	 * Element segmentElement = doc.createElement(elements[0]);
+	 * rootElement.appendChild(segmentElement);
+	 *
+	 * // Add remaining elements as sub-elements
+	 * for (int i = 1; i < elements.length; i++) {
+	 * Element element = doc.createElement("Element" + i);
+	 * element.appendChild(doc.createTextNode(elements[i]));
+	 * segmentElement.appendChild(element);
+	 * }
+	 * }
+	 * }
+	 *
+	 * try (OutputStream outputStream = Files.newOutputStream(testPath)) {
+	 * StreamResult result = new StreamResult(outputStream); // StreamResult with OutputStream
+	 *
+	 * // Write the content into an XML file
+	 * TransformerFactory transformerFactory = TransformerFactory.newInstance();
+	 * Transformer transformer = transformerFactory.newTransformer();
+	 * transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+	 * DOMSource source = new DOMSource(doc);
+	 *
+	 * transformer.transform(source, result);
+	 *
+	 * System.out.println("File converted to XML successfully!");
+	 * }
+	 *
+	 * }
+	 *
+	 * private static String sanitizeInputData(String input) {
+	 * // Regular expression to match any illegal XML characters
+	 * return input.replaceAll("[^\\u0009\\u000A\\u000D\\u0020-\\uD7FF\\uE000-\\uFFFD]", "");
+	 * }
+	 */
 }
