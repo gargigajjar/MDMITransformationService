@@ -1269,58 +1269,392 @@
 																					</xsd:complexType>
 																				</xsd:element>
 																				<xsd:element dfdl:initiator="HL"
-																		name="Loop2000F" minOccurs="0" maxOccurs="1">
-																		<xsd:complexType>
-																			<xsd:sequence>
-																				<xsd:element minOccurs="0"
-																					name="HLServiceLevel2000F">
+																					name="Loop2000F" minOccurs="0" maxOccurs="1">
 																					<xsd:complexType>
-																						<xsd:sequence
-																							dfdl:ref="ibmEdiFmt:EDISegmentFormat">
-																							<xsd:sequence
-																								dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
-																								<xsd:element minOccurs="0"
-																									name="HL01HierarchicalIDNumber"
-																									type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="HL02HierarchicalParentIDNumber"
-																									type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="HL03HierarchicalLevelCode"
-																									type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="HL04HierarchicalChildCode"
-																									type="xsd:string" />
-																							</xsd:sequence>
+																						<xsd:sequence>
+																							<xsd:element minOccurs="0"
+																								name="HLServiceLevel2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="HL01HierarchicalIDNumber"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HL02HierarchicalParentIDNumber"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HL03HierarchicalLevelCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HL04HierarchicalChildCode"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="TRN"
+																								name="TRNServiceTraceNumber2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="TRN01TraceTypeCode" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="TRN02PatientEventTraceNumber"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="TRN03TraceAssigningEntityIdentifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="TRN04TraceAssigningEntityAdditionalIdentifier"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="AAA"
+																								name="AAAServiceRequestValidation2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="AAA01ValidRequestIndicator"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="AAA02" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="AAA03RejectReasonCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="AAA04FollowupActionCode"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="HCR"
+																								name="HCRHealthCareServicesReview2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="HCR01ActionCode" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HCR02ReviewIdentificationNumber"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HCR03ReviewDecisionReasonCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HCR04SecondSurgicalOpinionIndicator"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								maxOccurs="99" dfdl:initiator="REF"
+																								name="REF2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="REF01" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="REF02" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="REF03" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="REF04" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								maxOccurs="99" dfdl:initiator="DTP"
+																								name="DTP2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="DTP01DateTimeQualifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="DTP02DateTimePeriodFormatQualifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="DTP03" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="HI"
+																								name="HIRequestForAdditionalInformation2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="HI01HealthCareCodeInformation2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HI02HealthCareCodeInformation2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HI03HealthCareCodeInformation2000F"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="SV1"
+																								name="SV1ProfessionalService2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="SV101CompositeMedicalProcedureIdentifier2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV102ServiceLineAmount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV103UnitOrBasisForMeasurementCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV104ServiceUnitCount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV105" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV106" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV107CompositeDiagnosisCodePointer2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV108" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV109" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV110" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV111EPSDTIndicator" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV112" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV113" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV114" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV115" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV116" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV117" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV118" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV119" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV120NursingHomeLevelOfCare"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV121" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								maxOccurs="99" dfdl:initiator="SV2"
+																								name="SV2InstitutionalServiceLine2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="SV201ServiceLineRevenueCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV202CompositeMedicalProcedureIdentifier2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV203ServiceLineAmount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV204UnitOrBasisForMeasurementCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV205ServiceUnitCount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV206ServiceLineRate"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV207" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV208" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV209NursingHomeResidentialStatusCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV210NursingHomeLevelOfCare"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								maxOccurs="99" dfdl:initiator="SV3"
+																								name="SV3DentalService2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="SV301CompositeMedicalProcedureIdentifier2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV302ServiceLineAmount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV303" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV304OralCavityDesignation2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV305ProsthesisCrownOrInlayCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV306ServiceUnitCount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV307Description" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV308" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV309" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV310" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="SV311" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								maxOccurs="99" dfdl:initiator="HSD"
+																								name="HSDHealthCareServicesDelivery2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="HSD01QuantityQualifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD02ServiceUnitCount"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD03UnitOrBasisForMeasurementCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD04SampleSelectionModulus"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD05TimePeriodQualifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD06PeriodCount" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD07DeliveryFrequencyCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="HSD08DeliveryPatternTimeCode"
+																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="MSG" name="MSGMessageText2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="MSG01FreeFormMessageText"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="MSG02" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="MSG03" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="PWK"
+																								name="PWKAdditionalServiceInformation2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="PWK01AttachmentReportTypeCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK02ReportTransmissionCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK03" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK04" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK05IdentificationCodeQualifier"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK06AttachmentControlNumber"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK07AttachmentDescription"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK08" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="PWK09" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
 																						</xsd:sequence>
 																					</xsd:complexType>
 																				</xsd:element>
-																				<xsd:element minOccurs="0"
-																					dfdl:initiator="TRN"
-																					name="TRNServiceTraceNumber2000F">
-																					<xsd:complexType>
-																						<xsd:sequence
-																							dfdl:ref="ibmEdiFmt:EDISegmentFormat">
-																							<xsd:sequence
-																								dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
-																								<xsd:element minOccurs="0"
-																									name="TRN01TraceTypeCode" type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="TRN02PatientEventTraceNumber"
-																									type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="TRN03TraceAssigningEntityIdentifier"
-																									type="xsd:string" />
-																								<xsd:element minOccurs="0"
-																									name="TRN04TraceAssigningEntityAdditionalIdentifier"
-																									type="xsd:string" />
-																							</xsd:sequence>
-																						</xsd:sequence>
-																					</xsd:complexType>
-																				</xsd:element>
-																			</xsd:sequence>
-																		</xsd:complexType>
-																	</xsd:element>
 																			</xsd:sequence>
 																		</xsd:complexType>
 																	</xsd:element>
