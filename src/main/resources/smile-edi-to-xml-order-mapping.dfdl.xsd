@@ -1600,24 +1600,6 @@
 																								</xsd:complexType>
 																							</xsd:element>
 																							<xsd:element minOccurs="0"
-																								dfdl:initiator="MSG" name="MSGMessageText2000F">
-																								<xsd:complexType>
-																									<xsd:sequence
-																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
-																										<xsd:sequence
-																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
-																											<xsd:element minOccurs="0"
-																												name="MSG01FreeFormMessageText"
-																												type="xsd:string" />
-																											<xsd:element minOccurs="0"
-																												name="MSG02" type="xsd:string" />
-																											<xsd:element minOccurs="0"
-																												name="MSG03" type="xsd:string" />
-																										</xsd:sequence>
-																									</xsd:sequence>
-																								</xsd:complexType>
-																							</xsd:element>
-																							<xsd:element minOccurs="0"
 																								dfdl:initiator="PWK"
 																								name="PWKAdditionalServiceInformation2000F">
 																								<xsd:complexType>
@@ -1648,6 +1630,24 @@
 																												name="PWK08" type="xsd:string" />
 																											<xsd:element minOccurs="0"
 																												name="PWK09" type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="MSG" name="MSGMessageText2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="MSG01FreeFormMessageText"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="MSG02" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="MSG03" type="xsd:string" />
 																										</xsd:sequence>
 																									</xsd:sequence>
 																								</xsd:complexType>
