@@ -4,7 +4,7 @@ preprocessors:
        name: PreProcessorForFHIRJson
        class: org.mdmi.processors.fhir.PreProcessorForFHIRJson
        groups:
-         - FHIRR4JSON         
+         - xFHIRR4JSON         
 postprocessors:
     fhir:
        name: FHIRR4PostProcessorJson

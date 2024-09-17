@@ -1,0 +1,55 @@
+<Bundle xmlns='http://hl7.org/fhir'>
+  <id value='PASTest-SR-Bundle-01'/>
+ <type value='collection'/>
+  <timestamp value='2023-10-12T11:02:00+05:00'/>
+  <entry>
+    <fullUrl value='http://example.org/fhir/Claim/PASTest-SR-Claim-01'/>
+    <resource>
+      <Claim>
+        <id value='PASTest-SR-Claim-01'/>
+        <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-levelOfServiceCode'>
+          <valueCodeableConcept>
+            <coding>
+              <system value='http://codesystem.x12.org/005010/1338'/>
+              <code value='U'/>
+              <display value='Urgent'/>
+            </coding>
+          </valueCodeableConcept>
+        </extension>
+        <item>
+          <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-itemTraceNumber'>
+            <valueIdentifier>
+              <system value='http://example.org/ITEM_TRACE_NUMBER'/>
+              <value value='1122334'/>
+            </valueIdentifier>
+          </extension>
+          <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber'>
+            <valueString value='1122445'/>
+          </extension>
+          <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber'>
+            <valueString value='9988311'/>
+          </extension>
+          <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-serviceItemRequestType'>
+            <valueCodeableConcept>
+              <coding>
+                <system value='http://codesystem.x12.org/005010/1525'/>
+                <code value='SC'/>
+                <display value='Specialty Care Review'/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+          <extension url='http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-certificationType'>
+            <valueCodeableConcept>
+              <coding>
+                <system value='http://codesystem.x12.org/005010/1322'/>
+                <code value='I'/>
+                <display value='Initial'/>
+              </coding>
+            </valueCodeableConcept>
+          </extension>
+        </item>
+      </Claim>
+    </resource>
+  </entry>
+  
+</Bundle>

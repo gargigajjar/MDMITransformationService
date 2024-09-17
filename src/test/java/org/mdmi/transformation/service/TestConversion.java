@@ -53,6 +53,15 @@ class TestConversion {
 		}
 	}
 
+	private static byte[] readXMLMessage() {
+		try {
+			return StreamUtils.readStream(new FileInputStream("input-xml.xml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+			return "<no-message/>".getBytes();
+		}
+	}
+
 	@Test
 	void testEDI2XML() throws IOException, SAXException {
 		Smooks smooks = new Smooks(
@@ -79,6 +88,42 @@ class TestConversion {
 				executionContext, new StreamSource(new ByteArrayInputStream(readInputMessage())), result);
 
 			Path path = Paths.get("target/test-output/EDI2XML/x12.xml");
+			byte[] strToBytes = result.getResult().getBytes();
+
+			Files.write(path, strToBytes);
+
+			System.out.println(result.getResult());
+
+		} finally {
+			smooks.close();
+		}
+	}
+
+	@Test
+	void testXML2EDI() throws IOException, SAXException {
+		Smooks smooks = new Smooks(
+			new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
+		smooks.addResourceConfigs("smile-smooks-unparser-config.xml");
+
+		try {
+
+			Path testPath = Paths.get("target/test-output/" + "XML2EDI");
+			if (!Files.exists(testPath)) {
+				Files.createDirectories(testPath);
+			}
+			// Create an exec context - no profiles....
+			ExecutionContext executionContext = smooks.createExecutionContext();
+
+			StringResult result = new StringResult();
+
+			// Configure the execution context to generate a report...
+			// executionContext.getContentDeliveryRuntime().addExecutionEventListener(new HtmlReportGenerator("target/report/report.html",
+			// executionContext.getApplicationContext()));
+
+			// Filter the input message to the outputWriter, using the execution context...
+			smooks.filterSource(executionContext, new StreamSource(new ByteArrayInputStream(readXMLMessage())), result);
+
+			Path path = Paths.get("target/test-output/XML2EDI/x12.edi");
 			byte[] strToBytes = result.getResult().getBytes();
 
 			Files.write(path, strToBytes);
