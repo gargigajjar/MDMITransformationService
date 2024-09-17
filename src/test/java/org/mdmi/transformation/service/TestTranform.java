@@ -1,9 +1,9 @@
 /*******************************************************************************
- * Copyright (c) 2024 seanmuir.
+ * Copyright (c) 2024 MDIX, Inc.
  * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
+ * are made available under the terms of the Apache License, Version 2.0
+ * which accompany this distribution and is available at 
+ * https\://www.apache.org/licenses/LICENSE-2.0.
  *
  * Contributors:
  *     seanmuir - initial API and implementation
