@@ -31,7 +31,6 @@ public class Normalizer extends ConfigurableSemanticProcessor {
 	@Override
 	public void processSemanticModel(ElementValueSet elementSet) {
 		// TODO Auto-generated method stub
-		System.err.println("Gargi");
 		// List<IElementValue> parentValue = null;
 		String refValue = "";
 		String idValue = "";
@@ -50,7 +49,7 @@ public class Normalizer extends ConfigurableSemanticProcessor {
 								String[] temp = refValue.split("/");
 								refValue = temp[temp.length - 1];
 							}
-							System.err.println("child " + child.getName());
+							// System.err.println("child " + child.getName());
 						}
 					} else {
 						XValue xvalue = (XValue) semanticElement.getXValue();
@@ -58,7 +57,7 @@ public class Normalizer extends ConfigurableSemanticProcessor {
 					}
 
 					SemanticElement parent = se.getRelationshipByName("NORMALIZE").getRelatedSemanticElement();
-					System.err.println(se.getName() + " : inside resolve condition : " + parent.getName());
+					// System.err.println(se.getName() + " : inside resolve condition : " + parent.getName());
 
 					for (IElementValue parentValue : elementSet.getElementValuesByName(parent)) {
 						if (parent.getDatatype().getName().equals("Container")) {
@@ -73,23 +72,12 @@ public class Normalizer extends ConfigurableSemanticProcessor {
 						}
 
 						if (idValue.equals(refValue) && parentValue.getChildren() != null) {
-							for (IElementValue child : semanticElement.getChildren()) {
-								System.err.println(
-									"Children of " + semanticElement.getName() + " :: " + child.getName());
-							}
-							System.err.println(
-								semanticElement.getName() + " has new children from " + parentValue.getName() +
-										" with the id of " + idValue);
 							for (IElementValue child : parentValue.getChildren()) {
 								semanticElement.addChild(child);
 
-								System.err.println("Children :: " + child.getName());
+								// System.err.println("Children :: " + child.getName());
 							}
 
-							for (IElementValue child : semanticElement.getChildren()) {
-								System.err.println(
-									"Children of " + semanticElement.getName() + " :: " + child.getName());
-							}
 						}
 					}
 
