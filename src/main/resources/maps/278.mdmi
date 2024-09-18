@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdmi="http://schema.omg.org/spec/MDMI/1.0">
   <mdmi:MessageGroup xmi:id="_W9vpUFlxEe-ezYGZbS4PDQ" name="X12" description="SKIPCONTAINMENT" defaultLocationExprLang="XPath" defaultConstraintExprLang="JavaScript" defaultRuleExprLang="JavaScript">
-    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-09-17 17:19:07.14">
+    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-09-18 08:52:51.77">
       <syntaxModel xmi:id="_W9vpUllxEe-ezYGZbS4PDQ">
         <root xsi:type="mdmi:Bag" xmi:id="_W9vpU1lxEe-ezYGZbS4PDQ" name="DocumentRoot" maxOccurs="1" location="DocumentRoot" semanticElement="_W9yG6VlxEe-ezYGZbS4PDQ">
           <nodes xsi:type="mdmi:Bag" xmi:id="_W9vpVFlxEe-ezYGZbS4PDQ" name="X12005010X217278A3" maxOccurs="1" location="X12005010X217278A3" semanticElement="_W9yG6llxEe-ezYGZbS4PDQ" fieldName="X12005010X217278A3">
@@ -863,7 +863,6 @@
                             <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTH1lxEe-ezYGZbS4PDQ" name="SV10703DiagnosisCodePointer" maxOccurs="1" location="SV10703DiagnosisCodePointer" semanticElement="_W9zUT1lxEe-ezYGZbS4PDQ" fieldName="SV10703DiagnosisCodePointer"/>
                           </nodes>
                           <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_Ul8xwHD6Ee-FTpuZNkMOxA" name="SV101CompositeMedicalProcedureIdentifier2000F" description="1" maxOccurs="1" location="SV101CompositeMedicalProcedureIdentifier2000F" semanticElement="_aTHv8HD6Ee-FTpuZNkMOxA" fieldName="SV109"/>
-                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_NC2UUHU6Ee-MCsbFDAy6Qg" name="SV101CompositeMedicalProcedureIdentifier2000F" description="1" maxOccurs="1" location="SV101CompositeMedicalProcedureIdentifier2000F[target]" semanticElement="_VLt44HU6Ee-MCsbFDAy6Qg" fieldName="SV109"/>
                         </nodes>
                         <nodes xsi:type="mdmi:Bag" xmi:id="_W9wTIFlxEe-ezYGZbS4PDQ" name="MSGMessageText2000F" maxOccurs="1" location="MSGMessageText2000F" semanticElement="_W9zUVVlxEe-ezYGZbS4PDQ" fieldName="MSGMessageText2000F">
                           <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTIVlxEe-ezYGZbS4PDQ" name="MSG03" maxOccurs="1" location="MSG03" semanticElement="_W9zUVllxEe-ezYGZbS4PDQ" fieldName="MSG03"/>
@@ -3541,7 +3540,7 @@
         <semanticElements xmi:id="_W9zUKllxEe-ezYGZbS4PDQ" name="TOO0305ToothSurfaceCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zUJ1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wS-llxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9zUK1lxEe-ezYGZbS4PDQ" name="TOO0302ToothSurfaceCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zUJ1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wS-1lxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9zULFlxEe-ezYGZbS4PDQ" name="TOO0303ToothSurfaceCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zUJ1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wS_FlxEe-ezYGZbS4PDQ"/>
-        <semanticElements xmi:id="_W9zULVlxEe-ezYGZbS4PDQ" name="SV1ProfessionalService2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" children="_W9zULllxEe-ezYGZbS4PDQ _W9zUL1lxEe-ezYGZbS4PDQ _W9zUMFlxEe-ezYGZbS4PDQ _W9zUMVlxEe-ezYGZbS4PDQ _W9zUMllxEe-ezYGZbS4PDQ _W9zUM1lxEe-ezYGZbS4PDQ _W9zUNFlxEe-ezYGZbS4PDQ _W9zUNVlxEe-ezYGZbS4PDQ _W9zUNllxEe-ezYGZbS4PDQ _W9zUN1lxEe-ezYGZbS4PDQ _W9zUOFlxEe-ezYGZbS4PDQ _W9zUOVlxEe-ezYGZbS4PDQ _W9zUOllxEe-ezYGZbS4PDQ _W9zUO1lxEe-ezYGZbS4PDQ _W9zUPFlxEe-ezYGZbS4PDQ _W9zUPVlxEe-ezYGZbS4PDQ _W9zUPllxEe-ezYGZbS4PDQ _W9zUP1lxEe-ezYGZbS4PDQ _W9zUQFlxEe-ezYGZbS4PDQ _W9zUQVlxEe-ezYGZbS4PDQ _W9zUQllxEe-ezYGZbS4PDQ _W9zUS1lxEe-ezYGZbS4PDQ _aTHv8HD6Ee-FTpuZNkMOxA _NRd2gHEFEe-fIuYfdeu5bg _VLt44HU6Ee-MCsbFDAy6Qg" syntaxNode="_W9wS_VlxEe-ezYGZbS4PDQ">
+        <semanticElements xmi:id="_W9zULVlxEe-ezYGZbS4PDQ" name="SV1ProfessionalService2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" children="_W9zULllxEe-ezYGZbS4PDQ _W9zUL1lxEe-ezYGZbS4PDQ _W9zUMFlxEe-ezYGZbS4PDQ _W9zUMVlxEe-ezYGZbS4PDQ _W9zUMllxEe-ezYGZbS4PDQ _W9zUM1lxEe-ezYGZbS4PDQ _W9zUNFlxEe-ezYGZbS4PDQ _W9zUNVlxEe-ezYGZbS4PDQ _W9zUNllxEe-ezYGZbS4PDQ _W9zUN1lxEe-ezYGZbS4PDQ _W9zUOFlxEe-ezYGZbS4PDQ _W9zUOVlxEe-ezYGZbS4PDQ _W9zUOllxEe-ezYGZbS4PDQ _W9zUO1lxEe-ezYGZbS4PDQ _W9zUPFlxEe-ezYGZbS4PDQ _W9zUPVlxEe-ezYGZbS4PDQ _W9zUPllxEe-ezYGZbS4PDQ _W9zUP1lxEe-ezYGZbS4PDQ _W9zUQFlxEe-ezYGZbS4PDQ _W9zUQVlxEe-ezYGZbS4PDQ _W9zUQllxEe-ezYGZbS4PDQ _W9zUS1lxEe-ezYGZbS4PDQ _aTHv8HD6Ee-FTpuZNkMOxA _NRd2gHEFEe-fIuYfdeu5bg" syntaxNode="_W9wS_VlxEe-ezYGZbS4PDQ">
           <mapToMdmi xmi:id="_XBDr0HEGEe-Vl4yP12JwRw" name="Message2MDMI4SV1ProfessionalService2000F" businessElement="_C52tAHEGEe-Vl4yP12JwRw"/>
         </semanticElements>
         <semanticElements xmi:id="_W9zULllxEe-ezYGZbS4PDQ" name="SV109" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zULVlxEe-ezYGZbS4PDQ" syntaxNode="_W9wS_llxEe-ezYGZbS4PDQ"/>
@@ -5239,11 +5238,12 @@
           <mapToMdmi xmi:id="_B5boUHA2Ee-YIpOdFPSDZA" name="Message2MDMI4HI01HealthCareCodeInformation2000E" businessElement="_xFMPEXA1Ee-YIpOdFPSDZA" rule="DATATYPEMAP:mapStringToCommunicatedDiagCode"/>
         </semanticElements>
         <semanticElements xmi:id="_aTHv8HD6Ee-FTpuZNkMOxA" name="SV101CompositeMedicalProcedureIdentifier2000F" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zULVlxEe-ezYGZbS4PDQ" syntaxNode="_Ul8xwHD6Ee-FTpuZNkMOxA">
+          <mapFromMdmi xmi:id="_59zmkXW8Ee-MCsbFDAy6Qg" name="MDMI2Message4SV101CompositeMedicalProcedureIdentifier2000F" businessElement="_05FIfHW8Ee-MCsbFDAy6Qg" rule="DATATYPEMAP:mapCodedElementToString"/>
           <mapToMdmi xmi:id="_oybGkHEEEe-fIuYfdeu5bg" name="Message2MDMI4SV101CompositeMedicalProcedureIdentifier2000F" businessElement="_dovcYHEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ProductOrServiceCode"/>
           <mapToMdmi xmi:id="_rrtA0HEEEe-fIuYfdeu5bg" name="Message2MDMI4SV101CompositeMedicalProcedureIdentifier2000F1" businessElement="_dovcYXEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ModifierCode"/>
           <mapToMdmi xmi:id="_yHGW8HEEEe-fIuYfdeu5bg" name="Message2MDMI4SV101CompositeMedicalProcedureIdentifier2000F2" businessElement="_dowDcHEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ProductOrServiceCodeEnd"/>
         </semanticElements>
-        <semanticElements xmi:id="_wZ3koHD6Ee-FTpuZNkMOxA" name="xSV202CompositeMedicalProcedureIdentifier2000F" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuwVlxEe-ezYGZbS4PDQ" syntaxNode="_kr8k8HD6Ee-FTpuZNkMOxA">
+        <semanticElements xmi:id="_wZ3koHD6Ee-FTpuZNkMOxA" name="SV202CompositeMedicalProcedureIdentifier2000F" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuwVlxEe-ezYGZbS4PDQ" syntaxNode="_kr8k8HD6Ee-FTpuZNkMOxA">
           <mapToMdmi xmi:id="_eDKSEHEFEe-fIuYfdeu5bg" name="Message2MDMI4SV202CompositeMedicalProcedureIdentifier2000F" businessElement="_dovcYHEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ProductOrServiceCode"/>
           <mapToMdmi xmi:id="_fDz2wHEFEe-fIuYfdeu5bg" name="Message2MDMI4SV202CompositeMedicalProcedureIdentifier2000F1" businessElement="_dovcYXEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ModifierCode"/>
           <mapToMdmi xmi:id="_izLEcHEFEe-fIuYfdeu5bg" name="Message2MDMI4SV202CompositeMedicalProcedureIdentifier2000F2" businessElement="_dowDcHEEEe-fIuYfdeu5bg" rule="DATATYPEMAP:mapToSV1ProductOrServiceCodeEnd"/>
@@ -5277,9 +5277,6 @@
         <semanticElements xmi:id="_N1_ekHTkEe-MCsbFDAy6Qg" name="TEMPSE" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu1FlxEe-ezYGZbS4PDQ">
           <mapFromMdmi xmi:id="_Qez68XTkEe-MCsbFDAy6Qg" name="MDMI2Message4TEMPSE" businessElement="_hRCopVlyEe-ezYGZbS4PDQ" rule="DATATYPEMAP:mapDateTimeToString"/>
           <mapToMdmi xmi:id="_Qez68HTkEe-MCsbFDAy6Qg" name="Message2MDMI4TEMPSE" businessElement="_hRCopVlyEe-ezYGZbS4PDQ" rule="DATATYPEMAP:mapStringToDateTime"/>
-        </semanticElements>
-        <semanticElements xmi:id="_VLt44HU6Ee-MCsbFDAy6Qg" name="SV101CompositeMedicalProcedureIdentifier2000FTarget" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9zULVlxEe-ezYGZbS4PDQ" syntaxNode="_NC2UUHU6Ee-MCsbFDAy6Qg">
-          <mapFromMdmi xmi:id="_VLt44XU6Ee-MCsbFDAy6Qg" name="MDMI2Message4SV101CompositeMedicalProcedureIdentifier2000F" businessElement="_C87GdnToEe-MCsbFDAy6Qg" rule="DATATYPEMAP:mapProductOrServiceCodeToSV1"/>
         </semanticElements>
       </elementSet>
     </models>
@@ -5355,10 +5352,10 @@
       <businessElements xmi:id="_m9vmKHTkEe-MCsbFDAy6Qg" name="ClaimItemServiceItemRequestTypeCode" description="" reference="ClaimItemServiceItemRequestTypeCode" uniqueIdentifier="f2a51ece-fc7b-4525-a2d2-16755b198c6f" referenceDatatype="_W97QxllxEe-ezYGZbS4PDQ" enumValueSetField="" enumValueField="" enumValueDescrField="HL7" enumValueSet="" readonly="true"/>
       <businessElements xmi:id="_m9vmKXTkEe-MCsbFDAy6Qg" name="ClaimItemCertificationTypeCode" description="" reference="ClaimItemCertificationTypeCode" uniqueIdentifier="0fee1f3e-0426-4412-980f-b6a292d584e9" referenceDatatype="_W97QxllxEe-ezYGZbS4PDQ" enumValueSetField="" enumValueField="" enumValueDescrField="HL7" enumValueSet="" readonly="true"/>
       <businessElements xmi:id="_0r7X8nTlEe-MCsbFDAy6Qg" name="ClaimItemServicedDateTime" description="Date and time the good or service referenced in the claim line item was provided" reference="ClaimItemDateTime" uniqueIdentifier="d4a2ab04-2094-4819-86ee-a5e0c2cc2887" referenceDatatype="_W97QnVlxEe-ezYGZbS4PDQ" readonly="true"/>
-      <businessElements xmi:id="_C87GdnToEe-MCsbFDAy6Qg" name="ClaimItemProductOrServiceCode" description="Billing, service, product, or drug code" reference="ClaimItemProductOrServiceCode" uniqueIdentifier="ed4d247c-ce44-4630-9391-77a5a16d1642" referenceDatatype="_W97QxllxEe-ezYGZbS4PDQ" enumValueDescrField="hl7" enumValueSet="http://hl7.org/fhir/ValueSet/service-uscls" readonly="true"/>
       <businessElements xmi:id="_1hbVNnToEe-MCsbFDAy6Qg" name="ClaimItemQuantity" description="Number of the items or units of service provided for the claim" reference="ClaimItemQuantityUnitMeasure" uniqueIdentifier="6084ad4f-5088-4818-97fa-54afcd745634" referenceDatatype="_W97Qr1lxEe-ezYGZbS4PDQ" readonly="true"/>
       <businessElements xmi:id="_1hxTd3ToEe-MCsbFDAy6Qg" name="ClaimItemRevenueCode" description="Revenue or cost center code for the Claim item" reference="ClaimItemRevenueCode" uniqueIdentifier="3b32db08-109d-4573-a448-c65f30ad5e68" referenceDatatype="_W97QxllxEe-ezYGZbS4PDQ" enumValueDescrField="hl7" enumValueSet="http://hl7.org/fhir/ValueSet/ex-revenue-center" readonly="true"/>
       <businessElements xmi:id="_J4ITJ3TqEe-MCsbFDAy6Qg" name="ClaimItemContainer" description="Contains data and metadata about claim line items" reference="ClaimItemContainer" uniqueIdentifier="ac2ff9f8-073a-4253-a695-f5fb1922827a" referenceDatatype="_W97Qo1lxEe-ezYGZbS4PDQ" readonly="true"/>
+      <businessElements xmi:id="_05FIfHW8Ee-MCsbFDAy6Qg" name="ClaimItemProductOrServiceCode" description="Billing, service, product, or drug code" reference="ClaimItemProductOrServiceCode" uniqueIdentifier="ed4d247c-ce44-4630-9391-77a5a16d1642" referenceDatatype="_W97QxllxEe-ezYGZbS4PDQ" enumValueDescrField="hl7" enumValueSet="http://hl7.org/fhir/ValueSet/service-uscls" readonly="true"/>
     </domainDictionary>
     <datatypes xsi:type="mdmi:DTSPrimitive" xmi:id="_W97Qm1lxEe-ezYGZbS4PDQ" typeName="Binary" description="Binary" reference="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <datatypes xsi:type="mdmi:DTSPrimitive" xmi:id="_W97QnFlxEe-ezYGZbS4PDQ" typeName="Boolean" description="Boolean" reference="http://www.w3.org/2001/XMLSchema#boolean"/>
