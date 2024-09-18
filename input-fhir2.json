@@ -1,0 +1,28 @@
+{
+  "resourceType": "Bundle",
+  "id": "PASTest-SR-Bundle-01",
+  "type": "collection",
+  "timestamp": "2023-10-12T11:02:00+05:00",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/Claim/PASTest-SR-Claim-01",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "PASTest-SR-Claim-01",
+        "item": [
+          {
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                  "code": "G0299",
+                  "display": "Direct Skilled Nursing Services of a Registered Nurse (Rn) in the Home Health or Hospice Setting, each 15 minutes"
+                }
+              ]
+            }
+          }
+        ]
+      } 
+   }
+  ]
+}

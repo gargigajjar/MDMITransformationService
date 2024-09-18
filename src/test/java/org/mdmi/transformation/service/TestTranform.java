@@ -45,7 +45,7 @@ class TestTransform {
 
 	private static byte[] readFHIRMessage() {
 		try {
-			return StreamUtils.readStream(new FileInputStream("input-fhir.xml"));
+			return StreamUtils.readStream(new FileInputStream("input-fhir2.json"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "<no-message/>".getBytes();
