@@ -2,7 +2,7 @@
  * Copyright (c) 2024 MDIX, Inc.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Apache License, Version 2.0
- * which accompany this distribution and is available at 
+ * which accompany this distribution and is available at
  * https\://www.apache.org/licenses/LICENSE-2.0.
  *
  * Contributors:
@@ -45,7 +45,7 @@ class TestTransform {
 
 	private static byte[] readFHIRMessage() {
 		try {
-			return StreamUtils.readStream(new FileInputStream("input-fhir2.json"));
+			return StreamUtils.readStream(new FileInputStream("input-fhir.json"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "<no-message/>".getBytes();

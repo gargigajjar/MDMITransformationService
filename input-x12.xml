@@ -123,7 +123,7 @@
                         <DTP02DateTimePeriodFormatQualifier>D8</DTP02DateTimePeriodFormatQualifier>
                      </DTP2000E>
                      <HIPatientDiagnosis2000E>
-                        <HI01HealthCareCodeInformation2000E>NaN:G89.4</HI01HealthCareCodeInformation2000E>
+                        <HI01HealthCareCodeInformation2000E>http://hl7.org/fhir/sid/icd-10-cm:G89.4</HI01HealthCareCodeInformation2000E>
                      </HIPatientDiagnosis2000E>
                      <CL1InstitutionalClaimCode2000E>
                         <CL101AdmissionTypeCode>2</CL101AdmissionTypeCode>
@@ -148,7 +148,7 @@
                            <UM01RequestCategoryCode>SC</UM01RequestCategoryCode>
                            <UM02CertificationTypeCode>I</UM02CertificationTypeCode>
                            <UM03ServiceTypeCode>1</UM03ServiceTypeCode>
-                           <UM04HealthCareServiceLocationInformation2000F>NaN:B</UM04HealthCareServiceLocationInformation2000F>
+                           <UM04HealthCareServiceLocationInformation2000F>11:B</UM04HealthCareServiceLocationInformation2000F>
                         </UMHealthCareServicesReviewInformation2000F>
                         <REF2000F>
                            <REF01>BB</REF01>
