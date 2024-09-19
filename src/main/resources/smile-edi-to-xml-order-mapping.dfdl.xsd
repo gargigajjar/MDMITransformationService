@@ -919,6 +919,44 @@
 																					</xsd:complexType>
 																				</xsd:element>
 																				<xsd:element minOccurs="0"
+																					dfdl:initiator="UM"
+																					name="UMHealthCareServicesReviewInformation2000E">
+																					<xsd:complexType>
+																						<xsd:sequence
+																							dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																							<xsd:sequence
+																								dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																								<xsd:element minOccurs="0"
+																									name="UM01RequestCategoryCode"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM02CertificationTypeCode"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM03ServiceTypeCode" type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM04HealthCareServiceLocationInformation2000E"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM05RelatedCausesInformation2000E"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM06LevelOfServiceCode" type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM07CurrentHealthConditionCode"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM08PrognosisCode" type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM09ReleaseOfInformationCode"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="UM10DelayReasonCode" type="xsd:string" />
+																							</xsd:sequence>
+																						</xsd:sequence>
+																					</xsd:complexType>
+																				</xsd:element>
+																				<xsd:element minOccurs="0"
 																					dfdl:initiator="HCR"
 																					name="HCRHealthCareServicesReview2000E">
 																					<xsd:complexType>
@@ -1026,6 +1064,28 @@
 																									type="xsd:string" />
 																								<xsd:element minOccurs="0"
 																									name="HSD08DeliveryPatternTimeCode"
+																									type="xsd:string" />
+																							</xsd:sequence>
+																						</xsd:sequence>
+																					</xsd:complexType>
+																				</xsd:element>
+																				<xsd:element minOccurs="0"
+																					dfdl:initiator="CL1"
+																					name="CL1InstitutionalClaimCode2000E">
+																					<xsd:complexType>
+																						<xsd:sequence
+																							dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																							<xsd:sequence
+																								dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																								<xsd:element minOccurs="0"
+																									name="CL101AdmissionTypeCode" type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="CL102AdmissionSourceCode"
+																									type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="CL103PatientStatusCode" type="xsd:string" />
+																								<xsd:element minOccurs="0"
+																									name="CL104NursingHomeResidentialStatusCode"
 																									type="xsd:string" />
 																							</xsd:sequence>
 																						</xsd:sequence>
@@ -1337,6 +1397,43 @@
 																											<xsd:element minOccurs="0"
 																												name="AAA04FollowupActionCode"
 																												type="xsd:string" />
+																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0"
+																								dfdl:initiator="UM"
+																								name="UMHealthCareServicesReviewInformation2000F">
+																								<xsd:complexType>
+																									<xsd:sequence
+																										dfdl:ref="ibmEdiFmt:EDISegmentFormat">
+																										<xsd:sequence
+																											dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																											<xsd:element minOccurs="0"
+																												name="UM01RequestCategoryCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM02CertificationTypeCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM03ServiceTypeCode" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM04HealthCareServiceLocationInformation2000F"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM05" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM06" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM07CurrentHealthConditionCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM08PrognosisCode" type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM09ReleaseOfInformationCode"
+																												type="xsd:string" />
+																											<xsd:element minOccurs="0"
+																												name="UM10DelayReasonCode" type="xsd:string" />
 																										</xsd:sequence>
 																									</xsd:sequence>
 																								</xsd:complexType>
