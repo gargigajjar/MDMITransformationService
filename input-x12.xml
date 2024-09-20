@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><DocumentRoot>
+<?xml version="1.0" encoding="UTF-8"?>
    <X12005010X217278A3>
       <STTransactionSetHeader>
          <ST01TransactionSetIdentifierCode>278</ST01TransactionSetIdentifierCode>
@@ -118,9 +118,9 @@
                         <UM06LevelOfServiceCode>U</UM06LevelOfServiceCode>
                      </UMHealthCareServicesReviewInformation2000E>
                      <DTP2000E>
-                        <DTP03>20231001</DTP03>
                         <DTP01DateTimeQualifier>036</DTP01DateTimeQualifier>
                         <DTP02DateTimePeriodFormatQualifier>D8</DTP02DateTimePeriodFormatQualifier>
+                        <DTP03>20231001</DTP03>
                      </DTP2000E>
                      <HIPatientDiagnosis2000E>
                         <HI01HealthCareCodeInformation2000E>http://hl7.org/fhir/sid/icd-10-cm:G89.4</HI01HealthCareCodeInformation2000E>
@@ -142,8 +142,6 @@
                            <HL03HierarchicalLevelCode>SS</HL03HierarchicalLevelCode>
                            <HL04HierarchicalChildCode>0</HL04HierarchicalChildCode>
                         </HLServiceLevel2000F>
-                     </Loop2000F>
-                     <Loop2000F>
                         <UMHealthCareServicesReviewInformation2000F>
                            <UM01RequestCategoryCode>SC</UM01RequestCategoryCode>
                            <UM02CertificationTypeCode>I</UM02CertificationTypeCode>
@@ -167,4 +165,3 @@
          </Loop2000B>
       </Loop2000A>
    </X12005010X217278A3>
-</DocumentRoot>
