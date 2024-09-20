@@ -51,25 +51,23 @@ public class TestTransformation {
 		}
 	}
 
-	/*
-	 * @Test
-	 * void testEDI2FHIR() throws Exception {
-	 * Path testPath = Paths.get("target/test-output/" + "testEDI2FHIR");
-	 * if (!Files.exists(testPath)) {
-	 * Files.createDirectories(testPath);
-	 * }
-	 * MdmiEngine mdmiEngine = new MdmiEngine();
-	 * // mdmiEngine.mdmiSettings = new MDMISettings();
-	 * String result = mdmiEngine.transformation(
-	 * "X12.278", "FHIRR4JSON.MasterBundleReference", new String(readInputMessage()));
-	 * Path path = Paths.get("target/test-output/testEDI2FHIR/testEDI2FHIR.json");
-	 * byte[] strToBytes = result.getBytes();
-	 *
-	 * Files.write(path, strToBytes);
-	 * System.err.println(result);
-	 *
-	 * }
-	 */
+	@Test
+	void testEDI2FHIR() throws Exception {
+		Path testPath = Paths.get("target/test-output/" + "testEDI2FHIR");
+		if (!Files.exists(testPath)) {
+			Files.createDirectories(testPath);
+		}
+		MdmiEngine mdmiEngine = new MdmiEngine();
+		// mdmiEngine.mdmiSettings = new MDMISettings();
+		String result = mdmiEngine.transformation(
+			"X12.278", "FHIRR4JSON.MasterBundleReference", new String(readInputMessage()));
+		Path path = Paths.get("target/test-output/testEDI2FHIR/testEDI2FHIR.json");
+		byte[] strToBytes = result.getBytes();
+
+		Files.write(path, strToBytes);
+		System.err.println(result);
+
+	}
 
 	@Test
 	void testFHIR2EDI() throws Exception {

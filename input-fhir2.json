@@ -11,7 +11,14 @@
     {
       "resource": {
         "resourceType": "Claim",
-       
+       "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
         "item": [
           {
             "productOrService": {
