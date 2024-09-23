@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdmi="http://schema.omg.org/spec/MDMI/1.0">
   <mdmi:MessageGroup xmi:id="_W9vpUFlxEe-ezYGZbS4PDQ" name="X12" description="SKIPCONTAINMENT" defaultLocationExprLang="XPath" defaultConstraintExprLang="JavaScript" defaultRuleExprLang="JavaScript">
-    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-09-23 11:37:46.106">
+    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-09-23 13:47:12.425">
       <syntaxModel xmi:id="_W9vpUllxEe-ezYGZbS4PDQ">
         <root xsi:type="mdmi:Bag" xmi:id="_W9vpU1lxEe-ezYGZbS4PDQ" name="DocumentRoot" maxOccurs="1" location="DocumentRoot" semanticElement="_W9yG6VlxEe-ezYGZbS4PDQ">
           <nodes xsi:type="mdmi:Bag" xmi:id="_W9vpVFlxEe-ezYGZbS4PDQ" name="X12005010X217278A3" maxOccurs="1" location="X12005010X217278A3" semanticElement="_W9yG6llxEe-ezYGZbS4PDQ" fieldName="X12005010X217278A3">
@@ -871,10 +871,10 @@
                           <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTI1lxEe-ezYGZbS4PDQ" name="MSG01FreeFormMessageText" maxOccurs="1" location="MSG01FreeFormMessageText" semanticElement="_W9zUWFlxEe-ezYGZbS4PDQ" fieldName="MSG01FreeFormMessageText"/>
                         </nodes>
                         <nodes xsi:type="mdmi:Bag" xmi:id="_W9wTJFlxEe-ezYGZbS4PDQ" name="HLServiceLevel2000F" description="1" minOccurs="1" maxOccurs="1" location="HLServiceLevel2000F" semanticElement="_W9yu1FlxEe-ezYGZbS4PDQ" fieldName="HLServiceLevel2000F">
-                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJVlxEe-ezYGZbS4PDQ" name="HL02HierarchicalParentIDNumber" description="2" maxOccurs="1" location="HL02HierarchicalParentIDNumber" semanticElement="_W9yu1VlxEe-ezYGZbS4PDQ" fieldName="HL02HierarchicalParentIDNumber"/>
-                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJllxEe-ezYGZbS4PDQ" name="HL01HierarchicalIDNumber" description="1" maxOccurs="1" location="HL01HierarchicalIDNumber" semanticElement="_W9yu1llxEe-ezYGZbS4PDQ" fieldName="HL01HierarchicalIDNumber"/>
-                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJ1lxEe-ezYGZbS4PDQ" name="HL03HierarchicalLevelCode" description="3" maxOccurs="1" location="HL03HierarchicalLevelCode" semanticElement="_W9yu11lxEe-ezYGZbS4PDQ" fieldName="HL03HierarchicalLevelCode"/>
-                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTKFlxEe-ezYGZbS4PDQ" name="HL04HierarchicalChildCode" description="4" maxOccurs="1" location="HL04HierarchicalChildCode" semanticElement="_W9yu2FlxEe-ezYGZbS4PDQ" fieldName="HL04HierarchicalChildCode"/>
+                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJVlxEe-ezYGZbS4PDQ" name="HL02HierarchicalParentIDNumber" description="2" maxOccurs="1" location="HL02HierarchicalParentIDNumber" fieldName="HL02HierarchicalParentIDNumber"/>
+                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJllxEe-ezYGZbS4PDQ" name="HL01HierarchicalIDNumber" description="1" maxOccurs="1" location="HL01HierarchicalIDNumber" fieldName="HL01HierarchicalIDNumber"/>
+                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTJ1lxEe-ezYGZbS4PDQ" name="HL03HierarchicalLevelCode" description="3" maxOccurs="1" location="HL03HierarchicalLevelCode" fieldName="HL03HierarchicalLevelCode"/>
+                          <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTKFlxEe-ezYGZbS4PDQ" name="HL04HierarchicalChildCode" description="4" maxOccurs="1" location="HL04HierarchicalChildCode" fieldName="HL04HierarchicalChildCode"/>
                         </nodes>
                         <nodes xsi:type="mdmi:Bag" xmi:id="_W9wTKVlxEe-ezYGZbS4PDQ" name="PWKAdditionalServiceInformation2000F" maxOccurs="1" location="PWKAdditionalServiceInformation2000F" semanticElement="_W9yvF1lxEe-ezYGZbS4PDQ" fieldName="PWKAdditionalServiceInformation2000F">
                           <nodes xsi:type="mdmi:LeafSyntaxTranslator" xmi:id="_W9wTKllxEe-ezYGZbS4PDQ" name="PWK03" maxOccurs="1" location="PWK03" semanticElement="_W9yvGFlxEe-ezYGZbS4PDQ" fieldName="PWK03"/>
@@ -2536,7 +2536,7 @@
         <semanticElements xmi:id="_W9yHHFlxEe-ezYGZbS4PDQ" name="HL03HierarchicalLevelCodeLoopD" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yHGFlxEe-ezYGZbS4PDQ" syntaxNode="_W9wRF1lxEe-ezYGZbS4PDQ">
           <computedInValue xmi:id="_w5Uj0GPgEe-RX4gKxF5sYw" expression="value.getXValue().setValue('23');" language="JavaScript"/>
         </semanticElements>
-        <semanticElements xmi:id="_W9yHHVlxEe-ezYGZbS4PDQ" name="Loop2000E" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yHF1lxEe-ezYGZbS4PDQ" children="_W9yHHllxEe-ezYGZbS4PDQ _W9yHH1lxEe-ezYGZbS4PDQ _W9yHI1lxEe-ezYGZbS4PDQ _W9yHK1lxEe-ezYGZbS4PDQ _W9yHL1lxEe-ezYGZbS4PDQ _W9yHQ1lxEe-ezYGZbS4PDQ _W9yHR1lxEe-ezYGZbS4PDQ _W9yHUFlxEe-ezYGZbS4PDQ _W9ys0VlxEe-ezYGZbS4PDQ _W9ys9FlxEe-ezYGZbS4PDQ _W9ys-VlxEe-ezYGZbS4PDQ _W9ytAVlxEe-ezYGZbS4PDQ _W9ytC1lxEe-ezYGZbS4PDQ _W9ytD1lxEe-ezYGZbS4PDQ _W9ytE1lxEe-ezYGZbS4PDQ _W9ytHVlxEe-ezYGZbS4PDQ _W9ytIllxEe-ezYGZbS4PDQ _W9ytJllxEe-ezYGZbS4PDQ _W9ytVFlxEe-ezYGZbS4PDQ _W9ytXFlxEe-ezYGZbS4PDQ _W9yt1VlxEe-ezYGZbS4PDQ _W9yt3VlxEe-ezYGZbS4PDQ _W9yt5VlxEe-ezYGZbS4PDQ _W9yt8llxEe-ezYGZbS4PDQ _W9yuBVlxEe-ezYGZbS4PDQ _W9yuCVlxEe-ezYGZbS4PDQ _W9yuDVlxEe-ezYGZbS4PDQ _W9yuEVlxEe-ezYGZbS4PDQ _W9yuFllxEe-ezYGZbS4PDQ _W9yuGllxEe-ezYGZbS4PDQ _W9yuIllxEe-ezYGZbS4PDQ _W9yuJ1lxEe-ezYGZbS4PDQ _W9zUWVlxEe-ezYGZbS4PDQ _W9zUXllxEe-ezYGZbS4PDQ _W9z6x1lxEe-ezYGZbS4PDQ _W9z6zFlxEe-ezYGZbS4PDQ _W9z64llxEe-ezYGZbS4PDQ _W9z651lxEe-ezYGZbS4PDQ _hLjksG-4Ee-YIpOdFPSDZA _W9ytB1lxEe-ezYGZbS4PDQ __rnSgHavEe-DFbUvBGpQqA" syntaxNode="_W9wRGFlxEe-ezYGZbS4PDQ">
+        <semanticElements xmi:id="_W9yHHVlxEe-ezYGZbS4PDQ" name="Loop2000EFirst" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yHF1lxEe-ezYGZbS4PDQ" children="_W9yHHllxEe-ezYGZbS4PDQ _W9yHH1lxEe-ezYGZbS4PDQ _W9yHI1lxEe-ezYGZbS4PDQ _W9yHK1lxEe-ezYGZbS4PDQ _W9yHL1lxEe-ezYGZbS4PDQ _W9yHQ1lxEe-ezYGZbS4PDQ _W9yHR1lxEe-ezYGZbS4PDQ _W9yHUFlxEe-ezYGZbS4PDQ _W9ys0VlxEe-ezYGZbS4PDQ _W9ys9FlxEe-ezYGZbS4PDQ _W9ys-VlxEe-ezYGZbS4PDQ _W9ytAVlxEe-ezYGZbS4PDQ _W9ytC1lxEe-ezYGZbS4PDQ _W9ytD1lxEe-ezYGZbS4PDQ _W9ytE1lxEe-ezYGZbS4PDQ _W9ytHVlxEe-ezYGZbS4PDQ _W9ytIllxEe-ezYGZbS4PDQ _W9ytJllxEe-ezYGZbS4PDQ _W9ytVFlxEe-ezYGZbS4PDQ _W9ytXFlxEe-ezYGZbS4PDQ _W9yt1VlxEe-ezYGZbS4PDQ _W9yt3VlxEe-ezYGZbS4PDQ _W9yt5VlxEe-ezYGZbS4PDQ _W9yt8llxEe-ezYGZbS4PDQ _W9yuBVlxEe-ezYGZbS4PDQ _W9yuCVlxEe-ezYGZbS4PDQ _W9yuDVlxEe-ezYGZbS4PDQ _W9yuEVlxEe-ezYGZbS4PDQ _W9yuFllxEe-ezYGZbS4PDQ _W9yuGllxEe-ezYGZbS4PDQ _W9yuIllxEe-ezYGZbS4PDQ _W9yuJ1lxEe-ezYGZbS4PDQ _W9zUWVlxEe-ezYGZbS4PDQ _W9zUXllxEe-ezYGZbS4PDQ _W9z6x1lxEe-ezYGZbS4PDQ _W9z6zFlxEe-ezYGZbS4PDQ _W9z64llxEe-ezYGZbS4PDQ _W9z651lxEe-ezYGZbS4PDQ _hLjksG-4Ee-YIpOdFPSDZA _W9ytB1lxEe-ezYGZbS4PDQ __rnSgHavEe-DFbUvBGpQqA" syntaxNode="_W9wRGFlxEe-ezYGZbS4PDQ">
           <mapFromMdmi xmi:id="_mGMEkXHaEe-Vl4yP12JwRw" name="MDMI2Message4Loop2000E" businessElement="_cwe5cnHaEe-Vl4yP12JwRw"/>
           <mapToMdmi xmi:id="_oo25MG-3Ee-YIpOdFPSDZA" name="Message2MDMI4Loop2000E" businessElement="_kHUntG-3Ee-YIpOdFPSDZA"/>
         </semanticElements>
@@ -3108,7 +3108,7 @@
         <semanticElements xmi:id="_W9yuJllxEe-ezYGZbS4PDQ" name="CL102AdmissionSourceCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuIllxEe-ezYGZbS4PDQ" syntaxNode="_W9wSjVlxEe-ezYGZbS4PDQ">
           <mapFromMdmi xmi:id="_di8DcXXzEe-MCsbFDAy6Qg" name="MDMI2Message4CL102AdmissionSourceCode" businessElement="_AvAlO3XzEe-MCsbFDAy6Qg" rule="DATATYPEMAP:mapCodedElementToString"/>
         </semanticElements>
-        <semanticElements xmi:id="_W9yuJ1lxEe-ezYGZbS4PDQ" name="Loop2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yHHVlxEe-ezYGZbS4PDQ" children="_W9yuKFlxEe-ezYGZbS4PDQ _W9yuoVlxEe-ezYGZbS4PDQ _W9yus1lxEe-ezYGZbS4PDQ _W9yuuFlxEe-ezYGZbS4PDQ _W9yuvVlxEe-ezYGZbS4PDQ _W9yuwVlxEe-ezYGZbS4PDQ _W9yu1FlxEe-ezYGZbS4PDQ _W9yu2VlxEe-ezYGZbS4PDQ _W9yu3llxEe-ezYGZbS4PDQ _W9yu41lxEe-ezYGZbS4PDQ _W9yvF1lxEe-ezYGZbS4PDQ _W9yvIVlxEe-ezYGZbS4PDQ _W9yvJVlxEe-ezYGZbS4PDQ _W9zTxVlxEe-ezYGZbS4PDQ _W9zTyVlxEe-ezYGZbS4PDQ _W9zT-FlxEe-ezYGZbS4PDQ _W9zUAVlxEe-ezYGZbS4PDQ _W9zUBVlxEe-ezYGZbS4PDQ _W9zUH1lxEe-ezYGZbS4PDQ _W9zUJFlxEe-ezYGZbS4PDQ _W9zULVlxEe-ezYGZbS4PDQ _W9zUUFlxEe-ezYGZbS4PDQ _W9zUVVlxEe-ezYGZbS4PDQ" syntaxNode="_W9wS3FlxEe-ezYGZbS4PDQ">
+        <semanticElements xmi:id="_W9yuJ1lxEe-ezYGZbS4PDQ" name="FirstLoop2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yHHVlxEe-ezYGZbS4PDQ" children="_W9yuKFlxEe-ezYGZbS4PDQ _W9yuoVlxEe-ezYGZbS4PDQ _W9yus1lxEe-ezYGZbS4PDQ _W9yuuFlxEe-ezYGZbS4PDQ _W9yuvVlxEe-ezYGZbS4PDQ _W9yuwVlxEe-ezYGZbS4PDQ _W9yu1FlxEe-ezYGZbS4PDQ _W9yu2VlxEe-ezYGZbS4PDQ _W9yu3llxEe-ezYGZbS4PDQ _W9yu41lxEe-ezYGZbS4PDQ _W9yvF1lxEe-ezYGZbS4PDQ _W9yvIVlxEe-ezYGZbS4PDQ _W9yvJVlxEe-ezYGZbS4PDQ _W9zTxVlxEe-ezYGZbS4PDQ _W9zTyVlxEe-ezYGZbS4PDQ _W9zT-FlxEe-ezYGZbS4PDQ _W9zUAVlxEe-ezYGZbS4PDQ _W9zUBVlxEe-ezYGZbS4PDQ _W9zUH1lxEe-ezYGZbS4PDQ _W9zUJFlxEe-ezYGZbS4PDQ _W9zULVlxEe-ezYGZbS4PDQ _W9zUUFlxEe-ezYGZbS4PDQ _W9zUVVlxEe-ezYGZbS4PDQ" syntaxNode="_W9wS3FlxEe-ezYGZbS4PDQ">
           <mapToMdmi xmi:id="_haf_YHBXEe-YIpOdFPSDZA" name="Message2MDMI4Loop2000F" businessElement="_ShPluG6iEe-nJM3uxNjaPw"/>
         </semanticElements>
         <semanticElements xmi:id="_W9yuKFlxEe-ezYGZbS4PDQ" name="HIRequestForAdditionalInformation2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" children="_W9yuKVlxEe-ezYGZbS4PDQ _W9yuM1lxEe-ezYGZbS4PDQ _W9yuPVlxEe-ezYGZbS4PDQ _W9yuR1lxEe-ezYGZbS4PDQ _W9yuUVlxEe-ezYGZbS4PDQ _W9yuW1lxEe-ezYGZbS4PDQ _W9yuZVlxEe-ezYGZbS4PDQ _W9yub1lxEe-ezYGZbS4PDQ _W9yueVlxEe-ezYGZbS4PDQ _W9yug1lxEe-ezYGZbS4PDQ _W9yujVlxEe-ezYGZbS4PDQ _W9yul1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wTaFlxEe-ezYGZbS4PDQ"/>
@@ -3316,18 +3316,8 @@
         <semanticElements xmi:id="_W9yu0VlxEe-ezYGZbS4PDQ" name="SV20206ProcedureModifier" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuy1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wUEFlxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9yu0llxEe-ezYGZbS4PDQ" name="SV20202ProcedureCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuy1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wUEVlxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9yu01lxEe-ezYGZbS4PDQ" name="SV20208ProcedureCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yuy1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wUEllxEe-ezYGZbS4PDQ"/>
-        <semanticElements xmi:id="_W9yu1FlxEe-ezYGZbS4PDQ" name="HLServiceLevel2000FFirst" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" children="_W9yu1VlxEe-ezYGZbS4PDQ _W9yu1llxEe-ezYGZbS4PDQ _W9yu11lxEe-ezYGZbS4PDQ _W9yu2FlxEe-ezYGZbS4PDQ" syntaxNode="_W9wTJFlxEe-ezYGZbS4PDQ"/>
-        <semanticElements xmi:id="_W9yu1VlxEe-ezYGZbS4PDQ" name="HL02HierarchicalParentIDNumber" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu1FlxEe-ezYGZbS4PDQ" syntaxNode="_W9wTJVlxEe-ezYGZbS4PDQ">
-          <computedInValue xmi:id="_pi30oHX9Ee-NuJfNGVawTA" expression="value.getXValue().setValue('5');" language="JavaScript"/>
-        </semanticElements>
-        <semanticElements xmi:id="_W9yu1llxEe-ezYGZbS4PDQ" name="HL01HierarchicalIDNumber" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu1FlxEe-ezYGZbS4PDQ" syntaxNode="_W9wTJllxEe-ezYGZbS4PDQ">
-          <computedInValue xmi:id="_sQTEMHX9Ee-NuJfNGVawTA" expression="value.getXValue().setValue('6');" language="JavaScript"/>
-        </semanticElements>
-        <semanticElements xmi:id="_W9yu11lxEe-ezYGZbS4PDQ" name="HL03HierarchicalLevelCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu1FlxEe-ezYGZbS4PDQ" syntaxNode="_W9wTJ1lxEe-ezYGZbS4PDQ">
-          <computedInValue xmi:id="_opWhcHTmEe-MCsbFDAy6Qg" expression="value.getXValue().setValue('SS');" language="JavaScript"/>
-        </semanticElements>
-        <semanticElements xmi:id="_W9yu2FlxEe-ezYGZbS4PDQ" name="HL04HierarchicalChildCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu1FlxEe-ezYGZbS4PDQ" syntaxNode="_W9wTKFlxEe-ezYGZbS4PDQ">
-          <computedInValue xmi:id="_K6C90HaEEe-DFbUvBGpQqA" expression="value.getXValue().setValue('0');" language="JavaScript"/>
+        <semanticElements xmi:id="_W9yu1FlxEe-ezYGZbS4PDQ" name="HLServiceLevel2000FFirst" elementType="LOCAL" datatype="_W97QpFlxEe-ezYGZbS4PDE" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wTJFlxEe-ezYGZbS4PDQ">
+          <computedInValue xmi:id="_3IwwUHnTEe-C57xiO3CttA" expression="value.getXValue().addValue('HL01HierarchicalIDNumber', '6');&#xD;&#xA;value.getXValue().addValue('HL02HierarchicalParentIDNumber', '5');&#xD;&#xA;value.getXValue().addValue('HL03HierarchicalLevelCode', 'SS');&#xD;&#xA;value.getXValue().addValue('HL04HierarchicalChildCode', '0');" language="JavaScript"/>
         </semanticElements>
         <semanticElements xmi:id="_W9yu2VlxEe-ezYGZbS4PDQ" name="TRNServiceTraceNumber2000F" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9yuJ1lxEe-ezYGZbS4PDQ" children="_W9yu2llxEe-ezYGZbS4PDQ _W9yu21lxEe-ezYGZbS4PDQ _W9yu3FlxEe-ezYGZbS4PDQ _W9yu3VlxEe-ezYGZbS4PDQ" syntaxNode="_W9wS71lxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9yu2llxEe-ezYGZbS4PDQ" name="TRN02ServiceTraceNumber" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9yu2VlxEe-ezYGZbS4PDQ" syntaxNode="_W9wS8FlxEe-ezYGZbS4PDQ"/>
@@ -5423,6 +5413,12 @@
     <datatypes xsi:type="mdmi:DTCStructured" xmi:id="_W97QpFlxEe-ezYGZbS4PDQ" typeName="PhysicalRatio" isReadonly="true">
       <fields xmi:id="_W97QpVlxEe-ezYGZbS4PDQ" name="denominator" minOccurs="1" maxOccurs="1" datatype="_W97QnllxEe-ezYGZbS4PDQ"/>
       <fields xmi:id="_W97QpllxEe-ezYGZbS4PDQ" name="numerator" minOccurs="1" maxOccurs="1" datatype="_W97QnllxEe-ezYGZbS4PDQ"/>
+    </datatypes>
+    <datatypes xsi:type="mdmi:DTCStructured" xmi:id="_W97QpFlxEe-ezYGZbS4PDE" typeName="HL" isReadonly="true">
+      <fields xmi:id="_W97QpElxEe-ezYGZbS4PDQ" name="HL01HierarchicalIDNumber" minOccurs="1" maxOccurs="1" datatype="_W97QoFlxEe-ezYGZbS4PDQ"/>
+      <fields xmi:id="_W97QpllxEE-ezYGZbS4PDQ" name="HL02HierarchicalParentIDNumber" minOccurs="1" maxOccurs="1" datatype="_W97QoFlxEe-ezYGZbS4PDQ"/>
+      <fields xmi:id="_W97QpllxEE-ezYGZbS4PEQ" name="HL03HierarchicalLevelCode" minOccurs="1" maxOccurs="1" datatype="_W97QoFlxEe-ezYGZbS4PDQ"/>
+      <fields xmi:id="_W97QpllxEE-ezYGZbS4EDQ" name="HL04HierarchicalChildCode" minOccurs="1" maxOccurs="1" datatype="_W97QoFlxEe-ezYGZbS4PDQ"/>
     </datatypes>
     <datatypes xsi:type="mdmi:DTCStructured" xmi:id="_W97Qp1lxEe-ezYGZbS4PDQ" typeName="DigitalSignature" isReadonly="true">
       <fields xmi:id="_W97QqFlxEe-ezYGZbS4PDQ" name="ContentType" minOccurs="1" maxOccurs="1" datatype="_W97QoFlxEe-ezYGZbS4PDQ"/>
