@@ -126,7 +126,7 @@
 												dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
 												<xsd:element minOccurs="0"
 													name="HL01HierarchicalIDNumber" type="xsd:string" />
-												<xsd:element minOccurs="0" name="HL02"
+												<xsd:element minOccurs="0" name="HL02HierarchicalParentIDNumber"
 													type="xsd:string" />
 												<xsd:element minOccurs="0"
 													name="HL03HierarchicalLevelCode" type="xsd:string" />
