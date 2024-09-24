@@ -419,9 +419,9 @@ public class MdmiEngine {
 		getMapProperties(target);
 		logger.debug("done getMapProperties source()");
 
-		// if (source.startsWith("X12")) {
-		// message = ediToXML(message);
-		// }
+		if (source.startsWith("X12")) {
+			message = ediToXML(message);
+		}
 
 		logger.debug("start  RuntimeService.runTransformation");
 		String result = RuntimeService.runTransformation(
@@ -429,9 +429,9 @@ public class MdmiEngine {
 			mapValues.get(source), mapValues.get(target));
 		logger.debug("done  RuntimeService.runTransformation");
 
-		// if (target.startsWith("X12")) {
-		// result = xmlToEDI(result);
-		// }
+		if (target.startsWith("X12")) {
+			result = xmlToEDI(result);
+		}
 
 		return result;
 	}
