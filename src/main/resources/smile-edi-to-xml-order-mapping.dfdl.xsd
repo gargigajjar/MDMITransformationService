@@ -5,10 +5,16 @@
 	<xsd:import namespace="http://www.ibm.com/dfdl/EDI/Format"
 		schemaLocation="/EDIFACT-Common/IBM_EDI_Format.dfdl.xsd" />
 	<xsd:annotation>
-		<xsd:appinfo source="http://www.ogf.org/dfdl/">
-			<dfdl:format ref="ibmEdiFmt:EDIFormat" />
-		</xsd:appinfo>
-	</xsd:annotation>
+        <xsd:appinfo source="http://www.ogf.org/dfdl/">
+            <dfdl:format ref="ibmEdiFmt:EDIFormat" escapeSchemeRef="EDIEscapeScheme"/>
+
+            <dfdl:defineEscapeScheme name="EDIEscapeScheme">
+                <dfdl:escapeScheme escapeKind="escapeCharacter" escapeCharacter="{$ibmEdiFmt:EscapeChar}"
+                                   escapeEscapeCharacter="{$ibmEdiFmt:EscapeChar}" extraEscapedCharacters="* ^"/>
+            </dfdl:defineEscapeScheme>
+        </xsd:appinfo>
+    </xsd:annotation>
+
 	<xsd:element name="X12005010X217278A3">
 		<xsd:complexType>
 			<xsd:sequence>
@@ -126,8 +132,8 @@
 												dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
 												<xsd:element minOccurs="0"
 													name="HL01HierarchicalIDNumber" type="xsd:string" />
-												<xsd:element minOccurs="0" name="HL02HierarchicalParentIDNumber"
-													type="xsd:string" />
+												<xsd:element minOccurs="0"
+													name="HL02HierarchicalParentIDNumber" type="xsd:string" />
 												<xsd:element minOccurs="0"
 													name="HL03HierarchicalLevelCode" type="xsd:string" />
 												<xsd:element minOccurs="0"
@@ -1366,7 +1372,7 @@
 																											<xsd:element minOccurs="0"
 																												name="TRN01TraceTypeCode" type="xsd:string" />
 																											<xsd:element minOccurs="0"
-																												name="TRN02PatientEventTraceNumber"
+																												name="TRN02ServiceTraceNumber"
 																												type="xsd:string" />
 																											<xsd:element minOccurs="0"
 																												name="TRN03TraceAssigningEntityIdentifier"
@@ -1746,6 +1752,192 @@
 																											<xsd:element minOccurs="0"
 																												name="MSG03" type="xsd:string" />
 																										</xsd:sequence>
+																									</xsd:sequence>
+																								</xsd:complexType>
+																							</xsd:element>
+																							<xsd:element minOccurs="0" maxOccurs="99"
+																								name="Loop2010F">
+																								<xsd:complexType>
+																									<xsd:sequence>
+																										<xsd:element dfdl:initiator="NM1"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0" maxOccurs="99"
+																											name="NM1ServiceProviderName2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="NM101EntityIdentifierCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM102EntityTypeQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM103ServiceProviderLastOrOrganizationName"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM104ServiceProviderFirstName"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM105ServiceProviderMiddleName"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM106ServiceProviderNamePrefix" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM107ServiceProviderNameSuffix"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM108IdentificationCodeQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM109ServiceProviderIdentifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM110" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM111" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="NM112" type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element dfdl:initiator="REF"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0"
+																											name="REFServiceProviderSupplementalIdentification2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="REF01ReferenceIdentificationQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="REF02ServiceProviderSupplementalIdentifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="REF03LicenseNumberStateCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="REF04" type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element dfdl:initiator="N3"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0" name="N3ServiceProviderAddress2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="N301ServiceProviderAddressLine"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N302ServiceProviderAddressLine"
+																															type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element dfdl:initiator="N4"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0"
+																											name="N4ServiceProviderCityStateZIPCode2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="N401ServiceProviderCityName"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N402ServiceProviderStateOrProvinceCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N403ServiceProviderPostalZoneOrZIPCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N404CountryCode" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N405" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N406" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="N407CountrySubdivisionCode"
+																															type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element dfdl:initiator="PER"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0"
+																											name="PERServiceProviderContactInformation2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="PER01ContactFunctionCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER02ServiceProviderContactName"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER03CommunicationNumberQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER04ServiceProviderContactCommunicationNumber"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER05CommunicationNumberQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER06ServiceProviderContactCommunicationNumber"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER07CommunicationNumberQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER08ServiceProviderContactCommunicationNumber"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PER09" type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
+																										<xsd:element dfdl:initiator="PRV"
+																											dfdl:ref="ibmEdiFmt:EDISegmentFormat"
+																											minOccurs="0"
+																											name="PRVServiceProviderInformation2010F">
+																											<xsd:complexType>
+																												<xsd:sequence>
+																													<xsd:sequence
+																														dfdl:ref="ibmEdiFmt:EDISegmentSequenceFormat">
+																														<xsd:element minOccurs="0"
+																															name="PRV01ProviderCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PRV02ReferenceIdentificationQualifier"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PRV03ProviderTaxonomyCode"
+																															type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PRV04" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PRV05" type="xsd:string" />
+																														<xsd:element minOccurs="0"
+																															name="PRV06" type="xsd:string" />
+																													</xsd:sequence>
+																												</xsd:sequence>
+																											</xsd:complexType>
+																										</xsd:element>
 																									</xsd:sequence>
 																								</xsd:complexType>
 																							</xsd:element>

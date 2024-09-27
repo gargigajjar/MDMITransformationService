@@ -35,7 +35,7 @@ public class TestTransformation {
 
 	private static byte[] readInputMessage() {
 		try {
-			return StreamUtils.readStream(new FileInputStream("LoopF.edi"));
+			return StreamUtils.readStream(new FileInputStream("input-message.edi"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "<no-message/>".getBytes();
