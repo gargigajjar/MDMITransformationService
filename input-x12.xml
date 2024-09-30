@@ -14,7 +14,7 @@
       <Loop2000A>
          <HLUtilizationManagementOrganizationUMOLevel2000A>
             <HL01HierarchicalIDNumber>1</HL01HierarchicalIDNumber>
-            <HL02>0</HL02>
+            <HL02HierarchicalParentIDNumber>0</HL02HierarchicalParentIDNumber>
             <HL03HierarchicalLevelCode>20</HL03HierarchicalLevelCode>
             <HL04HierarchicalChildCode>1</HL04HierarchicalChildCode>
          </HLUtilizationManagementOrganizationUMOLevel2000A>
@@ -109,7 +109,7 @@
                      <TRNPatientEventTrackingNumber2000E>
                         <TRN01TraceTypeCode>1</TRN01TraceTypeCode>
                         <TRN02PatientEventTraceNumber>PASTest-SR-Claim-01</TRN02PatientEventTraceNumber>
-                        <TRN03TraceAssigningEntityIdentifier/>
+                        
                      </TRNPatientEventTrackingNumber2000E>
                      <UMHealthCareServicesReviewInformation2000E>
                         <UM01RequestCategoryCode>SC</UM01RequestCategoryCode>
