@@ -1,94 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi</groupId>
-	<artifactId>org.mdmi.engine</artifactId>
-	<version>3.0.0</version>
+	<artifactId>org.mdmi.minimalengine</artifactId>
+	<version>0.9.9</version>
 	<packaging>jar</packaging>
 	<name>MDMI Transformation Engine</name>
 	<description>MDMI Transformation Engine</description>
 	<properties>
 		<mdmi.runtime.version>3.0.0-SNAPSHOT</mdmi.runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		 
 		<tycho-version>2.7.5</tycho-version>
 		<skipTests>false</skipTests>
-		  <maven.compiler.release>11</maven.compiler.release>
-    <maven.compiler.source>11</maven.compiler.source>
-  <!--  <spring.version>6.1.6</spring.version> -->
-    <maven.compiler.target>11</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <smooks.version>2.0.0-RC4</smooks.version>
-    <smooks.edifact.cartridge.version>2.0.0-RC4</smooks.edifact.cartridge.version>
+		<maven.compiler.release>11</maven.compiler.release>
+		<maven.compiler.source>11</maven.compiler.source>
+		<!--  <spring.version>6.1.6</spring.version> -->
+		<maven.compiler.target>11</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<smooks.version>2.0.0-RC4</smooks.version>
+		<smooks.edifact.cartridge.version>2.0.0-RC4</smooks.edifact.cartridge.version>
 	</properties>
 	<!-- Inherit defaults from Spring Boot -->
-
-
 	<dependencies>
-	<!-- https://mvnrepository.com/artifact/com.ctc.wstx/woodstox-osgi -->
-<dependency>
-    <groupId>com.ctc.wstx</groupId>
-    <artifactId>woodstox-osgi</artifactId>
-    <version>3.2.1.1</version>
-</dependency>
-	
-	<dependency>
-		<groupId>ch.qos.logback</groupId>
-		<artifactId>logback-classic</artifactId>
-		<version>1.2.3</version>
-	</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
-<dependency>
-    <groupId>org.thymeleaf</groupId>
-    <artifactId>thymeleaf</artifactId>
-    <version>3.0.15.RELEASE</version>
-</dependency>
-
- <dependency>
-        <groupId>xalan</groupId>
-        <artifactId>serializer</artifactId>
-        <version>2.7.3</version>
-    </dependency>
+		<!-- https://mvnrepository.com/artifact/com.ctc.wstx/woodstox-osgi -->
+		 
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+		 
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>serializer</artifactId>
+			<version>2.7.3</version>
+		</dependency>
+		
+		<!--
 		<dependency>
 			<groupId>org.apache.httpcomponents.core5</groupId>
 			<artifactId>httpcore5</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+	 
 		<dependency>
 			<groupId>org.apache.httpcomponents.client5</groupId>
 			<artifactId>httpclient5</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5-h2 -->
+	 
 		<dependency>
 			<groupId>org.apache.httpcomponents.core5</groupId>
 			<artifactId>httpcore5-h2</artifactId>
 			<version>5.0.2</version>
+		</dependency> -->
+		 
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.11.0</version>
+			<scope>test</scope>
 		</dependency>
-	
-	<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-<dependency>
-    <groupId>org.junit.jupiter</groupId>
-    <artifactId>junit-jupiter-api</artifactId>
-    <version>5.11.0</version>
-    <scope>test</scope>
-</dependency>
-
- 
-	   <dependency>
-      <groupId>org.smooks.cartridges.edi</groupId>
-      <artifactId>smooks-edi-cartridge</artifactId>
-      <version>2.0.0-RC4</version>
-  <exclusions>
-            <exclusion>
-                <artifactId>xml-apis</artifactId>
-                <groupId>xml-apis</groupId>
-            </exclusion>
-        </exclusions>
-    </dependency>
-   
+	 
 		<dependency>
 			<groupId>org.mdmi</groupId>
 			<artifactId>org.mdmi.ecore</artifactId>
@@ -99,7 +75,6 @@
 			<artifactId>org.mdmi.core.runtime</artifactId>
 			<version>${mdmi.runtime.version}</version>
 		</dependency>
-		 
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.ecore</artifactId>
@@ -110,81 +85,51 @@
 			<artifactId>org.eclipse.emf.common </artifactId>
 			<version>2.15.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.eclipse.ocl</groupId>
 			<artifactId>org.eclipse.ocl</artifactId>
 			<version>3.6.200.v20170522</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.eclipse.ocl.ecore</groupId>
 			<artifactId>org.eclipse.ocl.ecore</artifactId>
 			<version>3.6.200.v20170522</version>
 		</dependency>
- 
-		
-		
-		
-
-
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.5.1</version>
 		</dependency>
-		 
 		<dependency>
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
 			<version>v20191111</version>
 		</dependency>
-		<!--<dependency>
+		<!--<dependency><groupId>commons-io</groupId><artifactId>commons-io</artifactId><version>2.11.0</version></dependency>-->
+		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version>
-		</dependency>-->
-		
-		<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.16.1</version>
-</dependency>
+			<version>2.16.1</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
 		</dependency>
- 
- 	
 		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp/okhttp -->
-	 <dependency>
+		<dependency>
 			<groupId>org.mdmi</groupId>
 			<artifactId>org.mdmi.processors</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-		<dependency>
-			<groupId>org.mdmi.processors</groupId>
-			<artifactId>org.mdmi.processors.fhir</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-	 
-	 
-		
-
-
-	 
+ 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-	 
-
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
 			<version>2.15.0</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -192,17 +137,12 @@
 			<version>3.12.0</version>
 		</dependency>
 		<!-- cda -->
-
-		 
-
-<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
-<dependency>
-    <groupId>org.yaml</groupId>
-    <artifactId>snakeyaml</artifactId>
-    <version>2.2</version>
-</dependency>
-
-		
+		<!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>2.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -216,13 +156,9 @@
 				</configuration>
 				<extensions>true</extensions>
 			</plugin>
-			 
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				
-			 
 				<executions>
 					<execution>
 						<goals>
@@ -236,7 +172,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -252,8 +187,6 @@
 					<target>11</target>
 				</configuration>
 			</plugin>
-		 
-			
 		</plugins>
 	</build>
 	<repositories>
@@ -291,7 +224,6 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-
 		<repository>
 			<id>mdix</id>
 			<name>mdmiartifactory</name>
@@ -316,11 +248,10 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-		<profiles>
+	<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
-
 				<repository>
 					<id>mdix</id>
 					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
@@ -334,8 +265,6 @@
 						<enabled>true</enabled>
 					</snapshots>
 				</snapshotRepository>
-
-
 			</distributionManagement>
 		</profile>
 	</profiles>

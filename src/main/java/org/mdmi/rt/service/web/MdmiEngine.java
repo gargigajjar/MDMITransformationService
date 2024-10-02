@@ -32,7 +32,6 @@ import org.mdmi.core.engine.javascript.Utils;
 import org.mdmi.core.engine.postprocessors.ConfigurablePostProcessor;
 import org.mdmi.core.engine.preprocessors.ConfigurablePreProcessor;
 import org.mdmi.core.engine.semanticprocessors.ConfigurableSemanticProcessor;
-import org.mdmi.core.engine.terminology.FHIRTerminologyTransform;
 import org.mdmi.core.runtime.RuntimeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -91,7 +90,7 @@ public class MdmiEngine {
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws Exception {
 
-		logger.debug("Loading Maps");
+		logger.error("Loading Maps");
 
 		// List<String> foo = getFilesFromClasspathFolder();
 
@@ -146,18 +145,18 @@ public class MdmiEngine {
 				return;
 			}
 
-			logger.debug("Initialize terminology ");
-			FHIRTerminologyTransform.codeValues.clear();
+			logger.error("Initialize terminology ");
+			// FHIRTerminologyTransform.codeValues.clear();
 
-			FHIRTerminologyTransform.processTerminology = true;
+			// FHIRTerminologyTransform.processTerminology = true;
 
-			FHIRTerminologyTransform.setFHIRTerminologyURL(terminologySettings.getUrl());
+			// FHIRTerminologyTransform.setFHIRTerminologyURL(terminologySettings.getUrl());
 
-			FHIRTerminologyTransform.setUserName(terminologySettings.getUserName());
+			// FHIRTerminologyTransform.setUserName(terminologySettings.getUserName());
 
-			FHIRTerminologyTransform.setPassword(terminologySettings.getPassword());
+			// FHIRTerminologyTransform.setPassword(terminologySettings.getPassword());
 
-			logger.debug("loading maps");
+			logger.error("loading maps");
 			for (String mapsFolder : Stream.of(mapsFolders.split(",", -1)).collect(Collectors.toList())) {
 
 				Set<Path> folders = Files.find(
@@ -170,10 +169,10 @@ public class MdmiEngine {
 						file -> (!file.isDirectory() && file.toString().endsWith("mdmi"))).map(File::getName).collect(
 							Collectors.toSet());
 					for (String map : maps) {
-						logger.debug("Loading map  " + map);
+						logger.error("Loading map  " + map);
 						InputStream targetStream = new FileInputStream(folder.toString() + "/" + map);
 						Mdmi.INSTANCE().getResolver().resolve(targetStream);
-						logger.debug("Loaded map  " + map);
+						logger.error("Loaded map  " + map);
 					}
 
 					Path datatypemapsPath = Paths.get(folder.toString() + "/datatypemaps");
@@ -183,7 +182,7 @@ public class MdmiEngine {
 								file -> (!file.isDirectory() && file.toString().endsWith("js"))).map(
 									File::getName).collect(Collectors.toSet());
 						for (String datatypemap : datatypemaps) {
-							logger.debug("Loading datatypemap  " + datatypemap);
+							logger.error("Loading datatypemap  " + datatypemap);
 							InputStream datatypetermStream = new FileInputStream(
 								folder.toString() + "/datatypemaps/" + datatypemap);
 							String mapsource = IOUtils.toString(datatypetermStream, StandardCharsets.UTF_8.name());
@@ -193,11 +192,11 @@ public class MdmiEngine {
 									Mdmi.INSTANCE().getResolver().getMaps().get(key).datatypemappings = mapsource;
 								}
 							}
-							logger.debug("debug datatypemap  " + datatypemap);
+							logger.error("debug datatypemap  " + datatypemap);
 						}
 					}
 
-					logger.debug("loading terms");
+					logger.error("loading terms");
 					Path termsPath = Paths.get(folder.toString() + "/terms");
 					if (Files.isDirectory(termsPath)) {
 
@@ -212,7 +211,7 @@ public class MdmiEngine {
 
 								Path file = Path.of(folder.toString() + "/terms/" + valuset);
 
-								logger.debug("Loading valuset  " + valuset);
+								logger.error("Loading valuset  " + valuset);
 
 								String json = Files.readString(file, StandardCharsets.UTF_8);
 								JSONObject jsonObject;
@@ -246,7 +245,7 @@ public class MdmiEngine {
 								file -> (!file.isDirectory() && file.toString().endsWith("properties"))).map(
 									File::getName).collect(Collectors.toSet());
 
-						logger.debug("loading datatypeterm");
+						logger.error("loading datatypeterm");
 						for (String datatypeterm : datatypeterms) {
 							logger.error("Loading datatypeterm  " + datatypeterm);
 							InputStream datatypetermStream = new FileInputStream(
@@ -255,16 +254,16 @@ public class MdmiEngine {
 							Utils.mapOfTransforms.get(FilenameUtils.removeExtension(datatypeterm)).load(
 								datatypetermStream);
 
-							logger.debug("Loaded map  " + datatypeterm);
+							logger.error("Loaded map  " + datatypeterm);
 						}
 
 					}
 
-					logger.debug("Check for processors.yml ");
-					logger.debug("Looking for " + folder.toString() + "/" + "processors.yml");
-					logger.debug("EXISTS " + Files.exists(Paths.get(folder.toString() + "/" + "processors.yml")));
+					logger.error("Check for processors.yml ");
+					logger.error("Looking for " + folder.toString() + "/" + "processors.yml");
+					logger.error("EXISTS " + Files.exists(Paths.get(folder.toString() + "/" + "processors.yml")));
 					if (Files.exists(Paths.get(folder.toString() + "/" + "processors.yml"))) {
-						logger.debug("Found processors.yml ");
+						logger.error("Found processors.yml ");
 						Yaml processorYaml = new Yaml();
 						InputStream inputStream = new FileInputStream(folder.toString() + "/" + "processors.yml");
 						Map<String, Object> obj = processorYaml.load(inputStream);
@@ -291,12 +290,12 @@ public class MdmiEngine {
 							File::getName).collect(Collectors.toSet());
 
 					for (String propertyFile : propertyFiles) {
-						logger.debug("Loading property  " + propertyFile);
+						logger.error("Loading property  " + propertyFile);
 						InputStream targetStream = new FileInputStream(folder.toString() + "/" + propertyFile);
 						Properties properties = new Properties();
 						properties.load(targetStream);
 						mapProperties.put(FilenameUtils.removeExtension(propertyFile), properties);
-						logger.debug("Loaded property  " + propertyFile);
+						logger.error("Loaded property  " + propertyFile);
 					}
 
 					Set<String> valuesFiles = Stream.of(new File(folder.toString()).listFiles()).filter(
@@ -304,7 +303,7 @@ public class MdmiEngine {
 							Collectors.toSet());
 
 					for (String valuesFile : valuesFiles) {
-						logger.debug("Loading property  " + valuesFile);
+						logger.error("Loading property  " + valuesFile);
 
 						// Files.readString()
 
@@ -317,7 +316,7 @@ public class MdmiEngine {
 						try {
 							jsonObject = (JSONObject) parser.parse(body);
 							mapValues.put(FilenameUtils.removeExtension(valuesFile), jsonObject);
-							logger.debug("Loaded property  " + valuesFile);
+							logger.error("Loaded property  " + valuesFile);
 						} catch (ParseException e) {
 							logger.error(e.getLocalizedMessage());
 						}
@@ -371,63 +370,63 @@ public class MdmiEngine {
 	}
 
 	String ediToXML(String message) throws Exception {
-		String messageOut = "<DocumentRoot>" + EDIProcessor.transformEDI2XML(message.getBytes()) + "</DocumentRoot>";
-		logger.error(messageOut);
-		return messageOut;
+		// String messageOut = "<DocumentRoot>" + EDIProcessor.transformEDI2XML(message.getBytes()) + "</DocumentRoot>";
+		// logger.error(messageOut);
+		return message;
 
 	}
 
 	String xmlToEDI(String message) throws Exception {
 		logger.error(message);
-		String messageOut = EDIProcessor.transformXML2EDI(
-			message.replace("<DocumentRoot>", "").replace("</DocumentRoot>", "").replaceAll("[\\n\\r]", "").replaceAll(
-				"999AaA999", " ").getBytes());
-		logger.error(messageOut);
-		return messageOut;
+		// String messageOut = EDIProcessor.transformXML2EDI(
+		// message.replace("<DocumentRoot>", "").replace("</DocumentRoot>", "").replaceAll("[\\n\\r]", "").replaceAll(
+		// "999AaA999", " ").getBytes());
+		// logger.error(messageOut);
+		return message;
 
 	}
 
 	public String transformation(String source, String target, String message) throws Exception {
-		logger.debug("DEBUG Start transformation ");
+		logger.error("DEBUG Start transformation ");
 
-		logger.debug("start loadMaps()");
+		logger.error("start loadMaps()");
 		loadMaps();
-		logger.debug("done loadMaps()");
-		logger.debug("start loadPreProcessors()");
+		logger.error("done loadMaps()");
+		logger.error("start loadPreProcessors()");
 		loadPreProcessors(Mdmi.INSTANCE());
-		logger.debug("done loadPreProcessors()");
-		logger.debug("start loadPostProcessors()");
+		logger.error("done loadPreProcessors()");
+		logger.error("start loadPostProcessors()");
 		loadPostProcessors(Mdmi.INSTANCE());
-		logger.debug("done loadPostProcessors()");
-		logger.debug("start loadsourcesemanticprocessors()");
+		logger.error("done loadPostProcessors()");
+		logger.error("start loadsourcesemanticprocessors()");
 		loadsourcesemanticprocessors(Mdmi.INSTANCE());
-		logger.debug("start loadsourcesemanticprocessors()");
-		logger.debug("done loadTargetSemanticProcessors()");
+		logger.error("start loadsourcesemanticprocessors()");
+		logger.error("done loadTargetSemanticProcessors()");
 		loadTargetSemanticProcessors(Mdmi.INSTANCE());
-		logger.debug("done loadTargetSemanticProcessors()");
+		logger.error("done loadTargetSemanticProcessors()");
 
 		// MdmiUow.setSerializeSemanticModel(false);
-		logger.debug("start ProcessRelationships()");
+		logger.error("start ProcessRelationships()");
 		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
-		logger.debug("done ProcessRelationships()");
+		logger.error("done ProcessRelationships()");
 
-		logger.debug("start getMapProperties source()");
+		logger.error("start getMapProperties source()");
 		getMapProperties(source);
-		logger.debug("done getMapProperties source()");
+		logger.error("done getMapProperties source()");
 
-		logger.debug("start getMapProperties source()");
+		logger.error("start getMapProperties source()");
 		getMapProperties(target);
-		logger.debug("done getMapProperties source()");
+		logger.error("done getMapProperties source()");
 
 		if (source.startsWith("X12")) {
 			message = ediToXML(message);
 		}
 
-		logger.debug("start  RuntimeService.runTransformation");
+		logger.error("start  RuntimeService.runTransformation");
 		String result = RuntimeService.runTransformation(
 			source, message.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
 			mapValues.get(source), mapValues.get(target));
-		logger.debug("done  RuntimeService.runTransformation");
+		logger.error("done  RuntimeService.runTransformation");
 
 		if (target.startsWith("X12")) {
 			result = xmlToEDI(result);
