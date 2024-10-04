@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdmi="http://schema.omg.org/spec/MDMI/1.0">
   <mdmi:MessageGroup xmi:id="_W9vpUFlxEe-ezYGZbS4PDQ" name="X12" description="SKIPCONTAINMENT" defaultLocationExprLang="XPath" defaultConstraintExprLang="JavaScript" defaultRuleExprLang="JavaScript">
-    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-09-27 16:24:53.152">
+    <models xmi:id="_W9vpUVlxEe-ezYGZbS4PDQ" messageModelName="278" description="2024-10-03 12:05:38.098">
       <syntaxModel xmi:id="_W9vpUllxEe-ezYGZbS4PDQ">
         <root xsi:type="mdmi:Bag" xmi:id="_W9vpU1lxEe-ezYGZbS4PDQ" name="DocumentRoot" maxOccurs="1" location="DocumentRoot" semanticElement="_W9yG6VlxEe-ezYGZbS4PDQ">
           <nodes xsi:type="mdmi:Bag" xmi:id="_W9vpVFlxEe-ezYGZbS4PDQ" name="X12005010X217278A3" maxOccurs="1" location="X12005010X217278A3" semanticElement="_W9yG6llxEe-ezYGZbS4PDQ" fieldName="X12005010X217278A3">
@@ -3908,7 +3908,10 @@
         <semanticElements xmi:id="_W9z7DFlxEe-ezYGZbS4PDQ" name="AAA03RejectReasonCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7CllxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ9FlxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9z7DVlxEe-ezYGZbS4PDQ" name="AAA02" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7CllxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ9VlxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9z7DllxEe-ezYGZbS4PDQ" name="AAA04FollowupActionCode" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7CllxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ9llxEe-ezYGZbS4PDQ"/>
-        <semanticElements xmi:id="_W9z7D1lxEe-ezYGZbS4PDQ" name="REFDependentSupplementalIdentification2010D" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9z671lxEe-ezYGZbS4PDQ" children="_W9z7EFlxEe-ezYGZbS4PDQ _W9z7EVlxEe-ezYGZbS4PDQ _W9z7EllxEe-ezYGZbS4PDQ _W9z7E1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ01lxEe-ezYGZbS4PDQ"/>
+        <semanticElements xmi:id="_W9z7D1lxEe-ezYGZbS4PDQ" name="REFDependentSupplementalIdentification2010D" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9z671lxEe-ezYGZbS4PDQ" children="_W9z7EFlxEe-ezYGZbS4PDQ _W9z7EVlxEe-ezYGZbS4PDQ _W9z7EllxEe-ezYGZbS4PDQ _W9z7E1lxEe-ezYGZbS4PDQ _JXrXYIGhEe-Tu83e-3z1_g" syntaxNode="_W9wQ01lxEe-ezYGZbS4PDQ">
+          <relationships xmi:id="_HdgJsIGhEe-Tu83e-3z1_g" name="QUALIFIER" rule="function isREFDependentSupplementalIdentification2010D(target){if ('beneficiary' === target.value()) {return true;} else {return false;}}" context="_W9z7D1lxEe-ezYGZbS4PDQ" relatedSemanticElement="_JXrXYIGhEe-Tu83e-3z1_g"/>
+          <mapFromMdmi xmi:id="_uNW7IYGgEe-Tu83e-3z1_g" name="MDMI2Message4REFDependentSupplementalIdentification2010D" businessElement="_D8EjHVmrEe-cOpHYeCJAXw"/>
+        </semanticElements>
         <semanticElements xmi:id="_W9z7EFlxEe-ezYGZbS4PDQ" name="REF04" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7D1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ1FlxEe-ezYGZbS4PDQ"/>
         <semanticElements xmi:id="_W9z7EVlxEe-ezYGZbS4PDQ" name="REF01ReferenceIdentificationQualifier" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7D1lxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ1VlxEe-ezYGZbS4PDQ">
           <mapFromMdmi xmi:id="_q_UtsXW_Ee-MCsbFDAy6Qg" name="MDMI2Message4REF01ReferenceIdentificationQualifier" businessElement="_Ap9cc1msEe-cOpHYeCJAXw" rule="DATATYPEMAP:mapInstanceIdentifierToStringIdentifierType"/>
@@ -3944,7 +3947,8 @@
           <mapFromMdmi xmi:id="_aYkGsWbgEe-UPvWK94GEdA" name="MDMI2Message4fDMGDPatientType" businessElement="_P2t642CFEe-BicZKIwBnMw" rule="DATATYPEMAP:mapCodedElementToString"/>
         </semanticElements>
         <semanticElements xmi:id="_W9z7IFlxEe-ezYGZbS4PDQ" name="NM1DependentName2010D" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9z671lxEe-ezYGZbS4PDQ" children="_W9z7IVlxEe-ezYGZbS4PDQ _W9z7IllxEe-ezYGZbS4PDQ _W9z7I1lxEe-ezYGZbS4PDQ _W9z7JFlxEe-ezYGZbS4PDQ _W9z7JVlxEe-ezYGZbS4PDQ _W9z7JllxEe-ezYGZbS4PDQ _W9z7J1lxEe-ezYGZbS4PDQ _W9z7KFlxEe-ezYGZbS4PDQ _W9z7KVlxEe-ezYGZbS4PDQ _W9z7KllxEe-ezYGZbS4PDQ _W9z7K1lxEe-ezYGZbS4PDQ _W9z7LFlxEe-ezYGZbS4PDQ _Ysv8EFvSEe-2tpUueUdvNQ _bUTuwGFlEe-BicZKIwBnMw _l4XK0GbgEe-UPvWK94GEdA" syntaxNode="_W9wQ91lxEe-ezYGZbS4PDQ">
-          <relationships xmi:id="_utzhgGbgEe-UPvWK94GEdA" name="QUALIFIER" description="" rule="function isNM1DependentName2010D(target){if ('beneficiary' === target.value()) {return true;} else {return false;}}" context="_W9z7IFlxEe-ezYGZbS4PDQ" relatedSemanticElement="_l4XK0GbgEe-UPvWK94GEdA"/>
+          <relationships xmi:id="_YMaMcIGgEe-Tu83e-3z1_g" name="QUALIFIER" rule="function isNM1DependentName2010D(target){if ('beneficiary' === target.value()) {return true;} else {return false;}}" context="_W9z7IFlxEe-ezYGZbS4PDQ" relatedSemanticElement="_l4XK0GbgEe-UPvWK94GEdA"/>
+          <mapFromMdmi xmi:id="_xKVCkYGgEe-Tu83e-3z1_g" name="MDMI2Message4NM1DependentName2010D" businessElement="_D8EjHVmrEe-cOpHYeCJAXw"/>
         </semanticElements>
         <semanticElements xmi:id="_W9z7IVlxEe-ezYGZbS4PDQ" name="NM101EntityIdentifierCode2010D" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7IFlxEe-ezYGZbS4PDQ" syntaxNode="_W9wQ-FlxEe-ezYGZbS4PDQ">
           <computedInValue xmi:id="_aZZdQHW_Ee-MCsbFDAy6Qg" expression="value.getXValue().setValue('QC');" language="JavaScript"/>
@@ -3975,6 +3979,7 @@
         </semanticElements>
         <semanticElements xmi:id="_W9z7LVlxEe-ezYGZbS4PDQ" name="N3DependentAddress2010D" datatype="_W97Qo1lxEe-ezYGZbS4PDQ" parent="_W9z671lxEe-ezYGZbS4PDQ" children="_W9z7LllxEe-ezYGZbS4PDQ _W9z7L1lxEe-ezYGZbS4PDQ _06OngGbgEe-UPvWK94GEdA" syntaxNode="_W9wRBFlxEe-ezYGZbS4PDQ">
           <relationships xmi:id="_9JKX0GbgEe-UPvWK94GEdA" name="QUALIFIER" description="" rule="function isN3DependentAddress2010D(target){if ('beneficiary' === target.value()) {return true;} else {return false;}}" context="_W9z7LVlxEe-ezYGZbS4PDQ" relatedSemanticElement="_06OngGbgEe-UPvWK94GEdA"/>
+          <mapFromMdmi xmi:id="_zW-gUYGgEe-Tu83e-3z1_g" name="MDMI2Message4N3DependentAddress2010D" businessElement="_D8EjHVmrEe-cOpHYeCJAXw"/>
         </semanticElements>
         <semanticElements xmi:id="_W9z7LllxEe-ezYGZbS4PDQ" name="N301DependentAddressLine" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7LVlxEe-ezYGZbS4PDQ" syntaxNode="_W9wRBVlxEe-ezYGZbS4PDQ">
           <mapFromMdmi xmi:id="_ZxLCwV4dEe-2tpUueUdvNQ" name="MDMI2Message4N301DependentAddressLine" businessElement="_3j4skVsHEe-JtrU1BkhTbA" rule="DATATYPEMAP:mapAddressStreetOneToString"/>
@@ -5553,6 +5558,9 @@
           <mapFromMdmi xmi:id="_ce_AEXeIEe-C57xiO3CttA" name="MDMI2Message4OrganizationContactTelecom" businessElement="_s0ropl_NEe-nwu7BruFo6Q"/>
           <computedValue xmi:id="_ce_AEneIEe-C57xiO3CttA" expression="SEMANTICROLLUP" language="JavaScript"/>
           <mapToMdmi xmi:id="_ce_AE3eIEe-C57xiO3CttA" name="Message2MDMI4OrganizationContactTelecom" businessElement="_s0ropl_NEe-nwu7BruFo6Q"/>
+        </semanticElements>
+        <semanticElements xmi:id="_JXrXYIGhEe-Tu83e-3z1_g" name="REFDPatientType" datatype="_W97QoFlxEe-ezYGZbS4PDQ" parent="_W9z7D1lxEe-ezYGZbS4PDQ">
+          <mapFromMdmi xmi:id="_JXrXYYGhEe-Tu83e-3z1_g" name="MDMI2Message4fN3DPatientType" businessElement="_P2t642CFEe-BicZKIwBnMw" rule="DATATYPEMAP:mapCodedElementToString"/>
         </semanticElements>
       </elementSet>
     </models>
