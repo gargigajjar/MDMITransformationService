@@ -1,6 +1,6 @@
 FROM alpine/git
 WORKDIR /app
-RUN git clone --branch mdmiThreeOh https://github.com/MDMI/MDMITransformationService.git
+RUN git clone --branch smiledocker https://github.com/MDMI/MDMITransformationService.git
 
 FROM maven:3.9-eclipse-temurin-11
 WORKDIR /app
