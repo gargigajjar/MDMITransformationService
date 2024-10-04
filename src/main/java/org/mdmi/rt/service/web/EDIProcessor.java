@@ -66,7 +66,8 @@ public class EDIProcessor {
 
 	protected static String transformEDI2XML(byte[] messageIn) throws Exception {
 		// Instantiate Smooks with the config...
-		Smooks smooks = new Smooks();
+		Smooks smooks = new Smooks(
+			new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
 		smooks.addResourceConfigs("smile-smooks-parser-config.xml");
 		try {
 			// Create an exec context - no profiles....
@@ -89,7 +90,8 @@ public class EDIProcessor {
 
 	public static String transformXML2EDI(byte[] messageIn) throws Exception {
 		// Instantiate Smooks with the config...
-		Smooks smooks = new Smooks();
+		Smooks smooks = new Smooks(
+			new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
 		smooks.addResourceConfigs("smile-smooks-unparser-config.xml");
 		try {
 			// Create an exec context - no profiles....

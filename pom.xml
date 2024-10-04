@@ -10,7 +10,7 @@
 	<properties>
 		<mdmi.runtime.version>3.0.0-SNAPSHOT</mdmi.runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 		<tycho-version>2.7.5</tycho-version>
 		<skipTests>true</skipTests>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
