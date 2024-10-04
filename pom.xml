@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi.transformation</groupId>
 	<artifactId>org.mdmi.transformation.service</artifactId>
@@ -18,24 +20,28 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		 <version>3.0.13</version>
+		<version>3.0.13</version>
 	</parent>
 	<dependencies>
-	
-	<dependency>
-    <groupId>jakarta.annotation</groupId>
-    <artifactId>jakarta.annotation-api</artifactId>
 
-      
-</dependency>
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
 
-<!-- https://mvnrepository.com/artifact/org.openjdk.nashorn/nashorn-core -->
-<dependency>
-    <groupId>org.openjdk.nashorn</groupId>
-    <artifactId>nashorn-core</artifactId>
-    <version>15.4</version>
-</dependency>
 
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.openjdk.nashorn/nashorn-core -->
+		<dependency>
+			<groupId>org.openjdk.nashorn</groupId>
+			<artifactId>nashorn-core</artifactId>
+			<version>15.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.14.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.yaml</groupId>
@@ -126,20 +132,17 @@
 			<version>3.6.200.v20170522</version>
 		</dependency>
 
-<dependency>
- <groupId>com.github.ben-manes.caffeine</groupId>
- <artifactId>caffeine</artifactId>
- 
-</dependency>
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
 
-<dependency>
-    <groupId>ognl</groupId>
-    <artifactId>ognl</artifactId>
-    <version>3.1.12</version> 
-</dependency>
-		
-		
-		
+		</dependency>
+
+		<dependency>
+			<groupId>ognl</groupId>
+			<artifactId>ognl</artifactId>
+			<version>3.1.12</version>
+		</dependency>
 
 
 		<dependency>
@@ -168,7 +171,8 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<!--
+		https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
@@ -179,20 +183,24 @@
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5 -->
+		<!--
+		https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5 -->
 		<dependency>
 			<groupId>org.apache.httpcomponents.core5</groupId>
 			<artifactId>httpcore5</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.httpcomponents.client5/httpclient5 -->
 		<dependency>
 			<groupId>org.apache.httpcomponents.client5</groupId>
 			<artifactId>httpclient5</artifactId>
 			<version>5.0.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5-h2 -->
+		<!--
+		https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5-h2 -->
 		<dependency>
 			<groupId>org.apache.httpcomponents.core5</groupId>
 			<artifactId>httpcore5-h2</artifactId>
@@ -231,14 +239,14 @@
 			<artifactId>org.mdmi.processors.hl7v2</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.cda</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>
@@ -246,14 +254,13 @@
 		</dependency>
 
 
-	 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-		 
+
 		</dependency>
- 
+
 
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
@@ -300,9 +307,9 @@
 		</dependency>
 
 		<dependency>
-			 <groupId>org.eclipse.uml2.types</groupId>
-  <artifactId>org.eclipse.uml2.types</artifactId>
-  <version>2.0.0.v20170605</version>
+			<groupId>org.eclipse.uml2.types</groupId>
+			<artifactId>org.eclipse.uml2.types</artifactId>
+			<version>2.0.0.v20170605</version>
 		</dependency>
 
 		<dependency>
@@ -310,13 +317,13 @@
 			<artifactId>lpg.runtime.java</artifactId>
 			<version>2.0.17.v201004271640</version>
 		</dependency>
-		
- 
- <dependency>
-  <groupId>org.mdmi.x12</groupId>
-    <artifactId>org.mdmi.x12</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
- </dependency>
+
+
+		<dependency>
+			<groupId>org.mdmi.x12</groupId>
+			<artifactId>org.mdmi.x12</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 
 	</dependencies>
 	<build>
@@ -439,7 +446,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-		<profiles>
+	<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
