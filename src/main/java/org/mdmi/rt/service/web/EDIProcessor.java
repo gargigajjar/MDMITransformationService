@@ -68,7 +68,7 @@ public class EDIProcessor {
 		// Instantiate Smooks with the config...
 		Smooks smooks = new Smooks(
 			new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
-		smooks.addResourceConfigs("/maps/smile-smooks-parser-config.xml");
+		smooks.addResourceConfigs("/maps/aaaasmile-smooks-parser-config.xml");
 		try {
 			// Create an exec context - no profiles....
 			ExecutionContext executionContext = smooks.createExecutionContext();
@@ -92,7 +92,7 @@ public class EDIProcessor {
 		// Instantiate Smooks with the config...
 		Smooks smooks = new Smooks(
 			new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
-		smooks.addResourceConfigs("/maps/smile-smooks-unparser-config.xml");
+		smooks.addResourceConfigs("/maps/aaaaasmile-smooks-unparser-config.xml");
 		try {
 			// Create an exec context - no profiles....
 			ExecutionContext executionContext = smooks.createExecutionContext();
