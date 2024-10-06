@@ -23,8 +23,12 @@
 		<version>3.0.13</version>
 	</parent>
 	<dependencies>
-
-
+     <dependency>
+        <groupId>org.smooks</groupId>
+        <artifactId>smooks-core</artifactId>
+        <version>2.0.0-RC4</version>
+      </dependency>
+<!--
 <dependency>
     <groupId>org.apache.daffodil</groupId>
     <artifactId>daffodil-japi_2.12</artifactId>
@@ -45,7 +49,7 @@
     <artifactId>woodstox-core</artifactId>
     <version>7.0.0</version>
 </dependency>
-
+-->
 
 
 		<dependency>
@@ -338,13 +342,13 @@
 			<version>2.0.17.v201004271640</version>
 		</dependency>
 
-
+<!--
 		<dependency>
 			<groupId>org.mdmi.x12</groupId>
 			<artifactId>org.mdmi.x12</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+-->
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
