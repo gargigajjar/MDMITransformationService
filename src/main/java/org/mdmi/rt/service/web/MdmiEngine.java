@@ -95,9 +95,10 @@ public class MdmiEngine {
 
 	static long lastModified;
 
+	private EDIProcessor ediProcessor = new EDIProcessor();
+
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
-
 		synchronized (this) {
 
 			MdmiUow.sourceFilter = mdmiSettings.getSourceFilterFlag();
@@ -329,14 +330,14 @@ public class MdmiEngine {
 	}
 
 	String ediToXML(String message) throws Exception {
-		String messageOut = "<DocumentRoot>" + EDIProcessor.transformEDI2XML(message.getBytes()) + "</DocumentRoot>";
+		String messageOut = "<DocumentRoot>" + ediProcessor.transformEDI2XML(message.getBytes()) + "</DocumentRoot>";
 		logger.error(messageOut);
 		return messageOut;
 	}
 
 	String xmlToEDI(String message) throws Exception {
 		logger.error(message);
-		String messageOut = EDIProcessor.transformXML2EDI(
+		String messageOut = ediProcessor.transformXML2EDI(
 			message.replace("<DocumentRoot>", "").replace("</DocumentRoot>", "").replaceAll("[\\n\\r]", "").replaceAll(
 				"999AaA999", " ").getBytes());
 		logger.error(messageOut);
