@@ -7,3 +7,5 @@ WORKDIR /app
 COPY --from=0 /app/MDMITransformationService /app 
 RUN mvn install 
 ENTRYPOINT ["java","-jar","/app/target/org.mdmi.transformation.service.jar"]
+
+COPY ./src/main/resources/maps /maps/
