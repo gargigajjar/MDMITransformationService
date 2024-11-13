@@ -96,7 +96,7 @@ public class EDIProcessor {
 
 		try {
 			// Create an exec context - no profiles....
-			ExecutionContext executionContext = smooks.createExecutionContext();
+			ExecutionContext executionContext = unsmooks.createExecutionContext();
 			CharArrayWriter writer = new CharArrayWriter();
 			org.smooks.api.io.Source aaa = new org.smooks.io.source.StreamSource(new ByteArrayInputStream(messageIn));
 			unsmooks.filterSource(executionContext, aaa, new WriterSink(writer));
