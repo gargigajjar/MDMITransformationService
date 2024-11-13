@@ -91,7 +91,7 @@ public class EDIProcessor {
 		if (unsmooks == null) {
 			unsmooks = new Smooks(
 				new DefaultApplicationContextBuilder().withClassLoader(EDIProcessor.class.getClassLoader()).build());
-			smooks.addResourceConfigs("asmile-smooks-unparser-config.xml");
+			unsmooks.addResourceConfigs("asmile-smooks-unparser-config.xml");
 		}
 
 		try {
@@ -103,7 +103,7 @@ public class EDIProcessor {
 			return writer.toString();
 
 		} finally {
-			smooks.close();
+			unsmooks.close();
 		}
 	}
 
