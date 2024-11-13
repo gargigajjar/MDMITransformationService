@@ -37,7 +37,7 @@ class TestConversion {
 
 	private static byte[] readInputMessage() {
 		try {
-			return StreamUtils.readStream(new FileInputStream("input-message.edi"));
+			return StreamUtils.readStream(new FileInputStream("PA-Approved-request man edit 1112.edi"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			return "<no-message/>".getBytes();

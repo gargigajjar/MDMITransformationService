@@ -1,0 +1,33 @@
+ST*278*0002*005010X217~
+BHT*0007*13*6454de92-b85e-4054-8cb0-ccbaae62aa32*2024-04-01*19:56:21.436Z~
+HL*1*0*20*1~
+NM1*2B*2*Health Level Seven International Insurance***** *Payer-A Insurance~
+PER*ZZZZZZ~
+HL*2*1*21*1~
+NM1*1P*2*1ST CARE MEDICAL CLINIC*****xx*1407805088~
+HL*3*2*22*1~
+NM1*IL*1*Homenick806*Dianna917*Kiersten731* * *xx*85e086aa-c117-6cbf-e2b4-4a9e621a73c1~
+N3*607 Boyle Plaza Apt 43* ~
+N4*North Brookfield*MA*01535*US~
+DMG*D8*2007-03-31*F~
+INS*ZZZZZ~
+HL*4*3*23*1~
+HL*5*4*EV*1~
+TRN*1*test-91299123~
+UM***96***E~
+REF*BB*What is the Authorization Number~
+DTP*AAH*RD8*20231001-20231002~
+HI*2.16.840.1.113883.6.96:78275009~
+PWK*77*EL***AC*test-91299123~
+HL*6*5*SS*0~
+UM***96~
+HCR*A1*1~
+REF* *provider-practitioner-pp1~
+DTP*472*RD8*20231001-20231002~
+SV2**HC:95803:::::Actigraphy testing, recording, analysis, interpretation, and report (minimum of 72 hours to 14 consecutive days of recording)~
+PWK**EL***AC~
+NM1*other*1*Minor*David* *Dr.* * *provider-practitioner-pp1~
+N3*1635 W. Glendale Ave.* ~
+N4*Phoenix*AZ*85021*US*** ~
+PER*IC**TE*602-544-2273~
+PRV*other*PXC~
