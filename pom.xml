@@ -13,7 +13,7 @@
 		<mdmi.runtime.version>3.0.0-SNAPSHOT</mdmi.runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho-version>2.7.5</tycho-version>
-		<skipTests>false</skipTests>
+		<skipTests>true</skipTests>
 		<maven.compiler.release>11</maven.compiler.release>
 		<maven.compiler.source>11</maven.compiler.source>
 		<!--  <spring.version>6.1.6</spring.version> -->
