@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>19</java.version>
 		<tycho-version>2.7.5</tycho-version>
-		<skipTests>true</skipTests>
+		<skipTests>false</skipTests>
 	</properties>
 	<!-- Inherit defaults from Spring Boot -->
 	<parent>
@@ -22,18 +22,6 @@
 	</parent>
 	<dependencies>
 	
-<!--	 <dependency>
-    <groupId>org.apache.daffodil</groupId>
-    <artifactId>daffodil-japi_2.12</artifactId>
-    <version>3.8.0</version>
-</dependency>
--->
-<!-- https://mvnrepository.com/artifact/org.apache.daffodil/daffodil-schematron -->
-<dependency>
-    <groupId>org.apache.daffodil</groupId>
-    <artifactId>daffodil-schematron_2.12</artifactId>
-    <version>3.8.0</version>
-</dependency>
 
 
   <!-- https://mvnrepository.com/artifact/org.smooks.cartridges.edi/smooks-edi-cartridge -->
@@ -44,14 +32,7 @@
 </dependency>
 
 	
-	<dependency>
-    <groupId>jakarta.annotation</groupId>
-    <artifactId>jakarta.annotation-api</artifactId>
 
-      
-</dependency>
-
-<!-- https://mvnrepository.com/artifact/org.openjdk.nashorn/nashorn-core -->
 <dependency>
     <groupId>org.openjdk.nashorn</groupId>
     <artifactId>nashorn-core</artifactId>
@@ -185,12 +166,6 @@
 			<artifactId>closure-compiler</artifactId>
 			<version>v20191111</version>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.11.0</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
