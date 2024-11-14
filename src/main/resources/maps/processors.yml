@@ -10,7 +10,7 @@ postprocessors:
        name: FHIRR4PostProcessorJson
        class: org.mdmi.processors.fhir.FHIRR4PostProcessorJson
        groups:
-         - xxFHIRR4JSON
+         - FHIRR4JSON
 sourcesemanticprocessors:
     normalize:
         name: Normalize
