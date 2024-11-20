@@ -121,7 +121,7 @@ public class SBHA2XML implements IPreProcessor {
 		String output = "<" + root + ">" + System.lineSeparator() + inputLines.stream().skip(1).map(line -> {
 			List<String> cells = split2(line, delim); // Arrays.asList(line.split(delim));
 			return "<" + elementName + ">" + System.lineSeparator() +
-					IntStream.range(0, cells.size()).mapToObj(
+					IntStream.range(0, cells.size()).filter(i -> !cells.get(i).isBlank()).mapToObj(
 						i -> "<" + header.get(i).replaceAll(" ", "_") + ">" +
 								cells.get(i).replaceAll("\"", "").replaceAll("<", "&lt;").replaceAll(">", "&gt;") +
 								"</" + header.get(i).replaceAll(" ", "_") + ">").collect(

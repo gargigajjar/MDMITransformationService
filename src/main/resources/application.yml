@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8282
 
 spring:
   servlet:
@@ -9,15 +9,18 @@ spring:
 
 logging:
   level:
-    root: INFO
-    org.mdmi: TRACE
-    org.springframework.web: INFO
-    org.springframework.security: INFO
+    root: ${LOGGING_LEVEL_ROOT:INFO}
+    org.mdmi: ${LOGGING_LEVEL_MDMI:INFO}
+    org.springframework: ${LOGGING_LEVEL_SPRING:info}
+    com.google: ${LOGGING_LEVEL_JSCOMP:OFF}
 
 fhirterminology:
-    userName: user
-    password: user
-    url: http://terminologyservice.mdixinc.net:8080/fhir
+    userName: ${FHIR_TERMINOLOGY_NAME:user}
+    password: ${FHIR_TERMINOLOGY_PASSWORD:user}
+    url: ${FHIR_TERMINOLOGY_URL:http://terminologyservice.mdixinc.net:8080/fhir}
+
+mdmi:
+    sourceFilterFlag: ${MDMI_SOURCE_FILTER_FLAG:false}    
 
 origins:
   url: ""

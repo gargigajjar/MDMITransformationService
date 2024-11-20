@@ -45,14 +45,16 @@ public class CDAPreProcesor implements IPreProcessor {
 				if (!StringUtils.isEmpty(reference)) {
 					String result = section.getText().getText(reference.substring(1));
 					if (!StringUtils.isEmpty(result)) {
-						return result;
+						// System.out.println("regex test:" + result);
+						return result.replaceAll("<.*?>", "").replaceAll("\\s+", " ");
 					}
 				} else {
 					String mixed = ed.getReference().getText();
 					if (!StringUtils.isEmpty(mixed)) {
 						String result = section.getText().getText(mixed.substring(1));
 						if (!StringUtils.isEmpty(result)) {
-							return result;
+							// System.out.println("regex test:" + result);
+							return result.replaceAll("<.*?>", "").replaceAll("\\s+", " ");
 						}
 					}
 				}
@@ -168,7 +170,7 @@ public class CDAPreProcesor implements IPreProcessor {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			CDAUtil.save(sourceDocument, baos);
 
-			System.out.println(baos.toString());
+			// System.out.println(baos.toString());
 			mdmiMessage.setData(baos.toString());
 
 		} catch (Exception e) {
