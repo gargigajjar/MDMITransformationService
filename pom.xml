@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi.transformation</groupId>
 	<artifactId>org.mdmi.transformation.service</artifactId>
-	<version>3.0.0</version>
+	<version>4.0.0</version>
 	<packaging>jar</packaging>
 	<name>MDMI Transformation Service</name>
 	<description>MDMI Transformation Service</description>
@@ -15,7 +15,7 @@
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<tycho-version>2.7.5</tycho-version>
+		<!---		<tycho-version>2.7.5</tycho-version> -->
 		<skipTests>true</skipTests>
 	</properties>
 	<!-- Inherit defaults from Spring Boot -->
@@ -25,21 +25,65 @@
 		<version>3.3.5</version>
 	</parent>
 	<dependencies>
-
-	<!-- https://mvnrepository.com/artifact/jakarta.ws.rs/jakarta.ws.rs-api -->
-<dependency>
-    <groupId>jakarta.ws.rs</groupId>
-    <artifactId>jakarta.ws.rs-api</artifactId>
-
-</dependency>
-
-
-	<!-- https://mvnrepository.com/artifact/org.springframework/org.springframework.beans -->
-<dependency>
+		<dependency>
+			<groupId>jakarta.ws.rs</groupId>
+			<artifactId>jakarta.ws.rs-api</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.openjdk.nashorn</groupId>
+			<artifactId>nashorn-core</artifactId>
+			<version>15.4</version>
+		</dependency>
 
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore</artifactId>
+			<version>2.38.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.common </artifactId>
+			<version>2.38.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+			<version>2.38.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.antlr</groupId>
+			<artifactId>antlr4-runtime</artifactId>
+			<version>4.5.1</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.xml/serializer -->
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.javascript</groupId>
+			<artifactId>closure-compiler</artifactId>
+			<version>v20240317</version>
+			<!--<version>v20191111</version> -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.mdmi</groupId>
@@ -50,65 +94,71 @@
 			<groupId>org.mdmi</groupId>
 			<artifactId>org.mdmi.core.runtime</artifactId>
 			<version>${mdmi.runtime.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
-<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-<dependency>
-    <groupId>commons-io</groupId>
-    <artifactId>commons-io</artifactId>
-    <version>2.18.0</version>
-</dependency>
-
-<dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.18.0</version>
+		</dependency>
+		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.mdmi</groupId>
+			<artifactId>org.mdmi.processors</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.fhir</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.apex</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.hl7v2</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.cda</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-			<!--	<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<pomDependencies>consider</pomDependencies>
-				</configuration>
-				<extensions>true</extensions>
-			</plugin> -->
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>repackage</id>
+						<phase>package</phase>
 						<goals>
 							<goal>repackage</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
-
-
-			<!--	<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-
-				<executions>
-					<execution>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<phase>package</phase>
-						<configuration>
-							<classifier>app-to-import</classifier>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
--->
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -208,6 +258,50 @@
 
 
 			</distributionManagement>
+
+			<build>
+				<plugins>
+					<!-- Override plugin execution to disable -->
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>repackage</id>
+								<phase>none</phase>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 		</profile>
+
+<!--
+		<profile>
+			<id>disable-spring-boot-plugin</id>
+			<build>
+				<plugins>
+
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>repackage</id>
+								<phase>none</phase>
+								<goals>
+									<goal>repackage</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+-->
+
 	</profiles>
 </project>
