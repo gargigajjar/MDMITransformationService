@@ -19,8 +19,6 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.ws.rs.core.Context;
-
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.simple.JSONArray;
@@ -53,6 +51,7 @@ import org.yaml.snakeyaml.Yaml;
 
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.ws.rs.core.Context;
 
 @RestController
 @RequestMapping("/mdmi/transformation")
@@ -265,19 +264,21 @@ public class MdmiEngine {
 						InputStream inputStream = new FileInputStream(folder.toString() + "/" + "processors.yml");
 						Map<String, Object> obj = processorYaml.load(inputStream);
 
-						if (obj.containsKey("preprocessors")) {
-							preprocessors.add((Map<String, Object>) obj.get("preprocessors"));
-						}
-						if (obj.containsKey("postprocessors")) {
-							postprocessors.add((Map<String, Object>) obj.get("postprocessors"));
-						}
+						if (obj != null) {
+							if (obj.containsKey("preprocessors")) {
+								preprocessors.add((Map<String, Object>) obj.get("preprocessors"));
+							}
+							if (obj.containsKey("postprocessors")) {
+								postprocessors.add((Map<String, Object>) obj.get("postprocessors"));
+							}
 
-						if (obj.containsKey("sourcesemanticprocessors")) {
-							sourcesemanticprocessors.add((Map<String, Object>) obj.get("sourcesemanticprocessors"));
-						}
+							if (obj.containsKey("sourcesemanticprocessors")) {
+								sourcesemanticprocessors.add((Map<String, Object>) obj.get("sourcesemanticprocessors"));
+							}
 
-						if (obj.containsKey("targetsemanticprocessors")) {
-							targetsemanticprocessors.add((Map<String, Object>) obj.get("targetsemanticprocessors"));
+							if (obj.containsKey("targetsemanticprocessors")) {
+								targetsemanticprocessors.add((Map<String, Object>) obj.get("targetsemanticprocessors"));
+							}
 						}
 
 					}
@@ -408,7 +409,7 @@ public class MdmiEngine {
 		loadPostProcessors(Mdmi.INSTANCE());
 		loadsourcesemanticprocessors(Mdmi.INSTANCE());
 		loadTargetSemanticProcessors(Mdmi.INSTANCE());
-		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
+		// Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 		getMapProperties(source);
 		getMapProperties(target);
 
@@ -454,7 +455,7 @@ public class MdmiEngine {
 		loadsourcesemanticprocessors(Mdmi.INSTANCE());
 		loadTargetSemanticProcessors(Mdmi.INSTANCE());
 		// MdmiUow.setSerializeSemanticModel(false);
-		Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
+		// Mdmi.INSTANCE().getSourceSemanticModelProcessors().addSourceSemanticProcessor(new ProcessRelationships());
 		getMapProperties(source);
 		getMapProperties(target);
 
