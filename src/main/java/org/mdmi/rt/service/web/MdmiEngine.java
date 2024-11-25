@@ -94,9 +94,10 @@ public class MdmiEngine {
 
 	static long lastModified;
 
+	private EDIProcessor ediProcessor = new EDIProcessor();
+
 	@SuppressWarnings("unchecked")
 	private void loadMaps() throws IOException {
-
 		synchronized (this) {
 
 			MdmiUow.sourceFilter = mdmiSettings.getSourceFilterFlag();
@@ -329,6 +330,21 @@ public class MdmiEngine {
 
 	}
 
+	String ediToXML(String message) throws Exception {
+		String messageOut = "<DocumentRoot>" + ediProcessor.transformEDI2XML(message.getBytes()) + "</DocumentRoot>";
+		logger.error(messageOut);
+		return messageOut;
+	}
+
+	String xmlToEDI(String message) throws Exception {
+		logger.error(message);
+		String messageOut = ediProcessor.transformXML2EDI(
+			message.replace("<DocumentRoot>", "").replace("</DocumentRoot>", "").replaceAll("[\\n\\r]", "").replaceAll(
+				"999AaA999", " ").getBytes());
+		logger.error(messageOut);
+		return messageOut;
+	}
+
 	private void reloadMaps() throws IOException {
 		synchronized (this) {
 			loaded = false;
@@ -397,9 +413,33 @@ public class MdmiEngine {
 		getMapProperties(source);
 		getMapProperties(target);
 
+		String message = new String(uploadedInputStream.getBytes());
+
+		System.err.println("X!@");
+		if (source.startsWith("X12")) {
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+
+			message = ediToXML(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+			System.err.println(message);
+
+		}
+
 		String result = RuntimeService.runTransformation(
-			source, uploadedInputStream.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
+			source, message.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
 			mapValues.get(source), mapValues.get(target));
+
+		if (target.startsWith("X12")) {
+			result = xmlToEDI(result);
+		}
 		return result;
 	}
 
@@ -419,9 +459,17 @@ public class MdmiEngine {
 		getMapProperties(source);
 		getMapProperties(target);
 
+		if (source.startsWith("X12")) {
+			message = ediToXML(message);
+		}
+
 		String result = RuntimeService.runTransformation(
 			source, message.getBytes(), target, null, mapProperties.get(source), mapProperties.get(target),
 			mapValues.get(source), mapValues.get(target));
+
+		if (target.startsWith("X12")) {
+			result = xmlToEDI(result);
+		}
 		return result;
 	}
 

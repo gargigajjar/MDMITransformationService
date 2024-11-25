@@ -1,0 +1,124 @@
+{
+	"identifier": {
+		"value": "200300114000001"
+	},
+	"entry": [
+		{
+			"request": {
+				"method": "POST",
+				"url": "ClaimResponse"
+			},
+			"resource": {
+				"identifier": [
+					{
+						"system": "1A123456789",
+						"value": "2014042401"
+					}
+				],
+				"disposition": "19950713",
+				"preAuthPeriod": {
+					"start": "2005-05-02",
+					"end": "2005-06-30"
+				},
+				"item": [
+					{
+						"adjudication": [
+							{
+								"extension": [
+									{
+										"extension": [
+											{
+												"valueString": "19950713",
+												"url": "number"
+											},
+											{
+												"valueCodeableConcept": {
+													"coding": [
+														{
+															"code": "HCR03"
+														}
+													]
+												},
+												"url": "reasonCode"
+											},
+											{
+												"valueBoolean": false,
+												"url": "secondSurgicalOpinionFlag"
+											}
+										],
+										"url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction"
+									}
+								],
+								"category": {
+									"coding": [
+										{
+											"system": "http://terminology.hl7.org/CodeSystem/adjudication",
+											"code": "submitted",
+											"display": "Submitted"
+										}
+									],
+									"text": "Submitted"
+								}
+							}
+						],
+						"extension": [
+							{
+								"valueString": "Y456",
+								"url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-administrationReferenceNumber"
+							},
+							{
+								"valueString": "A123",
+								"url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-authorizationNumber"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "http://terminology.hl7.org/CodeSystem/icd9cm",
+											"code": "29681"
+										}
+									]
+								},
+								"url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-communicatedDiagnosis"
+							}
+						]
+					}
+				],
+				"meta": {
+					"tag": [
+						{
+							"system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+							"code": "SUBSETTED",
+							"display": "Resource encoded in summary mode"
+						}
+					]
+				},
+				"preAuthRef": "19950713",
+				"id": "f05c8a17-8fba-4ad3-86c2-d5e00a2398f2",
+				"processNote": [
+					{
+						"text": "This is a free-form text message"
+					}
+				],
+				"resourceType": "ClaimResponse"
+			},
+			"fullUrl": "ClaimResponse/f05c8a17-8fba-4ad3-86c2-d5e00a2398f2"
+		}
+	],
+	"meta": {
+		"tag": [
+			{
+				"system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+				"code": "SUBSETTED",
+				"display": "Resource encoded in summary mode"
+			}
+		]
+	},
+	"type": "batch",
+	"resourceType": "Bundle",
+	"timestamp": "20050501"
+}

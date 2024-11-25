@@ -1,0 +1,1737 @@
+{
+  "resourceType": "Bundle",
+  "id": "6166",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-04-18T18:21:14.182+00:00",
+    "profile": [
+      "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-pas-response-bundle"
+    ]
+  },
+  "type": "collection",
+  "timestamp": "2024-04-18T18:21:14.182+00:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:f408c387-0ab0-4920-b4a5-d76c8b90f364",
+      "resource": {
+        "resourceType": "ClaimResponse",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-18T18:21:14.171+00:00",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/profile-claimresponse"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://smiledigitalhealth.com/priorauth/pas-identifier",
+            "value": "a5e73292-1fe0-46c5-a8b3-41f00ef197be"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "preauthorization",
+        "patient": {
+          "reference": "Patient/provider-patient-2"
+        },
+        "created": "2024-04-18T18:21:14+00:00",
+        "insurer": {
+          "reference": "Organization/provider-payorganization-1"
+        },
+        "requestor": {
+          "reference": "Organization/provider-organization-oo1"
+        },
+        "request": {
+          "reference": "Claim/db33bcfd-047b-4f3a-aa1c-b537f09e70d9"
+        },
+        "outcome": "queued",
+        "item": [
+          {
+            "itemSequence": 1,
+            "adjudication": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewAction",
+                    "extension": [
+                      {
+                        "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-reviewActionCode",
+                        "valueCodeableConcept": {
+                          "coding": [
+                            {
+                              "system": "http://codesystem.x12.org/005010/306",
+                              "code": "A1",
+                              "display": "Approved"
+                            }
+                          ],
+                          "text": "Prior Auth Adjudication Approved"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "category": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/adjudication",
+                      "code": "submitted",
+                      "display": "Submitted Amount"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/provider-coverage-2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Claim/db33bcfd-047b-4f3a-aa1c-b537f09e70d9",
+      "resource": {
+        "resourceType": "Claim",
+        "id": "db33bcfd-047b-4f3a-aa1c-b537f09e70d9",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-18T18:21:13.740+00:00",
+          "source": "#bCxK7FwXHTY9O1ak"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-levelOfServiceCode",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://codesystem.x12.org/005010/1338",
+                  "code": "E",
+                  "display": "Elective"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://smiledigitalhealth.com/priorauth/pas-identifier",
+            "value": "a5e73292-1fe0-46c5-a8b3-41f00ef197be"
+          }
+        ],
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/claim-type",
+              "code": "professional"
+            }
+          ]
+        },
+        "use": "preauthorization",
+        "patient": {
+          "reference": "Patient/provider-patient-2"
+        },
+        "created": "2024-04-18T18:21:12.980Z",
+        "insurer": {
+          "reference": "Organization/provider-payorganization-1"
+        },
+        "provider": {
+          "reference": "Organization/provider-organization-oo1"
+        },
+        "priority": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/processpriority",
+              "code": "normal"
+            }
+          ]
+        },
+        "careTeam": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/davinci-pas/StructureDefinition/extension-careTeamClaimScope",
+                "valueBoolean": true
+              }
+            ],
+            "sequence": 1,
+            "provider": {
+              "reference": "Organization/provider-organization-oo1"
+            },
+            "role": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/claimcareteamrole",
+                  "code": "other",
+                  "display": "Other"
+                }
+              ]
+            }
+          }
+        ],
+        "supportingInfo": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                  "code": "additionalInformation"
+                }
+              ]
+            },
+            "valueReference": {
+              "reference": "Bundle/979a5326-3474-42a3-bd16-8c0f63a814e9"
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "sequence": 1,
+            "diagnosisCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "78275009",
+                  "display": "Obstructive sleep apnea syndrome"
+                }
+              ],
+              "text": "Obstructive sleep apnea syndrome"
+            },
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/us/davinci-pas/CodeSystem/PASTempCodes",
+                    "code": "patientreasonforvisit"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "insurance": [
+          {
+            "sequence": 1,
+            "focal": true,
+            "coverage": {
+              "reference": "Coverage/provider-coverage-2"
+            }
+          }
+        ],
+        "item": [
+          {
+            "sequence": 1,
+            "category": {
+              "coding": [
+                {
+                  "system": "https://codesystem.x12.org/005010/1365",
+                  "code": "96",
+                  "display": "Professional (Physician)"
+                }
+              ]
+            },
+            "productOrService": {
+              "coding": [
+                {
+                  "system": "http://www.ama-assn.org/go/cpt",
+                  "code": "95803",
+                  "display": "Actigraphy testing, recording, analysis, interpretation, and report (minimum of 72 hours to 14 consecutive days of recording)"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/ServiceRequest/12025713-d298-413d-8077-0113941f9b99",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "12025713-d298-413d-8077-0113941f9b99",
+        "meta": {
+          "versionId": "132",
+          "lastUpdated": "2024-04-18T15:25:22.060+00:00",
+          "source": "#FLgNBEYVTxgitjSV",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://smiledigitalhealth.com/priorauth/crd-test-case-name",
+            "valueCoding": {
+              "system": "https://smiledigitalhealth.com/priorauth/crd-test-case-name/code",
+              "code": "pa-required",
+              "display": "Prior Auth Required - Approved"
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+            "extension": [
+              {
+                "url": "coverage",
+                "valueReference": {
+                  "reference": "Coverage/provider-coverage-2"
+                }
+              },
+              {
+                "url": "questionnaire",
+                "valueCanonical": "http://example.org/sdh/dtr/aslp/Questionnaire/ASLPA1"
+              },
+              {
+                "url": "response",
+                "valueReference": {
+                  "reference": "QuestionnaireResponse/5584"
+                }
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+              "code": "ASLP.A1.DE4",
+              "display": "Actigraphy"
+            },
+            {
+              "system": "http://www.ama-assn.org/go/cpt",
+              "code": "95803",
+              "display": "Actigraphy testing, recording, analysis, interpretation, and report (minimum of 72 hours to 14 consecutive days of recording)"
+            }
+          ],
+          "text": "Actigraphy"
+        },
+        "subject": {
+          "reference": "Patient/provider-patient-2"
+        },
+        "occurrenceDateTime": "2023-06-05T08:00:00.000Z",
+        "authoredOn": "2023-06-05",
+        "requester": {
+          "reference": "PractitionerRole/provider-practitioner-role-ppr1"
+        },
+        "performer": [
+          {
+            "reference": "PractitionerRole/provider-practitioner-role-ppr2"
+          }
+        ],
+        "locationReference": [
+          {
+            "reference": "Location/provider-location-1z"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "78275009",
+                "display": "Obstructive sleep apnea syndrome"
+              }
+            ],
+            "text": "Obstructive sleep apnea syndrome"
+          }
+        ],
+        "insurance": [
+          {
+            "reference": "Coverage/provider-coverage-2"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Coverage/provider-coverage-2",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "provider-coverage-2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-03T16:33:28.866+00:00",
+          "source": "#K5l9VEu1NL47IzJl",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://acme.org/fhir-ns/payer-coverage-identifier-system",
+            "value": "23456"
+          }
+        ],
+        "status": "active",
+        "beneficiary": {
+          "reference": "Patient/provider-patient-2"
+        },
+        "payor": [
+          {
+            "reference": "Organization/provider-payorganization-1"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Patient/provider-patient-2",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "provider-patient-2",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-03T16:33:27.106+00:00",
+          "source": "#Wk9bF52g3hvVb3H1",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated by <a href=\"https://github.com/synthetichealth/synthea\">Synthea</a>.Version identifier: master-branch-latest\n .   Person seed: 4674462577562319288  Population seed: 1673294331528</div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2106-3",
+                  "display": "White"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "White"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+            "extension": [
+              {
+                "url": "ombCategory",
+                "valueCoding": {
+                  "system": "urn:oid:2.16.840.1.113883.6.238",
+                  "code": "2186-5",
+                  "display": "Not Hispanic or Latino"
+                }
+              },
+              {
+                "url": "text",
+                "valueString": "Not Hispanic or Latino"
+              }
+            ]
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/provider-patient-mothersMaidenName",
+            "valueString": "Sherlene302 Kihn564"
+          },
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "valueCode": "F"
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/provider-patient-birthPlace",
+            "valueAddress": {
+              "city": "Boston",
+              "state": "Massachusetts",
+              "country": "US"
+            }
+          },
+          {
+            "url": "http://synthetichealth.github.io/synthea/disability-adjusted-life-years",
+            "valueDecimal": 0.1435201139786352
+          },
+          {
+            "url": "http://synthetichealth.github.io/synthea/quality-adjusted-life-years",
+            "valueDecimal": 14.856479886021365
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://github.com/synthetichealth/synthea",
+            "value": "85e086aa-c117-6cbf-e2b4-4a9e621a73c1"
+          },
+          {
+            "system": "https://prior-auth.org/fhir/memberidentifier",
+            "value": "N0000016"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical Record Number"
+                }
+              ],
+              "text": "Medical Record Number"
+            },
+            "system": "http://hospital.smarthealthit.org",
+            "value": "85e086aa-c117-6cbf-e2b4-4a9e621a73c1"
+          },
+          {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "SS",
+                  "display": "Social Security Number"
+                }
+              ],
+              "text": "Social Security Number"
+            },
+            "system": "http://hl7.org/fhir/sid/us-ssn",
+            "value": "999-34-8854"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Homenick806",
+            "given": [
+              "Dianna917",
+              "Kiersten731"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-968-1946",
+            "use": "home"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "2007-03-31",
+        "address": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+                "extension": [
+                  {
+                    "url": "latitude",
+                    "valueDecimal": 42.2596074583043
+                  },
+                  {
+                    "url": "longitude",
+                    "valueDecimal": -72.10438388045209
+                  }
+                ]
+              }
+            ],
+            "line": [
+              "607 Boyle Plaza Apt 43"
+            ],
+            "city": "North Brookfield",
+            "state": "MA",
+            "postalCode": "01535",
+            "country": "US"
+          }
+        ],
+        "maritalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+              "code": "S",
+              "display": "Never Married"
+            }
+          ],
+          "text": "Never Married"
+        },
+        "multipleBirthBoolean": false,
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-US",
+                  "display": "English"
+                }
+              ],
+              "text": "English"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/PractitionerRole/provider-practitioner-role-ppr1",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "provider-practitioner-role-ppr1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-03T16:33:27.976+00:00",
+          "source": "#jmrv44IpSaBlmV61",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitionerrole"
+          ]
+        },
+        "practitioner": {
+          "reference": "Practitioner/provider-practitioner-pp1"
+        },
+        "organization": {
+          "reference": "Organization/provider-organization-oo1"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "208D00000X",
+                "display": "General Practice"
+              }
+            ],
+            "text": "General Practice"
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "system": "http://nucc.org/provider-taxonomy",
+                "code": "208D00000X",
+                "display": "General Practice"
+              }
+            ],
+            "text": "General Practice"
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/provider-location-ll1"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "602-544-2273"
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-direct",
+                "valueBoolean": true
+              }
+            ],
+            "system": "email",
+            "value": "david.minor@gen.com",
+            "use": "work"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Organization/provider-payorganization-1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "provider-payorganization-1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-03T16:33:28.659+00:00",
+          "source": "#NI2jUceJ0BQDUFh4",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><b>Org Payer-A Insurance</b></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://smiledigitalhealth.com/pa-org-identifier",
+            "value": "Payer-A Insurance"
+          }
+        ],
+        "active": true,
+        "name": "Health Level Seven International Insurance",
+        "alias": [
+          "HL7 International"
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(+1) 734-677-7777"
+          },
+          {
+            "system": "fax",
+            "value": "(+1) 734-677-6622"
+          },
+          {
+            "system": "email",
+            "value": "hq@HL7.org"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "3300 Washtenaw Avenue, Suite 227"
+            ],
+            "city": "Ann Arbor",
+            "state": "MI",
+            "postalCode": "48104",
+            "country": "USA"
+          }
+        ],
+        "endpoint": [
+          {
+            "reference": "Endpoint/CDSDiscovery",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "CDSDiscovery"
+            }
+          },
+          {
+            "reference": "Endpoint/DTRQuestionnairePackage",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "DTRQuestionnairePackage"
+            }
+          },
+          {
+            "reference": "Endpoint/DTRQuestionnaireError",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "DTRQuestionnaireError"
+            }
+          },
+          {
+            "reference": "Endpoint/PASSubmit",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "PASSubmit"
+            }
+          },
+          {
+            "reference": "Endpoint/PASUpdate",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "PASUpdate"
+            }
+          },
+          {
+            "reference": "Endpoint/PASInquiry",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "PASInquiry"
+            }
+          },
+          {
+            "reference": "Endpoint/CDEXAttachment",
+            "type": "Endpoint",
+            "identifier": {
+              "system": "http://smiledigitalhealth.com/pa-org-endpoint",
+              "value": "CDEXAttachment"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Organization/provider-organization-oo1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "provider-organization-oo1",
+        "meta": {
+          "versionId": "2",
+          "lastUpdated": "2024-04-03T16:33:28.659+00:00",
+          "source": "#NI2jUceJ0BQDUFh4",
+          "profile": [
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1407805088"
+          }
+        ],
+        "active": true,
+        "name": "1ST CARE MEDICAL CLINIC",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "(+1) 602-544-2273"
+          },
+          {
+            "system": "fax",
+            "value": "(+1) 602-544-3017"
+          },
+          {
+            "system": "email",
+            "value": "1stcaremedical@email.com"
+          }
+        ],
+        "address": [
+          {
+            "type": "both",
+            "line": [
+              "1635 W. Glendale Ave."
+            ],
+            "city": "PHOENIX",
+            "state": "AZ",
+            "postalCode": "85021",
+            "country": "USA"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Practitioner/provider-practitioner-pp1",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "provider-practitioner-pp1",
+        "meta": {
+          "versionId": "1",
+          "lastUpdated": "2024-04-03T16:33:27.476+00:00",
+          "source": "#cd8x4pQ5oJeWMqty",
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner",
+            "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://hl7.org/fhir/sid/us-npi",
+            "value": "1356441356"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "family": "Minor",
+            "given": [
+              "David"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "602-544-2273",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "david.minor@gen.com",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "1635 W. Glendale Ave."
+            ],
+            "city": "Phoenix",
+            "state": "AZ",
+            "postalCode": "85021",
+            "country": "US"
+          }
+        ],
+        "gender": "male"
+      }
+    },
+    {
+      "fullUrl": "https://example.org/fhir/Bundle/979a5326-3474-42a3-bd16-8c0f63a814e9",
+      "resource": {
+        "resourceType": "Bundle",
+        "id": "979a5326-3474-42a3-bd16-8c0f63a814e9",
+        "meta": {
+          "profile": [
+            "https://hl7.org/fhir/us/davinci-dtr/StructureDefinition/DTR-QRBundle"
+          ]
+        },
+        "type": "collection",
+        "timestamp": "2024-04-18T18:21:13.506Z",
+        "entry": [
+          {
+            "fullUrl": "https://example.org/fhir/QuestionnaireResponse/5584",
+            "resource": {
+              "resourceType": "QuestionnaireResponse",
+              "id": "5584",
+              "meta": {
+                "versionId": "3",
+                "lastUpdated": "2024-04-18T18:21:08.348+00:00",
+                "source": "#3t4oM8rrabcPNSlJ"
+              },
+              "contained": [
+                {
+                  "resourceType": "Questionnaire",
+                  "id": "ASLPA1",
+                  "meta": {
+                    "source": "#PYYSz1pYfYAdq7Lm"
+                  },
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+                      "valueCode": "shareable"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+                      "valueCode": "computable"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeCapability",
+                      "valueCode": "publishable"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-knowledgeRepresentationLevel",
+                      "valueCode": "structured"
+                    },
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/cqf-library",
+                      "valueCanonical": "http://example.org/sdh/dtr/aslp/Library/ASLPDataElements"
+                    }
+                  ],
+                  "url": "http://example.org/sdh/dtr/aslp/Questionnaire/ASLPA1",
+                  "name": "ASLPA1",
+                  "title": "ASLP.A1 Adult Sleep Studies",
+                  "status": "active",
+                  "experimental": false,
+                  "description": "Adult Sleep Studies Prior Authorization Form",
+                  "useContext": [
+                    {
+                      "code": {
+                        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+                        "code": "task",
+                        "display": "Workflow Task"
+                      },
+                      "valueCodeableConcept": {
+                        "coding": [
+                          {
+                            "system": "http://fhir.org/guides/nachc/hiv-cds/CodeSystem/activity-codes",
+                            "code": "ASLP.A1",
+                            "display": "Adult Sleep Studies"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-itemPopulationContext",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "Sleep Study"
+                          }
+                        }
+                      ],
+                      "linkId": "0",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order",
+                      "text": "A sleep study procedure being ordered",
+                      "type": "group",
+                      "repeats": true,
+                      "item": [
+                        {
+                          "linkId": "1",
+                          "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order#ServiceRequest.code",
+                          "text": "A sleep study procedure being ordered",
+                          "type": "choice",
+                          "answerOption": [
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE2",
+                                "display": "Home sleep apnea testing (HSAT)"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE3",
+                                "display": "Peripheral artery tonometry (PAT)"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE4",
+                                "display": "Actigraphy"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE5",
+                                "display": "Prescreening devices or procedures"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE6",
+                                "display": "Acoustic pharyngometry"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE7",
+                                "display": "Digital therapeutics"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE8",
+                                "display": "Home oximetry monitoring"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE9",
+                                "display": "Polysomnogram"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE10",
+                                "display": "Facility-based positive airway pressure (PAP) titration study"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE11",
+                                "display": "Facility-based, daytime, abbreviated, cardiorespiratory sleep studies (PAP NAP testing)"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE12",
+                                "display": "Multiple sleep latency test (MSLT)"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE13",
+                                "display": "Maintenance of wakefulness test (MWT)"
+                              }
+                            },
+                            {
+                              "valueCoding": {
+                                "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                                "code": "ASLP.A1.DE14",
+                                "display": "Artificial intelligence (AI)"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "linkId": "2",
+                          "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order#ServiceRequest.occurrence[x]",
+                          "text": "Date of the procedure",
+                          "type": "dateTime"
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "Diagnosis of Obstructive Sleep Apnea"
+                          }
+                        }
+                      ],
+                      "linkId": "3",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-diagnosis-of-obstructive-sleep-apnea#Condition.code",
+                      "text": "Diagnosis of Obstructive Sleep Apnea",
+                      "type": "choice",
+                      "answerOption": [
+                        {
+                          "valueCoding": {
+                            "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                            "code": "ASLP.A1.DE17",
+                            "display": "Obstructive sleep apnea (OSA)"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "History of Hypertension"
+                          }
+                        }
+                      ],
+                      "linkId": "4",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-history-of-hypertension#Observation.value[x]",
+                      "text": "History of Hypertension",
+                      "type": "boolean"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "History of Diabetes"
+                          }
+                        }
+                      ],
+                      "linkId": "5",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-history-of-diabetes#Observation.value[x]",
+                      "text": "History of Diabetes",
+                      "type": "boolean"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "Neck Circumference"
+                          }
+                        }
+                      ],
+                      "linkId": "6",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-height#Observation.value[x]",
+                      "text": "Neck circumference (in inches)",
+                      "type": "quantity"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "Height"
+                          }
+                        }
+                      ],
+                      "linkId": "7",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-height#Observation.value[x]",
+                      "text": "Height (in inches)",
+                      "type": "quantity"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "Weight"
+                          }
+                        }
+                      ],
+                      "linkId": "8",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-weight#Observation.value[x]",
+                      "text": "Weight (in pounds)",
+                      "type": "quantity"
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
+                          "valueExpression": {
+                            "language": "text/cql-identifier",
+                            "expression": "BMI"
+                          }
+                        }
+                      ],
+                      "linkId": "9",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-bmi#Observation.value[x]",
+                      "text": "Body mass index (BMI)",
+                      "type": "quantity"
+                    }
+                  ]
+                }
+              ],
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/qr-context",
+                  "valueReference": {
+                    "reference": "Coverage/provider-coverage-2"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/qr-context",
+                  "valueReference": {
+                    "reference": "ServiceRequest/12025713-d298-413d-8077-0113941f9b99"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/intendedUse",
+                  "valueCodeableConcept": {
+                    "coding": [
+                      {
+                        "system": "http://hl7.org/fhir/us/davinci-crd/CodeSystem/temp",
+                        "code": "withpa",
+                        "display": "Include in prior authorization"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-signature",
+                  "valueSignature": {
+                    "type": [
+                      {
+                        "system": "urn:iso-astm:E1762-95:2013",
+                        "code": "1.2.840.10065.1.12.1.5"
+                      }
+                    ],
+                    "when": "2024-04-18T18:21:07.713Z",
+                    "who": {
+                      "reference": "PractitionerRole/provider-practitioner-role-1"
+                    },
+                    "data": "bQ=="
+                  }
+                }
+              ],
+              "questionnaire": "#ASLPA1",
+              "status": "completed",
+              "subject": {
+                "reference": "Patient/provider-patient-2"
+              },
+              "item": [
+                {
+                  "linkId": "0",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order",
+                  "text": "A sleep study procedure being ordered",
+                  "item": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-author",
+                          "valueReference": {
+                            "reference": "http://cqframework.org/fhir/Device/clinical-quality-language"
+                          }
+                        }
+                      ],
+                      "linkId": "1",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order#ServiceRequest.code",
+                      "text": "A sleep study procedure being ordered",
+                      "answer": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/information-origin",
+                              "extension": [
+                                {
+                                  "url": "source",
+                                  "valueCode": "auto"
+                                }
+                              ]
+                            }
+                          ],
+                          "valueCoding": {
+                            "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                            "code": "ASLP.A1.DE4",
+                            "display": "Actigraphy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-author",
+                          "valueReference": {
+                            "reference": "http://cqframework.org/fhir/Device/clinical-quality-language"
+                          }
+                        }
+                      ],
+                      "linkId": "2",
+                      "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-sleep-study-order#ServiceRequest.occurrence[x]",
+                      "text": "Date of the procedure",
+                      "answer": [
+                        {
+                          "extension": [
+                            {
+                              "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/information-origin",
+                              "extension": [
+                                {
+                                  "url": "source",
+                                  "valueCode": "auto"
+                                }
+                              ]
+                            }
+                          ],
+                          "valueDateTime": "2023-06-05T08:00:00.000Z"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "linkId": "3",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-diagnosis-of-obstructive-sleep-apnea#Condition.code",
+                  "text": "Diagnosis of Obstructive Sleep Apnea"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-author",
+                      "valueReference": {
+                        "reference": "http://cqframework.org/fhir/Device/clinical-quality-language"
+                      }
+                    }
+                  ],
+                  "linkId": "4",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-history-of-hypertension#Observation.value[x]",
+                  "text": "History of Hypertension",
+                  "answer": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/information-origin",
+                          "extension": [
+                            {
+                              "url": "source",
+                              "valueCode": "auto"
+                            }
+                          ]
+                        }
+                      ],
+                      "valueBoolean": true
+                    }
+                  ]
+                },
+                {
+                  "linkId": "5",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-history-of-diabetes#Observation.value[x]",
+                  "text": "History of Diabetes"
+                },
+                {
+                  "linkId": "6",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-height#Observation.value[x]",
+                  "text": "Neck circumference (in inches)"
+                },
+                {
+                  "linkId": "7",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-height#Observation.value[x]",
+                  "text": "Height (in inches)"
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-author",
+                      "valueReference": {
+                        "reference": "http://cqframework.org/fhir/Device/clinical-quality-language"
+                      }
+                    }
+                  ],
+                  "linkId": "8",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-weight#Observation.value[x]",
+                  "text": "Weight (in pounds)",
+                  "answer": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/information-origin",
+                          "extension": [
+                            {
+                              "url": "source",
+                              "valueCode": "auto"
+                            }
+                          ]
+                        }
+                      ],
+                      "valueQuantity": {
+                        "value": 202,
+                        "unit": "[lb_av]",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "[lb_av]"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaireresponse-author",
+                      "valueReference": {
+                        "reference": "http://cqframework.org/fhir/Device/clinical-quality-language"
+                      }
+                    }
+                  ],
+                  "linkId": "9",
+                  "definition": "http://example.org/sdh/dtr/aslp/StructureDefinition/aslp-bmi#Observation.value[x]",
+                  "text": "Body mass index (BMI)",
+                  "answer": [
+                    {
+                      "extension": [
+                        {
+                          "url": "http://hl7.org/fhir/us/davinci-dtr/StructureDefinition/information-origin",
+                          "extension": [
+                            {
+                              "url": "source",
+                              "valueCode": "auto"
+                            }
+                          ]
+                        }
+                      ],
+                      "valueQuantity": {
+                        "value": 27,
+                        "unit": "kg/m2",
+                        "system": "http://unitsofmeasure.org",
+                        "code": "kg/m2"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.org/fhir/Coverage/provider-coverage-2",
+            "resource": {
+              "resourceType": "Coverage",
+              "id": "provider-coverage-2",
+              "meta": {
+                "versionId": "1",
+                "lastUpdated": "2024-04-03T16:33:28.866+00:00",
+                "source": "#K5l9VEu1NL47IzJl",
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-coverage"
+                ]
+              },
+              "identifier": [
+                {
+                  "system": "http://acme.org/fhir-ns/payer-coverage-identifier-system",
+                  "value": "23456"
+                }
+              ],
+              "status": "active",
+              "beneficiary": {
+                "reference": "Patient/provider-patient-2"
+              },
+              "payor": [
+                {
+                  "reference": "Organization/provider-payorganization-1"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.org/fhir/ServiceRequest/12025713-d298-413d-8077-0113941f9b99",
+            "resource": {
+              "resourceType": "ServiceRequest",
+              "id": "12025713-d298-413d-8077-0113941f9b99",
+              "meta": {
+                "versionId": "132",
+                "lastUpdated": "2024-04-18T15:25:22.060+00:00",
+                "source": "#FLgNBEYVTxgitjSV",
+                "profile": [
+                  "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-servicerequest"
+                ]
+              },
+              "extension": [
+                {
+                  "url": "https://smiledigitalhealth.com/priorauth/crd-test-case-name",
+                  "valueCoding": {
+                    "system": "https://smiledigitalhealth.com/priorauth/crd-test-case-name/code",
+                    "code": "pa-required",
+                    "display": "Prior Auth Required - Approved"
+                  }
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/ext-coverage-information",
+                  "extension": [
+                    {
+                      "url": "coverage",
+                      "valueReference": {
+                        "reference": "Coverage/provider-coverage-2"
+                      }
+                    },
+                    {
+                      "url": "questionnaire",
+                      "valueCanonical": "http://example.org/sdh/dtr/aslp/Questionnaire/ASLPA1"
+                    },
+                    {
+                      "url": "response",
+                      "valueReference": {
+                        "reference": "QuestionnaireResponse/5584"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "status": "active",
+              "intent": "order",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://example.org/sdh/dtr/aslp/CodeSystem/aslp-codes",
+                    "code": "ASLP.A1.DE4",
+                    "display": "Actigraphy"
+                  },
+                  {
+                    "system": "http://www.ama-assn.org/go/cpt",
+                    "code": "95803",
+                    "display": "Actigraphy testing, recording, analysis, interpretation, and report (minimum of 72 hours to 14 consecutive days of recording)"
+                  }
+                ],
+                "text": "Actigraphy"
+              },
+              "subject": {
+                "reference": "Patient/provider-patient-2"
+              },
+              "occurrenceDateTime": "2023-06-05T08:00:00.000Z",
+              "authoredOn": "2023-06-05",
+              "requester": {
+                "reference": "PractitionerRole/provider-practitioner-role-ppr1"
+              },
+              "performer": [
+                {
+                  "reference": "PractitionerRole/provider-practitioner-role-ppr2"
+                }
+              ],
+              "locationReference": [
+                {
+                  "reference": "Location/provider-location-1z"
+                }
+              ],
+              "reasonCode": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://snomed.info/sct",
+                      "code": "78275009",
+                      "display": "Obstructive sleep apnea syndrome"
+                    }
+                  ],
+                  "text": "Obstructive sleep apnea syndrome"
+                }
+              ],
+              "insurance": [
+                {
+                  "reference": "Coverage/provider-coverage-2"
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "https://example.org/fhir/Patient/provider-patient-2",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "provider-patient-2",
+              "meta": {
+                "versionId": "1",
+                "lastUpdated": "2024-04-03T16:33:27.106+00:00",
+                "source": "#Wk9bF52g3hvVb3H1",
+                "profile": [
+                  "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient",
+                  "http://hl7.org/fhir/us/davinci-crd/StructureDefinition/profile-patient"
+                ]
+              },
+              "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Generated by <a href=\"https://github.com/synthetichealth/synthea\">Synthea</a>.Version identifier: master-branch-latest\n .   Person seed: 4674462577562319288  Population seed: 1673294331528</div>"
+              },
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+                  "extension": [
+                    {
+                      "url": "ombCategory",
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2106-3",
+                        "display": "White"
+                      }
+                    },
+                    {
+                      "url": "text",
+                      "valueString": "White"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+                  "extension": [
+                    {
+                      "url": "ombCategory",
+                      "valueCoding": {
+                        "system": "urn:oid:2.16.840.1.113883.6.238",
+                        "code": "2186-5",
+                        "display": "Not Hispanic or Latino"
+                      }
+                    },
+                    {
+                      "url": "text",
+                      "valueString": "Not Hispanic or Latino"
+                    }
+                  ]
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/provider-patient-mothersMaidenName",
+                  "valueString": "Sherlene302 Kihn564"
+                },
+                {
+                  "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+                  "valueCode": "F"
+                },
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/provider-patient-birthPlace",
+                  "valueAddress": {
+                    "city": "Boston",
+                    "state": "Massachusetts",
+                    "country": "US"
+                  }
+                },
+                {
+                  "url": "http://synthetichealth.github.io/synthea/disability-adjusted-life-years",
+                  "valueDecimal": 0.1435201139786352
+                },
+                {
+                  "url": "http://synthetichealth.github.io/synthea/quality-adjusted-life-years",
+                  "valueDecimal": 14.856479886021365
+                }
+              ],
+              "identifier": [
+                {
+                  "system": "https://github.com/synthetichealth/synthea",
+                  "value": "85e086aa-c117-6cbf-e2b4-4a9e621a73c1"
+                },
+                {
+                  "system": "https://prior-auth.org/fhir/memberidentifier",
+                  "value": "N0000016"
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "MR",
+                        "display": "Medical Record Number"
+                      }
+                    ],
+                    "text": "Medical Record Number"
+                  },
+                  "system": "http://hospital.smarthealthit.org",
+                  "value": "85e086aa-c117-6cbf-e2b4-4a9e621a73c1"
+                },
+                {
+                  "type": {
+                    "coding": [
+                      {
+                        "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                        "code": "SS",
+                        "display": "Social Security Number"
+                      }
+                    ],
+                    "text": "Social Security Number"
+                  },
+                  "system": "http://hl7.org/fhir/sid/us-ssn",
+                  "value": "999-34-8854"
+                }
+              ],
+              "name": [
+                {
+                  "use": "official",
+                  "family": "Homenick806",
+                  "given": [
+                    "Dianna917",
+                    "Kiersten731"
+                  ]
+                }
+              ],
+              "telecom": [
+                {
+                  "system": "phone",
+                  "value": "555-968-1946",
+                  "use": "home"
+                }
+              ],
+              "gender": "female",
+              "birthDate": "2007-03-31",
+              "address": [
+                {
+                  "extension": [
+                    {
+                      "url": "http://hl7.org/fhir/StructureDefinition/geolocation",
+                      "extension": [
+                        {
+                          "url": "latitude",
+                          "valueDecimal": 42.2596074583043
+                        },
+                        {
+                          "url": "longitude",
+                          "valueDecimal": -72.10438388045209
+                        }
+                      ]
+                    }
+                  ],
+                  "line": [
+                    "607 Boyle Plaza Apt 43"
+                  ],
+                  "city": "North Brookfield",
+                  "state": "MA",
+                  "postalCode": "01535",
+                  "country": "US"
+                }
+              ],
+              "maritalStatus": {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
+                    "code": "S",
+                    "display": "Never Married"
+                  }
+                ],
+                "text": "Never Married"
+              },
+              "multipleBirthBoolean": false,
+              "communication": [
+                {
+                  "language": {
+                    "coding": [
+                      {
+                        "system": "urn:ietf:bcp:47",
+                        "code": "en-US",
+                        "display": "English"
+                      }
+                    ],
+                    "text": "English"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

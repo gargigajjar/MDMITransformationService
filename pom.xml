@@ -12,10 +12,11 @@
 	<properties>
 		<mdmi.runtime.version>4.0.0-SNAPSHOT</mdmi.runtime.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+ 
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<!---		<tycho-version>2.7.5</tycho-version> -->
+ 
 		<skipTests>true</skipTests>
 	</properties>
 	<!-- Inherit defaults from Spring Boot -->
@@ -25,6 +26,23 @@
 		<version>3.3.5</version>
 	</parent>
 	<dependencies>
+ 
+  <!-- https://mvnrepository.com/artifact/org.smooks.cartridges.edi/smooks-edi-cartridge -->
+<dependency>
+    <groupId>org.smooks.cartridges.edi</groupId>
+    <artifactId>smooks-edi-cartridge</artifactId>
+    <version>2.0.1</version>
+</dependency>
+
+	
+
+<dependency>
+    <groupId>org.openjdk.nashorn</groupId>
+    <artifactId>nashorn-core</artifactId>
+    <version>15.4</version>
+</dependency>
+
+ 
 		<dependency>
 			<groupId>jakarta.ws.rs</groupId>
 			<artifactId>jakarta.ws.rs-api</artifactId>
@@ -76,10 +94,27 @@
 		<dependency>
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
+ 
+			<version>v20191111</version>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+		<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents.core5/httpcore5 -->
+ 
 			<version>v20240317</version>
 			<!--<version>v20191111</version> -->
 		</dependency>
 
+ 
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -122,7 +157,7 @@
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.fhir</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-SMILE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
@@ -140,7 +175,6 @@
 			<artifactId>org.mdmi.processors.cda</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
