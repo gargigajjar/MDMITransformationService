@@ -57,10 +57,6 @@ import jakarta.ws.rs.core.Context;
 @RequestMapping("/mdmi/transformation")
 public class MdmiEngine {
 
-	// jakarta.annotation.PostConstruct thepost;
-
-	// javax.annotation.PostConstruct the otherone;
-
 	@Autowired
 	private ConfigurableApplicationContext applicationContext;
 

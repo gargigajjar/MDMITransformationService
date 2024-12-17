@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mdmi.transformation</groupId>
 	<artifactId>org.mdmi.transformation.service</artifactId>
-	<version>4.0.0</version>
+	<version>4.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>MDMI Transformation Service</name>
 	<description>MDMI Transformation Service</description>
@@ -15,14 +15,12 @@
 		<java.version>21</java.version>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
-		<!---		<tycho-version>2.7.5</tycho-version> -->
 		<skipTests>true</skipTests>
 	</properties>
-	<!-- Inherit defaults from Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
+		<version>3.4.0</version>
 	</parent>
 	<dependencies>
 		<dependency>
@@ -32,6 +30,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,7 +46,6 @@
 			<artifactId>nashorn-core</artifactId>
 			<version>15.4</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.ecore</artifactId>
@@ -53,38 +56,30 @@
 			<artifactId>org.eclipse.emf.common </artifactId>
 			<version>2.38.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
 			<version>2.38.0</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.antlr</groupId>
 			<artifactId>antlr4-runtime</artifactId>
 			<version>4.5.1</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.apache.xml/serializer -->
 		<dependency>
 			<groupId>xalan</groupId>
 			<artifactId>xalan</artifactId>
 			<version>2.7.2</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.javascript</groupId>
 			<artifactId>closure-compiler</artifactId>
 			<version>v20240317</version>
-			<!--<version>v20191111</version> -->
 		</dependency>
-
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mdmi</groupId>
 			<artifactId>org.mdmi.ecore</artifactId>
@@ -99,6 +94,10 @@
 					<groupId>org.slf4j</groupId>
 					<artifactId>slf4j-api</artifactId>
 				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-nop</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
@@ -111,18 +110,15 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.mdmi</groupId>
 			<artifactId>org.mdmi.processors</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.fhir</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0-SMILE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
@@ -134,18 +130,20 @@
 			<artifactId>org.mdmi.processors.hl7v2</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.cda</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.mdmi.processors</groupId>
+			<artifactId>org.mdmi.processors.edi</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -177,71 +175,11 @@
 		</plugins>
 	</build>
 	<repositories>
-		<!--		<repository>
-			<id>2022-12</id>
-			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2022-12</url>
-		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>mdix-release</id>
-			<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
-			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
-		</repository>
-		<repository>
-			<id>mdix-snapshot</id>
-			<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
-			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-		<repository>
-			<id>mdix</id>
-			<name>mdmiartifactory</name>
-			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory/</url>
-		</repository>
-		-->
 	</repositories>
-	<pluginRepositories>
-		<!--		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository> -->
-	</pluginRepositories>
 	<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
 			<distributionManagement>
-
 				<repository>
 					<id>mdix</id>
 					<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
@@ -255,10 +193,7 @@
 						<enabled>true</enabled>
 					</snapshots>
 				</snapshotRepository>
-
-
 			</distributionManagement>
-
 			<build>
 				<plugins>
 					<!-- Override plugin execution to disable -->
@@ -278,30 +213,5 @@
 				</plugins>
 			</build>
 		</profile>
-
-<!--
-		<profile>
-			<id>disable-spring-boot-plugin</id>
-			<build>
-				<plugins>
-
-					<plugin>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-maven-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>repackage</id>
-								<phase>none</phase>
-								<goals>
-									<goal>repackage</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
--->
-
 	</profiles>
 </project>
