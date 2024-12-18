@@ -22,6 +22,49 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.0</version>
 	</parent>
+
+	<repositories>
+	<!---	<repository>
+			<id>2022-12</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/2022-12</url>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>mdix-release</id>
+			<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
+			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
+		</repository> -->
+		<repository>
+			<id>mdix-snapshot</id>
+			<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
+			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>mdix</id>
+			<name>mdmiartifactory</name>
+			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory/</url>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>jakarta.ws.rs</groupId>
@@ -174,8 +217,6 @@
 			</plugin>
 		</plugins>
 	</build>
-	<repositories>
-	</repositories>
 	<profiles>
 		<profile>
 			<id>mdmiartifactory</id>
