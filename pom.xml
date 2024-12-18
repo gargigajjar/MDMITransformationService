@@ -24,32 +24,6 @@
 	</parent>
 
 	<repositories>
-	<!---	<repository>
-			<id>2022-12</id>
-			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2022-12</url>
-		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>spring-milestones</id>
-			<name>Spring Milestones</name>
-			<url>https://repo.spring.io/milestone</url>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-		<repository>
-			<id>mdix-release</id>
-			<name>a0rydvwuacqh2-artifactory-primary-0-releases</name>
-			<url>https://mdix.jfrog.io/artifactory/mdmiartifactory</url>
-		</repository> -->
 		<repository>
 			<id>mdix-snapshot</id>
 			<name>a0rydvwuacqh2-artifactory-primary-0-snapshots</name>
@@ -161,7 +135,7 @@
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
 			<artifactId>org.mdmi.processors.fhir</artifactId>
-			<version>1.0.0-SMILE</version>
+			<version>4.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mdmi.processors</groupId>
@@ -237,7 +211,6 @@
 			</distributionManagement>
 			<build>
 				<plugins>
-					<!-- Override plugin execution to disable -->
 					<plugin>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
